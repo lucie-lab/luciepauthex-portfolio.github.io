@@ -2,84 +2,270 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>[Ton Nom] - Portfolio</title>
+  <title>Lucie L. - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins:400,600&display=swap" rel="stylesheet">
+  <!-- Polices Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico:400|Poppins:400,600|Fira+Mono:400&display=swap" rel="stylesheet">
+  <!-- Icônes FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
-    <h1>[Ton Nom] - Portfolio</h1>
-    <p class="subtitle">Étudiante BTS SIO [SLAM/SISR]</p>
-    <p class="quote">Ose être différente, c’est ta force !</p>
+    <div class="header-content">
+      <img src="avatar.png" alt="Avatar Lucie" class="avatar">
+      <div class="header-text">
+        <h1>Lucie L.</h1>
+        <p class="subtitle">Portfolio BTS SIO <span class="option">SLAM</span></p>
+        <p class="quote">🌸 Ose être différente, c’est ta force ! 🌸</p>
+        <div class="badges">
+          <span class="badge pink">#FilleEnInformatique</span>
+          <span class="badge violet">#Passionnée</span>
+          <span class="badge blue">#Créative</span>
+        </div>
+      </div>
+    </div>
+    <!-- NAVIGATION avec sous-menus -->
+    <nav>
+      <ul class="main-nav">
+        <li><a href="#parcours"><i class="fa-solid fa-graduation-cap"></i> Parcours</a></li>
+        <li class="dropdown">
+          <a href="#competences"><i class="fa-solid fa-gem"></i> Compétences <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="#devweb">Développement Web</a></li>
+            <li><a href="#bdd">Base de Données</a></li>
+            <li><a href="#gestion">Gestion de Projet</a></li>
+            <li><a href="#softskills">Soft Skills</a></li>
+          </ul>
+        </li>
+        <li><a href="#projets"><i class="fa-solid fa-rocket"></i> Projets</a></li>
+        <li><a href="#veille"><i class="fa-solid fa-lightbulb"></i> Veille Techno</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fa-solid fa-heart"></i> Fun <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="#citations">Citations</a></li>
+            <li><a href="#playlist">Playlist</a></li>
+            <li><a href="#passions">Passions</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
   </header>
   <main>
-    <section id="presentation">
-      <h2>Mon Parcours</h2>
-      <p>
-        <!-- À REMPLIR AVEC TON HISTOIRE -->
-        BTS SIO option [SLAM/SISR], Lycée [Nom], Ville.<br>
-        [Ajoute ici un résumé de ton parcours scolaire et de tes expériences pro.]
-      </p>
-    </section>
-
-    <section id="tableau">
-      <h2>Tableau de Synthèse</h2>
-      <!-- Option 1 : Image -->
-      <img src="tableau_synthese.png" alt="Tableau de synthèse" class="tableau-img">
-      <!-- Option 2 : Lien PDF -->
-      <!-- <a href="tableau_synthese.pdf" target="_blank" class="button">Voir le tableau PDF</a> -->
-    </section>
-
-    <section id="competences">
-      <h2>Compétences Clés</h2>
-      <ul class="skills-list">
-        <li>
-          <strong>Développement Web :</strong> PHP, JS, HTML, CSS, ...
-        </li>
-        <li>
-          <strong>Gestion de projet :</strong> Méthodo Agile, outils collaboratifs...
-        </li>
-        <li>
-          <strong>[Compétence 3]</strong>
-        </li>
-        <li>
-          <strong>[Compétence 4]</strong>
-        </li>
-      </ul>
-    </section>
-
-    <section id="projets">
-      <h2>Mes Projets</h2>
-      <div class="project">
-        <h3>Projet 1 : [Nom]</h3>
-        <ul>
-          <li><b>Objectif :</b> [Description]</li>
-          <li><b>Technologies :</b> [Liste]</li>
-          <li><b>Entreprise :</b> [Nom, domaine, taille, local/international]</li>
-          <li><b>Résultat :</b> [Bilan/chiffres]</li>
-        </ul>
-        <a href="[Lien GitHub ou démo]" class="project-link" target="_blank">Lien du projet</a>
+    <!-- Parcours -->
+    <section id="parcours" class="glass">
+      <h2><i class="fa-solid fa-graduation-cap"></i> Mon Parcours</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2023-2025</span>
+          <div>
+            <b>BTS SIO option SLAM</b> – Lycée Arc-en-ciel, Nantes  
+            <p class="timeline-details">Modules : Dev, gestion projet, cybersécurité, etc. <span class="tag tag-pink">En cours</span></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2022-2023</span>
+          <div>
+            <b>Bac Général</b> – Spé Math/NSI, Lycée Victor Hugo, Nantes
+            <p class="timeline-details">Projet de site de révisions, mention Bien <span class="tag tag-blue">Terminé</span></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2024 (Stage)</span>
+          <div>
+            <b>Développeuse Web Junior</b> – WebNantes, PME locale  
+            <span class="timeline-details">
+              Création d’un site vitrine, découverte du travail en équipe agile.
+              <span class="tag tag-violet">Stage</span>
+            </span>
+          </div>
+        </div>
       </div>
-      <!-- Dupliquer .project pour chaque projet -->
     </section>
 
-    <section id="veille">
-      <h2>Veille Technologique</h2>
-      <p>
-        <b>Sujet :</b> [Innovation ou tendance choisie]<br>
-        <b>Résumé :</b> [Ce que tu as appris, pourquoi c’est important]<br>
-        <b>Sources :</b>
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="glass">
+      <h2><i class="fa-solid fa-gem"></i> Compétences majeures</h2>
+      <div class="competences-grid">
+        <div class="skill-card" id="devweb">
+          <h3><i class="fa-solid fa-code"></i> Développement Web</h3>
+          <ul>
+            <li>PHP, JavaScript, HTML5, CSS3</li>
+            <li>Frameworks : Laravel, Vue.js, Bootstrap</li>
+            <li>Responsive design, accessibilité</li>
+            <li>APIs REST, AJAX</li>
+          </ul>
+        </div>
+        <div class="skill-card" id="bdd">
+          <h3><i class="fa-solid fa-database"></i> Bases de données</h3>
+          <ul>
+            <li>MySQL, MariaDB, SQL Server</li>
+            <li>Modélisation, optimisations requêtes</li>
+            <li>Initiation NoSQL (MongoDB)</li>
+          </ul>
+        </div>
+        <div class="skill-card" id="gestion">
+          <h3><i class="fa-solid fa-diagram-project"></i> Gestion de projet</h3>
+          <ul>
+            <li>Méthodes Agiles (Scrum, Kanban)</li>
+            <li>Git & GitHub, Trello</li>
+            <li>Rédaction de documentation technique</li>
+          </ul>
+        </div>
+        <div class="skill-card" id="softskills">
+          <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
+          <ul>
+            <li>Créativité & esprit d’équipe</li>
+            <li>Pédagogie (tutorat, vulgarisation)</li>
+            <li>Réactivité, organisation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tableau-competences">
+        <h4><i class="fa-solid fa-table"></i> Tableau de synthèse</h4>
+        <!-- Image ou PDF du tableau fourni par l'école -->
+        <img src="tableau_synthese.png" alt="Tableau de synthèse" class="competence-img">
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="glass">
+      <h2><i class="fa-solid fa-rocket"></i> Projets réalisés</h2>
+      <div class="projet-list">
+        <div class="projet-card">
+          <div class="projet-badge tag tag-violet">Entreprise</div>
+          <h3><i class="fa-solid fa-list-check"></i> Gestionnaire de Tâches</h3>
+          <ul>
+            <li><b>Objectif :</b> Simplifier le suivi quotidien des tâches en équipe.</li>
+            <li><b>Technologies :</b> PHP, MySQL, Bootstrap</li>
+            <li><b>Entreprise :</b> WebNantes (PME locale)</li>
+            <li><b>Résultat :</b> +50 utilisateurs, gain de temps pour l’équipe</li>
+          </ul>
+          <div class="projet-liens">
+            <a href="https://github.com/ton-github/projet-taches" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="demo.html" target="_blank"><i class="fa-solid fa-play"></i> Démo</a>
+          </div>
+        </div>
+        <div class="projet-card">
+          <div class="projet-badge tag tag-blue">Formation</div>
+          <h3><i class="fa-solid fa-globe"></i> Site vitrine Association “Arc-en-ciel”</h3>
+          <ul>
+            <li><b>Objectif :</b> Créer un site moderne, accessible et responsive</li>
+            <li><b>Technologies :</b> HTML, CSS, JS</li>
+            <li><b>Résultat :</b> Site en ligne, +30% de visites en 3 mois</li>
+          </ul>
+          <div class="projet-liens">
+            <a href="https://github.com/ton-github/asso-vitrine" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://asso-exemple.fr" target="_blank"><i class="fa-solid fa-globe"></i> Voir le site</a>
+          </div>
+        </div>
+        <div class="projet-card">
+          <div class="projet-badge tag tag-pink">Perso</div>
+          <h3><i class="fa-solid fa-camera-retro"></i> Photothèque Responsive</h3>
+          <ul>
+            <li><b>Objectif :</b> Créer une galerie photo dynamique pour partager mes passions</li>
+            <li><b>Technologies :</b> Vue.js, SASS, Firebase</li>
+          </ul>
+          <div class="projet-liens">
+            <a href="https://github.com/ton-github/phototheque" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VEILLE TECHNO -->
+    <section id="veille" class="glass">
+      <h2><i class="fa-solid fa-lightbulb"></i> Ma veille technologique</h2>
+      <div class="veille-content">
+        <b>Sujet :</b> L’IA générative dans le développement web<br>
+        <b>Résumé :</b> Découverte des usages de l’IA (Copilot, ChatGPT…) pour accélérer le développement, générer du code, automatiser des tests.<br>
+        <b>Sources principales :</b>
         <ul>
-          <li><a href="[Lien1]" target="_blank">Source 1</a></li>
-          <li><a href="[Lien2]" target="_blank">Source 2</a></li>
+          <li><a href="https://blog.openai.com" target="_blank">OpenAI Blog</a></li>
+          <li><a href="https://www.silicon.fr" target="_blank">Silicon.fr</a></li>
+          <li><a href="https://www.journaldugeek.com" target="_blank">Journal du Geek</a></li>
         </ul>
-        <b>Ma contribution :</b> [Post, article, partage, etc.]
-      </p>
+        <b>Ma contribution :</b> Présentation à la classe, publication d’un post LinkedIn sur l’IA.
+      </div>
+    </section>
+
+    <!-- FUN ZONE (fantaise, passions, playlist, citations, etc.) -->
+    <section id="citations" class="glass fun-section">
+      <h2><i class="fa-solid fa-quote-left"></i> Citations Inspirantes</h2>
+      <blockquote>
+        “Le succès, c’est d’aller d’échec en échec sans perdre son enthousiasme.” <span>— Winston Churchill</span>
+      </blockquote>
+      <blockquote>
+        “Do it with passion or not at all.” <span>— Rosa Nouchette Carey</span>
+      </blockquote>
+    </section>
+    <section id="playlist" class="glass fun-section">
+      <h2><i class="fa-solid fa-music"></i> Ma Playlist Motivation</h2>
+      <ul class="playlist">
+        <li><i class="fa-solid fa-headphones"></i> <b>Dua Lipa</b> – Physical</li>
+        <li><i class="fa-solid fa-headphones"></i> <b>Angèle</b> – Balance ton quoi</li>
+        <li><i class="fa-solid fa-headphones"></i> <b>Imagine Dragons</b> – Thunder</li>
+      </ul>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3oM43CtKnRV?utm_source=generator" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+    </section>
+    <section id="passions" class="glass fun-section">
+      <h2><i class="fa-solid fa-star"></i> Mes Passions</h2>
+      <div class="passions-grid">
+        <div class="passion-card"><i class="fa-solid fa-paintbrush passion-ico"></i> Dessin</div>
+        <div class="passion-card"><i class="fa-solid fa-camera passion-ico"></i> Photographie</div>
+        <div class="passion-card"><i class="fa-solid fa-gamepad passion-ico"></i> Jeux vidéo</div>
+        <div class="passion-card"><i class="fa-solid fa-earth-europe passion-ico"></i> Voyages</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="glass">
+      <h2><i class="fa-solid fa-envelope"></i> Me Contacter</h2>
+      <div class="contact-block">
+        <p>Un projet, une question ? Écris-moi !</p>
+        <form action="mailto:lucie@email.fr" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Ton prénom" required>
+          <input type="email" name="email" placeholder="Ton email" required>
+          <textarea name="message" placeholder="Ton message" required></textarea>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Envoyer</button>
+        </form>
+        <div class="contact-links">
+          <a href="mailto:lucie@email.fr"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/lucie-lab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/lucie-lab" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
-    <p>&copy; [Ton Prénom] - 2025</p>
+    <p>© Lucie L. 2025 &nbsp; | &nbsp; <a href="mailto:lucie@email.fr">Me contacter</a> | <span style="color:#d72660;">🌸</span></p>
   </footer>
+  <!-- Menu mobile burger -->
+  <div class="burger-menu" id="burger-menu">
+    <span></span><span></span><span></span>
+  </div>
+  <script>
+    // Menu déroulant mobile
+    const burger = document.getElementById('burger-menu');
+    const nav = document.querySelector('nav ul');
+    burger.onclick = () => {
+      nav.classList.toggle('nav-open');
+      burger.classList.toggle('open');
+    };
+    // Ferme menu au clic sur lien (mobile)
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+        burger.classList.remove('open');
+      });
+    });
+    // Sous-menus desktop
+    document.querySelectorAll('.dropdown').forEach(item => {
+      item.addEventListener('mouseenter', () => item.classList.add('open'));
+      item.addEventListener('mouseleave', () => item.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
