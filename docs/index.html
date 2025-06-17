@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #181f2b;
-      --main-bg-light: #222b3a;
-      --main-accent: #8c2232; /* Bordeaux */
-      --main-accent-light: #c14459;
-      --secondary: #314c6a; /* Bleu foncé */
-      --neutral: #f4f4f8;
+      --main-bg: #fdeffb;
+      --main-bg-light: #fbe5f5;
+      --main-accent: #bc4a9b;          /* Rose/violet */
+      --main-accent-light: #fd8ba9;    /* Rose corail */
+      --secondary: #8b6bb5;            /* Violet doux */
+      --neutral: #fff7fc;
       --white: #fff;
-      --shadow: 0 4px 24px #0003;
+      --shadow: 0 4px 24px #bc4a9b33;
       --radius: 14px;
       --transition: 0.3s cubic-bezier(.4,2,.6,1);
       --font-main: 'Montserrat', Arial, sans-serif;
@@ -24,14 +24,14 @@
     }
     body {
       margin: 0; padding: 0;
-      background: linear-gradient(120deg, var(--main-bg) 60%, var(--main-accent) 100%);
-      color: var(--neutral);
+      background: linear-gradient(120deg, var(--main-bg-light) 60%, var(--main-accent-light) 100%);
+      color: #63305a;
       font-family: var(--font-main);
       min-height: 100vh;
       transition: background 1s;
     }
     header {
-      background: var(--main-bg-light);
+      background: linear-gradient(90deg, #f6c1e2 0%, #b98fc8 100%);
       box-shadow: var(--shadow);
       position: sticky;
       top: 0; z-index: 10;
@@ -41,7 +41,7 @@
       padding: 1.2rem 3vw;
     }
     nav a {
-      color: var(--neutral);
+      color: var(--main-accent);
       text-decoration: none;
       font-weight: bold;
       padding: 0.6em 1.3em;
@@ -54,14 +54,16 @@
     nav a.active, nav a:hover {
       background: var(--main-accent-light);
       color: var(--white);
+      box-shadow: 0 2px 12px #fd8ba955;
     }
     .container {
       max-width: 1050px;
       margin: 2.2rem auto 2rem auto;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.75);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 2.7rem 2rem 2.2rem 2rem;
+      border: 2px solid #fd8ba944;
     }
     section { margin-bottom: 3rem; }
     h1, h2, h3 {
@@ -70,8 +72,8 @@
       margin-top: 0;
     }
     h1 { font-size: 2.5em; }
-    h2 { font-size: 2em; margin-top: 2em; }
-    h3 { color: var(--secondary); font-size: 1.3em; }
+    h2 { font-size: 2em; margin-top: 2em; color: var(--secondary);}
+    h3 { color: var(--main-accent-light); font-size: 1.3em; }
     .about-flex {
       display: flex;
       flex-wrap: wrap;
@@ -86,10 +88,10 @@
     .about-photo img {
       width: 145px; height: 145px;
       border-radius: 50%;
-      border: 6px solid var(--main-accent);
+      border: 6px solid var(--main-accent-light);
       object-fit: cover;
-      box-shadow: 0 0 0 6px #8c223233;
-      background: #ccc;
+      box-shadow: 0 0 0 6px #fd8ba933;
+      background: #fbe5f5;
       animation: floating 3s infinite ease-in-out alternate;
     }
     @keyframes floating {
@@ -122,22 +124,22 @@
       background: var(--secondary);
       border: 2px solid var(--main-accent);
       border-radius: 50%;
-      box-shadow: 0 2px 6px #0004;
+      box-shadow: 0 2px 6px #fd8ba933;
     }
-    .timeline li strong { color: var(--main-accent-light); }
+    .timeline li strong { color: var(--main-accent); }
     /* Tableau compétences */
     .table-competences {
-      width: 100%; border-collapse: collapse; background: #25314a99;
-      box-shadow: 0 2px 20px #0002;
+      width: 100%; border-collapse: collapse; background: #fbe5f5;
+      box-shadow: 0 2px 20px #fd8ba933;
       border-radius: var(--radius);
       overflow: hidden;
       margin: 2em 0;
       font-family: var(--font-sec);
-      color: var(--neutral);
+      color: #63305a;
     }
     .table-competences th, .table-competences td {
       padding: 1em 1.2em;
-      border-bottom: 1px solid #314c6a88;
+      border-bottom: 1px solid #fd8ba955;
       text-align: left;
       font-size: 1.07em;
     }
@@ -149,7 +151,7 @@
       font-size: 1.1em;
     }
     .table-competences tr:last-child td { border-bottom: none; }
-    .table-competences td:first-child { font-weight: bold; color: var(--main-accent-light);}
+    .table-competences td:first-child { font-weight: bold; color: var(--main-accent);}
     /* Projets */
     .projects-grid {
       display: grid;
@@ -158,26 +160,26 @@
       margin-top: 2.7rem;
     }
     .project-card {
-      background: #232e3f;
+      background: #fff7fc;
       border-radius: var(--radius);
-      box-shadow: 0 3px 20px #8c223255;
+      box-shadow: 0 3px 20px #fd8ba933;
       padding: 1.7rem 1.4rem;
       border-top: 6px solid var(--main-accent-light);
       transition: transform .23s, box-shadow .23s;
       display: flex; flex-direction: column;
       min-height: 220px;
       justify-content: space-between;
-      color: var(--white);
+      color: #63305a;
     }
     .project-card:hover {
       transform: translateY(-7px) scale(1.04);
-      box-shadow: 0 8px 40px #8c223299;
+      box-shadow: 0 8px 40px #fd8ba966;
       border-top-color: var(--main-accent);
     }
-    .project-card h3 { color: var(--accent); }
+    .project-card h3 { color: var(--main-accent); }
     .project-meta {
-      font-size: 0.9em;
-      color: var(--neutral);
+      font-size: 0.95em;
+      color: var(--secondary);
       margin-bottom: 0.5em;
     }
     .project-tags {
@@ -187,8 +189,8 @@
       gap: 0.6em;
     }
     .project-tag {
-      background: var(--secondary);
-      color: var(--neutral);
+      background: var(--main-accent-light);
+      color: var(--white);
       padding: 0.2em 0.7em;
       border-radius: 6px;
       font-size: 0.93em;
@@ -199,7 +201,7 @@
     .entreprise {
       margin: 0.9em 0 0.6em 0;
       font-size: 0.97em;
-      color: var(--main-accent-light);
+      color: var(--secondary);
     }
     /* Veille */
     .veille-list {
@@ -208,25 +210,25 @@
       padding: 0;
     }
     .veille-list li {
-      background: #2b3b53;
+      background: #fbe5f5;
       border-left: 6px solid var(--main-accent);
       margin-bottom: 1.4em;
       padding: 1.2em 1.5em;
       border-radius: var(--radius);
-      box-shadow: 0 2px 10px #0002;
-      color: var(--neutral);
+      box-shadow: 0 2px 10px #fd8ba922;
+      color: #63305a;
       font-family: var(--font-sec);
       font-size: 1.08em;
     }
-    .veille-list strong { color: var(--main-accent-light);}
+    .veille-list strong { color: var(--main-accent);}
     .sources {
       margin-top: 0.8em;
       font-size: 0.98em;
-      color: #a9b9ce;
+      color: var(--secondary);
     }
     footer {
       text-align: center;
-      color: #b6b6c4;
+      color: #bc4a9b;
       margin: 3.2em 0 1.2em 0;
       font-size: 1em;
       letter-spacing: 1px;
@@ -242,7 +244,6 @@
     }
   </style>
   <script>
-    // Menu actif selon scroll
     window.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav a');
@@ -279,15 +280,15 @@
         </div>
         <div class="about-infos">
           <p>
-            <strong>Étudiant en BTS SIO option SISR</strong>, passionné par l’administration réseau, la virtualisation et la cybersécurité.  
-            <br>Mon parcours scolaire et mes expériences professionnelles m’ont permis de développer des compétences solides dans la gestion de systèmes et réseaux, l’automatisation et la veille technologique.
+            <strong>Étudiante en BTS SIO option SISR</strong>, passionnée par l’administration réseau, la virtualisation et la cybersécurité.<br>
+            Mon parcours scolaire et mes expériences professionnelles m’ont permis de développer des compétences solides dans la gestion de systèmes et réseaux, l’automatisation et la veille technologique.
           </p>
           <ul class="timeline">
             <li>
               <strong>2023 – 2025 :</strong> BTS SIO SISR – Lycée [Nom de l’établissement], [Ville]
             </li>
             <li>
-              <strong>2024 :</strong> Stage – Technicien Systèmes & Réseaux, [Entreprise A], [Ville]
+              <strong>2024 :</strong> Stage – Technicienne Systèmes & Réseaux, [Entreprise A], [Ville]
             </li>
             <li>
               <strong>2022 :</strong> Bac STI2D – [Lycée], [Ville]
@@ -339,7 +340,7 @@
         <!-- Projet 1 -->
         <div class="project-card">
           <h3>Déploiement d’une infrastructure réseau sécurisée</h3>
-          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Nom de l’entreprise], PME de 70 salariés, secteur services, portée locale</div>
+          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Nom de l’entreprise], PME de 70 salarié·es, secteur services, portée locale</div>
           <div class="project-meta"><strong>Objectifs :</strong> Moderniser le réseau, sécuriser les accès, améliorer la performance.</div>
           <p>
             Installation et configuration de switchs managés, mise en place de VLAN, configuration d’un firewall, création de VPN pour le télétravail.
@@ -355,7 +356,7 @@
         <!-- Projet 2 -->
         <div class="project-card">
           <h3>Virtualisation des serveurs</h3>
-          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise B], ESN, 200 salariés, portée nationale</div>
+          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise B], ESN, 200 salarié·es, portée nationale</div>
           <div class="project-meta"><strong>Objectifs :</strong> Optimiser l’utilisation des ressources et la maintenance.</div>
           <p>
             Déploiement d’une infrastructure Proxmox, migration des serveurs physiques vers des VM, documentation technique.
@@ -370,7 +371,7 @@
         <!-- Projet 3 -->
         <div class="project-card">
           <h3>Supervision réseau et sauvegarde</h3>
-          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise C], TPE, 15 salariés, informatique, portée régionale</div>
+          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise C], TPE, 15 salarié·es, informatique, portée régionale</div>
           <div class="project-meta"><strong>Objectifs :</strong> Assurer la disponibilité, détecter les incidents rapidement.</div>
           <p>
             Mise en place de Zabbix pour surveiller les équipements, création de scripts de sauvegarde automatisés.
@@ -389,26 +390,22 @@
       <h2>Veille technologique : innovations & tendances SISR</h2>
       <ul class="veille-list">
         <li>
-          <strong>SASE (Secure Access Service Edge)</strong>  
-          <br>
+          <strong>SASE (Secure Access Service Edge)</strong><br>
           Nouvelle architecture qui combine sécurité réseau et accès cloud, de plus en plus utilisée pour le télétravail.
           <div class="sources">Sources : <a href="https://www.journaldunet.com/solutions/cloud-computing/1504089-sase-definition-avantages/" target="_blank">JDN</a>, <a href="https://www.cisco.com/c/fr_fr/solutions/sase.html" target="_blank">Cisco</a></div>
         </li>
         <li>
-          <strong>Automatisation avec Ansible</strong>  
-          <br>
+          <strong>Automatisation avec Ansible</strong><br>
           Automatisation du déploiement et de la gestion des infrastructures, gain de temps et réduction des erreurs.
           <div class="sources">Source : <a href="https://www.ansible.com/resources/get-started" target="_blank">ansible.com</a></div>
         </li>
         <li>
-          <strong>Cybersécurité & Zero Trust</strong>
-          <br>
+          <strong>Cybersécurité & Zero Trust</strong><br>
           Approche "Zero Trust" : ne jamais faire confiance par défaut, tout vérifier. Renforcée par la montée des ransomwares.
           <div class="sources">Source : <a href="https://www.microsoft.com/fr-fr/security/business/zero-trust" target="_blank">Microsoft Security</a></div>
         </li>
         <li>
-          <strong>Participation & veille personnelle</strong>
-          <br>
+          <strong>Participation & veille personnelle</strong><br>
           Partage d’articles sur Discord/LinkedIn, alertes Google sur les CVE, lecture de blogs spécialisés (Korben, Undernews).
         </li>
       </ul>
