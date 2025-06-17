@@ -2,197 +2,84 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>[Ton Nom] - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #ffe0f7 0%, #f7e6ff 100%);
-      color: #333;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px 20px 20px;
-      background: none;
-    }
-    .title {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.8em;
-      color: #d72660;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-    .subtitle {
-      font-size: 1.3em;
-      color: #b580c7;
-      margin-bottom: 10px;
-      margin-top: 5px;
-    }
-    .main-content {
-      max-width: 920px;
-      margin: 40px auto 0 auto;
-      background: #fff7fb;
-      border-radius: 20px;
-      box-shadow: 0 4px 24px #e9b6d3cc;
-      padding: 30px 30px 40px 30px;
-    }
-    section {
-      margin-bottom: 35px;
-    }
-    h2 {
-      color: #d72660;
-      font-family: 'Pacifico', cursive;
-      font-size: 2em;
-      border-left: 6px solid #b580c7;
-      padding-left: 14px;
-      margin-bottom: 18px;
-    }
-    .timeline, .projects, .skills, .veille {
-      padding-left: 10px;
-    }
-    .timeline-entry {
-      margin-bottom: 15px;
-      border-left: 4px solid #f7a5cf;
-      padding-left: 12px;
-    }
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0;
-      background: #fff0fa;
-    }
-    .skills-table th, .skills-table td {
-      border: 1px solid #e6b4d9;
-      padding: 10px 14px;
-      text-align: left;
-    }
-    .skills-table th {
-      background: #f7d6f8;
-      color: #d72660;
-    }
-    .project-card {
-      background: #ffe6f2;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px #f4c3e1;
-      padding: 16px;
-      margin-bottom: 18px;
-    }
-    .project-card h3 {
-      color: #b580c7;
-      margin-top: 0;
-    }
-    .project-links a {
-      color: #d72660;
-      font-weight: bold;
-      margin-right: 12px;
-      text-decoration: underline;
-      transition: color 0.2s;
-    }
-    .project-links a:hover {
-      color: #b580c7;
-    }
-    .veille {
-      background: #f7e6ff;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 10px;
-    }
-    .sources {
-      font-size: 0.97em;
-      color: #b580c7;
-      margin-top: 8px;
-    }
-    @media (max-width: 700px) {
-      .main-content {
-        padding: 14px 4vw 18px 4vw;
-        border-radius: 10px;
-      }
-      h2 {
-        font-size: 1.35em;
-        padding-left: 8px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1 class="title">[Ton Nom] - Portfolio</h1>
-    <div class="subtitle">Étudiante en BTS SIO [Option SLAM/SISR] &mdash; Année 2024-2025</div>
-    <div style="color:#d72660; font-size:1.1em;">« Ose être différente, c’est ta force ! »</div>
+    <h1>[Ton Nom] - Portfolio</h1>
+    <p class="subtitle">Étudiante BTS SIO [SLAM/SISR]</p>
+    <p class="quote">Ose être différente, c’est ta force !</p>
   </header>
-
-  <main class="main-content">
-    <!-- Présentation -->
-    <section>
-      <h2>🌸 Mon Parcours</h2>
-      <div class="timeline">
-        <div class="timeline-entry">
-          <strong>2023-2025 :</strong> BTS SIO [SLAM/SISR] – Lycée [Nom du lycée], Ville<br>
-          <em>Principaux enseignements&nbsp;: Développement, réseaux, cybersécurité, gestion de projet...</em>
-        </div>
-        <div class="timeline-entry">
-          <strong>2021-2023 :</strong> Bac Général / Technologique – Spécialités [à préciser]<br>
-          <em>Expérience de projet : [exemple]</em>
-        </div>
-        <div class="timeline-entry">
-          <strong>Stages / Alternance :</strong> [Entreprise], [Année], [Missions principales]<br>
-          <em>[Résultats, réalisations marquantes]</em>
-        </div>
-      </div>
+  <main>
+    <section id="presentation">
+      <h2>Mon Parcours</h2>
+      <p>
+        <!-- À REMPLIR AVEC TON HISTOIRE -->
+        BTS SIO option [SLAM/SISR], Lycée [Nom], Ville.<br>
+        [Ajoute ici un résumé de ton parcours scolaire et de tes expériences pro.]
+      </p>
     </section>
 
-    <!-- Tableau de Synthèse des Compétences -->
-    <section>
-      <h2>💎 Mes Compétences Clés</h2>
-      <!-- Si tu as le tableau en image ou PDF, remplace src ou href par le bon lien -->
-      <!-- Méthode image : -->
-      <img src="tableau_synthese.png" alt="Tableau de synthèse des compétences" style="width:100%;max-width:700px;display:block;margin:auto;">
-      <!-- Ou méthode iframe PDF : -->
-      <!-- <iframe src="tableau_synthese.pdf" width="100%" height="360px" style="border:1px solid #e6b4d9;border-radius:8px;margin-top:14px;"></iframe> -->
-      <!-- /!\ Adapter la source selon le format fourni par ton école -->
+    <section id="tableau">
+      <h2>Tableau de Synthèse</h2>
+      <!-- Option 1 : Image -->
+      <img src="tableau_synthese.png" alt="Tableau de synthèse" class="tableau-img">
+      <!-- Option 2 : Lien PDF -->
+      <!-- <a href="tableau_synthese.pdf" target="_blank" class="button">Voir le tableau PDF</a> -->
     </section>
 
-    <!-- Projets Réalisés -->
-    <section>
-      <h2>🚀 Mes Projets</h2>
-      <div class="projects">
-        <div class="project-card">
-          <h3>Projet 1 : [Nom du projet]</h3>
-          <ul>
-            <li><strong>Objectif&nbsp;:</strong> [Décrire l'objectif]</li>
-            <li><strong>Technologies&nbsp;:</strong> [ex: PHP, MySQL, HTML/CSS]</li>
-            <li><strong>Entreprise / Formation : </strong> [Nom, domaine, taille, portée]</li>
-            <li><strong>Résultats&nbsp;:</strong> [Ce que tu as accompli]</li>
-          </ul>
-          <div class="project-links">
-            <a href="[Lien Github ou démo]" target="_blank">Voir le projet</a>
-            <a href="[Lien documentation/rapport]" target="_blank">Documentation</a>
-          </div>
-        </div>
-        <!-- Duplique le bloc .project-card pour chaque projet -->
-      </div>
+    <section id="competences">
+      <h2>Compétences Clés</h2>
+      <ul class="skills-list">
+        <li>
+          <strong>Développement Web :</strong> PHP, JS, HTML, CSS, ...
+        </li>
+        <li>
+          <strong>Gestion de projet :</strong> Méthodo Agile, outils collaboratifs...
+        </li>
+        <li>
+          <strong>[Compétence 3]</strong>
+        </li>
+        <li>
+          <strong>[Compétence 4]</strong>
+        </li>
+      </ul>
     </section>
 
-    <!-- Veille Technologique -->
-    <section>
-      <h2>✨ Ma Veille Technologique</h2>
-      <div class="veille">
-        <strong>Tendance étudiée&nbsp;:</strong> [ex: IA générative, cybersécurité, DevOps, etc.]<br><br>
-        <strong>Résumé :</strong> <br>
-        [Décris ici ta veille, ce que tu as appris, pourquoi ce sujet est important pour ton futur métier, etc.]
-        <div class="sources">
-          <strong>Sources principales&nbsp;:</strong>
-          <ul>
-            <li><a href="[Lien source 1]" target="_blank">Source 1</a></li>
-            <li><a href="[Lien source 2]" target="_blank">Source 2</a></li>
-            <!-- Ajoute d'autres sources si besoin -->
-          </ul>
-          <em>Ma contribution : [Par exemple, poster sur un forum, écrire un article, etc.]</em>
-        </div>
+    <section id="projets">
+      <h2>Mes Projets</h2>
+      <div class="project">
+        <h3>Projet 1 : [Nom]</h3>
+        <ul>
+          <li><b>Objectif :</b> [Description]</li>
+          <li><b>Technologies :</b> [Liste]</li>
+          <li><b>Entreprise :</b> [Nom, domaine, taille, local/international]</li>
+          <li><b>Résultat :</b> [Bilan/chiffres]</li>
+        </ul>
+        <a href="[Lien GitHub ou démo]" class="project-link" target="_blank">Lien du projet</a>
       </div>
+      <!-- Dupliquer .project pour chaque projet -->
+    </section>
+
+    <section id="veille">
+      <h2>Veille Technologique</h2>
+      <p>
+        <b>Sujet :</b> [Innovation ou tendance choisie]<br>
+        <b>Résumé :</b> [Ce que tu as appris, pourquoi c’est important]<br>
+        <b>Sources :</b>
+        <ul>
+          <li><a href="[Lien1]" target="_blank">Source 1</a></li>
+          <li><a href="[Lien2]" target="_blank">Source 2</a></li>
+        </ul>
+        <b>Ma contribution :</b> [Post, article, partage, etc.]
+      </p>
     </section>
   </main>
+  <footer>
+    <p>&copy; [Ton Prénom] - 2025</p>
+  </footer>
 </body>
 </html>
