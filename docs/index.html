@@ -3,388 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio Candy Pop – [Ton Nom]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <title>[Ton Nom] - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --rose: #ff6fa4;
-      --bleu: #67e8f9;
-      --violet: #a17cf4;
-      --jaune: #fff9ae;
-      --blanc: #fff;
-      --pop-shadow: 0 8px 36px #ff6fa426;
-      --radius-main: 30px;
-    }
     body {
-      margin: 0; padding: 0;
-      background: radial-gradient(circle at 70% 30%, #fff 40%, #ffecf9 100%);
-      font-family: 'Fredoka', Arial, sans-serif;
-      color: #a1487a;
-      min-height: 100vh;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #ffe0f7 0%, #f7e6ff 100%);
+      color: #333;
     }
     header {
-      background: linear-gradient(90deg, var(--rose), var(--violet));
-      box-shadow: var(--pop-shadow);
-      position: sticky; top: 0; z-index: 10;
-      border-bottom-right-radius: 1.2em;
-      border-bottom-left-radius: 1.2em;
+      text-align: center;
+      padding: 60px 20px 20px 20px;
+      background: none;
     }
-    nav {
-      display: flex; justify-content: center; align-items: center; gap: 2.2rem;
-      padding: 1.3rem 2vw 1rem 2vw;
-    }
-    nav a {
-      color: var(--blanc);
-      text-decoration: none;
+    .title {
       font-family: 'Pacifico', cursive;
-      font-size: 1.4em;
-      padding: 0.6em 1.4em;
-      border-radius: 2em;
-      background: var(--rose);
-      box-shadow: 0 2px 14px #ff6fa422;
-      margin: 0 0.2em;
-      transition: background 0.17s, transform 0.2s;
-      border: 2.5px solid var(--blanc);
+      font-size: 2.8em;
+      color: #d72660;
+      margin: 0;
+      letter-spacing: 2px;
     }
-    nav a.active, nav a:hover {
-      background: var(--bleu);
-      color: var(--violet);
-      border-color: var(--rose);
-      transform: scale(1.05) rotate(-2deg);
+    .subtitle {
+      font-size: 1.3em;
+      color: #b580c7;
+      margin-bottom: 10px;
+      margin-top: 5px;
     }
-    .container {
-      max-width: 1120px;
-      background: #fff;
-      margin: 2.7rem auto 2rem auto;
-      border-radius: var(--radius-main);
-      box-shadow: var(--pop-shadow);
-      padding: 2.5em 2.5em 2em 2.5em;
-      position: relative;
+    .main-content {
+      max-width: 920px;
+      margin: 40px auto 0 auto;
+      background: #fff7fb;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px #e9b6d3cc;
+      padding: 30px 30px 40px 30px;
     }
-    h1, h2 {
+    section {
+      margin-bottom: 35px;
+    }
+    h2 {
+      color: #d72660;
       font-family: 'Pacifico', cursive;
-      color: var(--rose);
-      margin-bottom: .2em;
-      text-shadow: 0 2px 14px #ff6fa422;
+      font-size: 2em;
+      border-left: 6px solid #b580c7;
+      padding-left: 14px;
+      margin-bottom: 18px;
     }
-    h1 { font-size: 2.7em; }
-    h2 { font-size: 2em; color: var(--violet);}
-    h3 { color: var(--bleu); font-family: 'Fredoka', sans-serif;}
-    /* Timeline */
-    .timeline {
-      margin: 2em 0 0.8em 0;
-      padding: 0;
-      list-style: none;
-      position: relative;
+    .timeline, .projects, .skills, .veille {
+      padding-left: 10px;
     }
-    .timeline li {
-      margin-bottom: 1.3em;
-      padding-left: 1.5em;
-      position: relative;
-      font-size: 1.09em;
-      color: #a1487a;
-      font-family: 'Fredoka', sans-serif;
+    .timeline-entry {
+      margin-bottom: 15px;
+      border-left: 4px solid #f7a5cf;
+      padding-left: 12px;
     }
-    .timeline li::before {
-      content: "🍭";
-      position: absolute;
-      left: 0; top: 0;
-      font-size: 1.1em;
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: #fff0fa;
     }
-    /* Tableau compétences */
-    .table-competences {
-      width: 100%; border-collapse: separate; border-spacing: 0;
-      margin: 2em 0 1.3em 0;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #fff9ae;
-      font-family: 'Fredoka', sans-serif;
+    .skills-table th, .skills-table td {
+      border: 1px solid #e6b4d9;
+      padding: 10px 14px;
+      text-align: left;
     }
-    .table-competences th, .table-competences td {
-      padding: 1em 1.1em;
-      font-size: 1.03em;
-    }
-    .table-competences th {
-      background: var(--rose);
-      color: #fff;
-      font-size: 1.13em;
-      letter-spacing: 1px;
-      border-bottom: 2px solid var(--violet);
-    }
-    .table-competences td:first-child {
-      color: var(--violet);
-      font-weight: bold;
-    }
-    .table-competences tr:not(:last-child) td {
-      border-bottom: 1px solid #ff6fa426;
-    }
-    /* Projets */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 2.3rem;
-      margin-top: 2.5rem;
+    .skills-table th {
+      background: #f7d6f8;
+      color: #d72660;
     }
     .project-card {
-      background: linear-gradient(130deg, #fff 70%, #ffecf9 100%);
-      border-radius: 22px;
-      box-shadow: 0 5px 22px #67e8f966;
-      padding: 1.5rem 1.2rem;
-      border: 4.5px solid var(--bleu);
-      display: flex; flex-direction: column;
-      min-height: 210px;
-      justify-content: space-between;
-      color: #a1487a;
-      font-family: 'Fredoka', sans-serif;
-      position: relative;
-      overflow: hidden;
-      transition: box-shadow .18s, border-color .18s, transform .18s;
-    }
-    .project-card:hover {
-      box-shadow: 0 12px 50px #a17cf455;
-      border-color: var(--rose);
-      transform: scale(1.04) rotate(-1deg);
+      background: #ffe6f2;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px #f4c3e1;
+      padding: 16px;
+      margin-bottom: 18px;
     }
     .project-card h3 {
-      color: var(--rose);
+      color: #b580c7;
       margin-top: 0;
-      font-family: 'Pacifico', cursive;
     }
-    .project-tags {
-      margin-top: 0.8em;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7em;
-    }
-    .project-tag {
-      background: var(--jaune);
-      color: var(--rose);
-      padding: 0.24em 1em;
-      border-radius: 2em;
-      font-size: 0.95em;
-      font-family: 'Fredoka', sans-serif;
-      margin-bottom: 0.2em;
-      box-shadow: 0 1px 8px #fff9ae66;
+    .project-links a {
+      color: #d72660;
       font-weight: bold;
+      margin-right: 12px;
+      text-decoration: underline;
+      transition: color 0.2s;
     }
-    .project-meta, .entreprise {
-      font-size: 0.98em;
-      color: var(--violet);
-      margin-bottom: 0.5em;
+    .project-links a:hover {
+      color: #b580c7;
     }
-    /* Veille */
-    .veille-list {
-      margin-top: 2.2em;
-      list-style: none;
-      padding: 0;
+    .veille {
+      background: #f7e6ff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 10px;
     }
-    .veille-list li {
-      background: #ffecf9;
-      border-left: 7px solid var(--rose);
-      margin-bottom: 1.2em;
-      padding: 1.2em 1.5em;
-      border-radius: 18px;
-      box-shadow: 0 2px 10px #ff6fa422;
-      color: #a1487a;
-      font-size: 1.08em;
-      font-family: 'Fredoka', sans-serif;
-    }
-    .veille-list strong { color: var(--rose);}
     .sources {
-      margin-top: 0.6em;
       font-size: 0.97em;
-      color: var(--violet);
+      color: #b580c7;
+      margin-top: 8px;
     }
-    /* Footer */
-    footer {
-      text-align: center;
-      color: var(--rose);
-      margin: 2.7em 0 1.2em 0;
-      font-size: 1.1em;
-      font-family: 'Pacifico', cursive;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 12px #ff6fa422;
-    }
-    /* Responsive */
-    @media (max-width: 1100px) { .container { padding: 1em; } }
     @media (max-width: 700px) {
-      .container { padding: 0.7em; }
-      .about-flex { flex-direction: column; align-items: center; }
-      nav { gap: 0.7em; font-size: 1em; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .main-content {
+        padding: 14px 4vw 18px 4vw;
+        border-radius: 10px;
+      }
+      h2 {
+        font-size: 1.35em;
+        padding-left: 8px;
+      }
     }
   </style>
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('nav a');
-      window.addEventListener('scroll', function() {
-        let current = '';
-        sections.forEach(sec => {
-          const secTop = sec.offsetTop - 120;
-          if (pageYOffset >= secTop) current = sec.getAttribute('id');
-        });
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').substring(1) === current) link.classList.add('active');
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="#presentation">Présentation</a>
-      <a href="#competences">Compétences</a>
-      <a href="#projets">Projets</a>
-      <a href="#veille">Veille</a>
-    </nav>
+    <h1 class="title">[Ton Nom] - Portfolio</h1>
+    <div class="subtitle">Étudiante en BTS SIO [Option SLAM/SISR] &mdash; Année 2024-2025</div>
+    <div style="color:#d72660; font-size:1.1em;">« Ose être différente, c’est ta force ! »</div>
   </header>
-  <div class="container">
+
+  <main class="main-content">
     <!-- Présentation -->
-    <section id="presentation">
-      <h1>[Ton Nom] – Portfolio SISR</h1>
-      <div class="about-flex">
-        <div class="about-photo">
-          <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil" style="width:140px; height:140px; border-radius:50%; box-shadow:0 0 0 7px #67e8f988; border:5px solid var(--rose); background:#ffecf9">
+    <section>
+      <h2>🌸 Mon Parcours</h2>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <strong>2023-2025 :</strong> BTS SIO [SLAM/SISR] – Lycée [Nom du lycée], Ville<br>
+          <em>Principaux enseignements&nbsp;: Développement, réseaux, cybersécurité, gestion de projet...</em>
         </div>
-        <div class="about-infos">
-          <p>
-            <strong>Étudiante en BTS SIO SISR</strong>, passionnée par l’administration réseau, la virtualisation et la cybersécurité.<br>
-            Mon parcours scolaire et mes expériences professionnelles m’ont permis de développer des compétences solides dans la gestion de systèmes et réseaux, l’automatisation et la veille technologique.
-          </p>
-          <ul class="timeline">
-            <li>
-              <strong>2023 – 2025 :</strong> BTS SIO SISR – Lycée [Nom de l’établissement], [Ville]
-            </li>
-            <li>
-              <strong>2024 :</strong> Stage – Technicienne Systèmes & Réseaux, [Entreprise A], [Ville]
-            </li>
-            <li>
-              <strong>2022 :</strong> Bac STI2D – [Lycée], [Ville]
-            </li>
+        <div class="timeline-entry">
+          <strong>2021-2023 :</strong> Bac Général / Technologique – Spécialités [à préciser]<br>
+          <em>Expérience de projet : [exemple]</em>
+        </div>
+        <div class="timeline-entry">
+          <strong>Stages / Alternance :</strong> [Entreprise], [Année], [Missions principales]<br>
+          <em>[Résultats, réalisations marquantes]</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tableau de Synthèse des Compétences -->
+    <section>
+      <h2>💎 Mes Compétences Clés</h2>
+      <!-- Si tu as le tableau en image ou PDF, remplace src ou href par le bon lien -->
+      <!-- Méthode image : -->
+      <img src="tableau_synthese.png" alt="Tableau de synthèse des compétences" style="width:100%;max-width:700px;display:block;margin:auto;">
+      <!-- Ou méthode iframe PDF : -->
+      <!-- <iframe src="tableau_synthese.pdf" width="100%" height="360px" style="border:1px solid #e6b4d9;border-radius:8px;margin-top:14px;"></iframe> -->
+      <!-- /!\ Adapter la source selon le format fourni par ton école -->
+    </section>
+
+    <!-- Projets Réalisés -->
+    <section>
+      <h2>🚀 Mes Projets</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Projet 1 : [Nom du projet]</h3>
+          <ul>
+            <li><strong>Objectif&nbsp;:</strong> [Décrire l'objectif]</li>
+            <li><strong>Technologies&nbsp;:</strong> [ex: PHP, MySQL, HTML/CSS]</li>
+            <li><strong>Entreprise / Formation : </strong> [Nom, domaine, taille, portée]</li>
+            <li><strong>Résultats&nbsp;:</strong> [Ce que tu as accompli]</li>
           </ul>
+          <div class="project-links">
+            <a href="[Lien Github ou démo]" target="_blank">Voir le projet</a>
+            <a href="[Lien documentation/rapport]" target="_blank">Documentation</a>
+          </div>
+        </div>
+        <!-- Duplique le bloc .project-card pour chaque projet -->
+      </div>
+    </section>
+
+    <!-- Veille Technologique -->
+    <section>
+      <h2>✨ Ma Veille Technologique</h2>
+      <div class="veille">
+        <strong>Tendance étudiée&nbsp;:</strong> [ex: IA générative, cybersécurité, DevOps, etc.]<br><br>
+        <strong>Résumé :</strong> <br>
+        [Décris ici ta veille, ce que tu as appris, pourquoi ce sujet est important pour ton futur métier, etc.]
+        <div class="sources">
+          <strong>Sources principales&nbsp;:</strong>
+          <ul>
+            <li><a href="[Lien source 1]" target="_blank">Source 1</a></li>
+            <li><a href="[Lien source 2]" target="_blank">Source 2</a></li>
+            <!-- Ajoute d'autres sources si besoin -->
+          </ul>
+          <em>Ma contribution : [Par exemple, poster sur un forum, écrire un article, etc.]</em>
         </div>
       </div>
     </section>
-    <!-- Tableau de synthèse des compétences -->
-    <section id="competences">
-      <h2>Tableau de synthèse – Compétences SISR</h2>
-      <table class="table-competences">
-        <tr>
-          <th>Compétence</th>
-          <th>Description</th>
-          <th>Mise en œuvre</th>
-        </tr>
-        <tr>
-          <td>Gestion d’infrastructure réseau</td>
-          <td>Installer, configurer et maintenir des équipements réseaux (switchs, routeurs), VLAN, VPN, WiFi sécurisé.</td>
-          <td>Déploiement d’un réseau d’entreprise avec segmentation VLAN et accès sécurisé.</td>
-        </tr>
-        <tr>
-          <td>Virtualisation & Cloud</td>
-          <td>Mettre en place des solutions de virtualisation (VMware, Hyper-V, Proxmox) et maîtriser le cloud (Azure, AWS).</td>
-          <td>Création de VM, déploiement de serveurs, migration vers le cloud.</td>
-        </tr>
-        <tr>
-          <td>Automatisation & Scripting</td>
-          <td>Automatiser des tâches d’administration avec PowerShell, Bash, Ansible.</td>
-          <td>Automatisation des sauvegardes, déploiement de scripts de supervision.</td>
-        </tr>
-        <tr>
-          <td>Cybersécurité</td>
-          <td>Mettre en œuvre des politiques de sécurité : firewall, sauvegarde, gestion des droits, supervision.</td>
-          <td>Implémentation de solutions de sauvegarde/restauration et de monitoring.</td>
-        </tr>
-        <tr>
-          <td>Support & Documentation</td>
-          <td>Assister les utilisateurs, rédiger des documentations techniques et procédures IT.</td>
-          <td>Support de niveau 1/2, création de guides utilisateurs.</td>
-        </tr>
-      </table>
-    </section>
-    <!-- Projets -->
-    <section id="projets">
-      <h2>Projets menés en entreprise et formation</h2>
-      <div class="projects-grid">
-        <!-- Projet 1 -->
-        <div class="project-card">
-          <h3>Déploiement d’une infrastructure réseau sécurisée</h3>
-          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Nom de l’entreprise], PME de 70 salarié·es, secteur services, portée locale</div>
-          <div class="project-meta"><strong>Objectifs :</strong> Moderniser le réseau, sécuriser les accès, améliorer la performance.</div>
-          <p>
-            Installation et configuration de switchs managés, mise en place de VLAN, configuration d’un firewall, création de VPN pour le télétravail.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Switch Cisco</span>
-            <span class="project-tag">PfSense</span>
-            <span class="project-tag">VLAN</span>
-            <span class="project-tag">VPN</span>
-          </div>
-          <div class="project-meta"><strong>Résultats :</strong> Réseau segmenté, accès sécurisés, télétravail facilité.</div>
-        </div>
-        <!-- Projet 2 -->
-        <div class="project-card">
-          <h3>Virtualisation des serveurs</h3>
-          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise B], ESN, 200 salarié·es, portée nationale</div>
-          <div class="project-meta"><strong>Objectifs :</strong> Optimiser l’utilisation des ressources et la maintenance.</div>
-          <p>
-            Déploiement d’une infrastructure Proxmox, migration des serveurs physiques vers des VM, documentation technique.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Proxmox</span>
-            <span class="project-tag">Linux</span>
-            <span class="project-tag">VM</span>
-          </div>
-          <div class="project-meta"><strong>Résultats :</strong> Réduction des coûts, simplification de la gestion.</div>
-        </div>
-        <!-- Projet 3 -->
-        <div class="project-card">
-          <h3>Supervision réseau et sauvegarde</h3>
-          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise C], TPE, 15 salarié·es, informatique, portée régionale</div>
-          <div class="project-meta"><strong>Objectifs :</strong> Assurer la disponibilité, détecter les incidents rapidement.</div>
-          <p>
-            Mise en place de Zabbix pour surveiller les équipements, création de scripts de sauvegarde automatisés.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Zabbix</span>
-            <span class="project-tag">Backup</span>
-            <span class="project-tag">PowerShell</span>
-          </div>
-          <div class="project-meta"><strong>Résultats :</strong> Monitoring temps réel, alertes proactives, restauration rapide.</div>
-        </div>
-      </div>
-    </section>
-    <!-- Veille technologique -->
-    <section id="veille">
-      <h2>Veille technologique : innovations & tendances SISR</h2>
-      <ul class="veille-list">
-        <li>
-          <strong>SASE (Secure Access Service Edge)</strong><br>
-          Nouvelle architecture qui combine sécurité réseau et accès cloud, de plus en plus utilisée pour le télétravail.
-          <div class="sources">Sources : <a href="https://www.journaldunet.com/solutions/cloud-computing/1504089-sase-definition-avantages/" target="_blank">JDN</a>, <a href="https://www.cisco.com/c/fr_fr/solutions/sase.html" target="_blank">Cisco</a></div>
-        </li>
-        <li>
-          <strong>Automatisation avec Ansible</strong><br>
-          Automatisation du déploiement et de la gestion des infrastructures, gain de temps et réduction des erreurs.
-          <div class="sources">Source : <a href="https://www.ansible.com/resources/get-started" target="_blank">ansible.com</a></div>
-        </li>
-        <li>
-          <strong>Cybersécurité & Zero Trust</strong><br>
-          Approche "Zero Trust" : ne jamais faire confiance par défaut, tout vérifier. Renforcée par la montée des ransomwares.
-          <div class="sources">Source : <a href="https://www.microsoft.com/fr-fr/security/business/zero-trust" target="_blank">Microsoft Security</a></div>
-        </li>
-        <li>
-          <strong>Participation & veille personnelle</strong><br>
-          Partage d’articles sur Discord/LinkedIn, alertes Google sur les CVE, lecture de blogs spécialisés (Korben, Undernews).
-        </li>
-      </ul>
-    </section>
-  </div>
-  <footer>
-    &copy; 2025 [Ton Nom] – Portfolio BTS SIO SISR | Version Candy Pop 🍭
-  </footer>
+  </main>
 </body>
 </html>
