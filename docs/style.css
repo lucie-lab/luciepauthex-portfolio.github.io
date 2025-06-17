@@ -84,6 +84,7 @@ nav {
 .badge.violet { background: #e0c3fc; color: #7c4984; }
 .badge.blue { background: #d6f0ff; color: #3466af; }
 
+
 nav {
   background: none;
   margin-top: 0;
@@ -552,4 +553,34 @@ footer {
 ::-webkit-scrollbar-thumb {
   background: #e0c3fc;
   border-radius: 7px;
+}
+/* ... toutes tes autres règles CSS ... */
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1111;
+  background: #fff0faee;
+  box-shadow: 0 2px 11px #e9b6d344;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+/* Pour que le menu ne prenne pas trop de place en sticky */
+.sticky-nav ul.main-nav {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Menu mobile responsive : tu peux garder le burger déjà fourni ! */
+@media (max-width: 1000px) {
+  .sticky-nav {
+    border-radius: 0;
+    box-shadow: 0 2px 14px #e0c3fc77;
+  }
+  .sticky-nav ul.main-nav {
+    border-radius: 0 0 18px 18px;
+  }
 }
