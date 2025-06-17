@@ -3,235 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio Pastel Dream – [Ton Nom]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Indie+Flower&display=swap" rel="stylesheet">
+  <title>Portfolio Candy Pop – [Ton Nom]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
     :root {
-      --rose: #f7a1c4;
-      --violet: #c3b1e1;
-      --bleu: #b8e0f7;
-      --jaune: #fff4b1;
+      --rose: #ff6fa4;
+      --bleu: #67e8f9;
+      --violet: #a17cf4;
+      --jaune: #fff9ae;
       --blanc: #fff;
-      --gris: #f9f9fb;
-      --shadow: 0 6px 30px #c3b1e144;
-      --radius: 24px;
-      --radius-card: 18px;
+      --pop-shadow: 0 8px 36px #ff6fa426;
+      --radius-main: 30px;
     }
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
+      background: radial-gradient(circle at 70% 30%, #fff 40%, #ffecf9 100%);
+      font-family: 'Fredoka', Arial, sans-serif;
+      color: #a1487a;
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--rose) 0%, var(--violet) 50%, var(--bleu) 100%);
-      font-family: 'Quicksand', Arial, sans-serif;
-      color: #83577c;
-      position: relative;
       overflow-x: hidden;
     }
-    /* Nuages décoratifs */
-    .cloud {
-      position: absolute;
-      background: var(--blanc);
-      opacity: .6;
-      border-radius: 50%;
-      filter: blur(6px);
-      z-index: 0;
-      animation: cloudmove 16s linear infinite alternate;
-    }
-    .cloud1 { width: 170px; height: 80px; top: 30px; left: 7vw; animation-delay: 0s;}
-    .cloud2 { width: 110px; height: 60px; top: 90px; left: 60vw; animation-delay: 2s;}
-    .cloud3 { width: 140px; height: 70px; top: 240px; left: 85vw; animation-delay: 4s;}
-    .cloud4 { width: 100px; height: 50px; top: 620px; left: 2vw; animation-delay: 1s;}
-    @keyframes cloudmove {
-      to { transform: translateY(20px) scale(1.05);}
-    }
-    /* HEADER */
     header {
-      z-index: 2;
-      position: sticky; top: 0;
-      background: linear-gradient(90deg, var(--rose) 0%, var(--violet) 100%);
-      box-shadow: var(--shadow);
-      border-bottom-left-radius: 0.7em;
-      border-bottom-right-radius: 0.7em;
+      background: linear-gradient(90deg, var(--rose), var(--violet));
+      box-shadow: var(--pop-shadow);
+      position: sticky; top: 0; z-index: 10;
+      border-bottom-right-radius: 1.2em;
+      border-bottom-left-radius: 1.2em;
     }
     nav {
-      display: flex; justify-content: center; align-items: center; gap: 2.5rem;
-      padding: 1.3rem 3vw 1rem 3vw;
+      display: flex; justify-content: center; align-items: center; gap: 2.2rem;
+      padding: 1.3rem 2vw 1rem 2vw;
     }
     nav a {
-      color: #fff;
+      color: var(--blanc);
       text-decoration: none;
-      font-family: 'Indie Flower', cursive;
-      font-size: 1.3em;
-      letter-spacing: 1.3px;
-      padding: 0.5em 1.2em;
-      border-radius: 1em;
-      background: linear-gradient(90deg, var(--rose) 60%, var(--violet) 100%);
-      box-shadow: 0 2px 8px #f7a1c440;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.4em;
+      padding: 0.6em 1.4em;
+      border-radius: 2em;
+      background: var(--rose);
+      box-shadow: 0 2px 14px #ff6fa422;
       margin: 0 0.2em;
-      transition: filter .2s, transform .2s;
+      transition: background 0.17s, transform 0.2s;
+      border: 2.5px solid var(--blanc);
     }
-    nav a:hover, nav a.active {
-      filter: brightness(1.2) drop-shadow(0 0 8px var(--jaune));
-      transform: scale(1.07) rotate(-2deg);
+    nav a.active, nav a:hover {
+      background: var(--bleu);
+      color: var(--violet);
+      border-color: var(--rose);
+      transform: scale(1.05) rotate(-2deg);
     }
-    /* CONTENU */
     .container {
-      background: var(--blanc);
-      margin: 3rem auto 2rem auto;
-      max-width: 940px;
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 2.2em 2em 1.7em 2em;
+      max-width: 1120px;
+      background: #fff;
+      margin: 2.7rem auto 2rem auto;
+      border-radius: var(--radius-main);
+      box-shadow: var(--pop-shadow);
+      padding: 2.5em 2.5em 2em 2.5em;
       position: relative;
-      z-index: 2;
-      backdrop-filter: blur(2.5px);
     }
     h1, h2 {
-      font-family: 'Indie Flower', cursive;
+      font-family: 'Pacifico', cursive;
       color: var(--rose);
-      font-weight: bold;
-      text-shadow: 0 2px 12px #f7a1c455;
-      margin-bottom: .3em;
+      margin-bottom: .2em;
+      text-shadow: 0 2px 14px #ff6fa422;
     }
     h1 { font-size: 2.7em; }
     h2 { font-size: 2em; color: var(--violet);}
-    h3 { color: var(--bleu); font-family: 'Quicksand', sans-serif;}
-    /* Parcours */
+    h3 { color: var(--bleu); font-family: 'Fredoka', sans-serif;}
+    /* Timeline */
     .timeline {
-      margin: 1.7em 0 1em 0;
+      margin: 2em 0 0.8em 0;
       padding: 0;
       list-style: none;
       position: relative;
     }
     .timeline li {
-      margin-bottom: 1.4em;
-      padding-left: 1.2em;
+      margin-bottom: 1.3em;
+      padding-left: 1.5em;
       position: relative;
-      font-size: 1.07em;
-      color: #895c8a;
+      font-size: 1.09em;
+      color: #a1487a;
+      font-family: 'Fredoka', sans-serif;
     }
     .timeline li::before {
-      content: "💎";
+      content: "🍭";
       position: absolute;
       left: 0; top: 0;
       font-size: 1.1em;
     }
-    /* Tableau synthèse */
+    /* Tableau compétences */
     .table-competences {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
+      width: 100%; border-collapse: separate; border-spacing: 0;
       margin: 2em 0 1.3em 0;
-      border-radius: var(--radius-card);
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 3px 16px #b8e0f733;
-      background: linear-gradient(90deg, #fff 60%, #ffeaf9 100%);
+      background: #fff9ae;
+      font-family: 'Fredoka', sans-serif;
     }
     .table-competences th, .table-competences td {
       padding: 1em 1.1em;
-      font-family: 'Quicksand', sans-serif;
+      font-size: 1.03em;
     }
     .table-competences th {
-      background: var(--violet);
+      background: var(--rose);
       color: #fff;
       font-size: 1.13em;
       letter-spacing: 1px;
-      border-bottom: 2px solid var(--bleu);
+      border-bottom: 2px solid var(--violet);
     }
     .table-competences td:first-child {
-      color: var(--rose);
+      color: var(--violet);
       font-weight: bold;
     }
     .table-competences tr:not(:last-child) td {
-      border-bottom: 1px solid #f7a1c422;
+      border-bottom: 1px solid #ff6fa426;
     }
-    /* Projets - cartes */
+    /* Projets */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.1rem;
-      margin-top: 2.3rem;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2.3rem;
+      margin-top: 2.5rem;
     }
     .project-card {
-      background: linear-gradient(135deg, #fff 80%, #fdeffb 100%);
-      border-radius: var(--radius-card);
-      box-shadow: 0 3px 14px #c3b1e122;
-      padding: 1.3rem 1.1rem;
-      border-top: 6px solid var(--rose);
+      background: linear-gradient(130deg, #fff 70%, #ffecf9 100%);
+      border-radius: 22px;
+      box-shadow: 0 5px 22px #67e8f966;
+      padding: 1.5rem 1.2rem;
+      border: 4.5px solid var(--bleu);
       display: flex; flex-direction: column;
-      min-height: 200px;
+      min-height: 210px;
       justify-content: space-between;
-      color: #895c8a;
-      transition: box-shadow .2s, transform .2s;
+      color: #a1487a;
+      font-family: 'Fredoka', sans-serif;
       position: relative;
       overflow: hidden;
+      transition: box-shadow .18s, border-color .18s, transform .18s;
     }
     .project-card:hover {
-      box-shadow: 0 8px 40px #f7a1c488;
-      transform: scale(1.03) rotate(-1.5deg);
-      border-top-color: var(--violet);
+      box-shadow: 0 12px 50px #a17cf455;
+      border-color: var(--rose);
+      transform: scale(1.04) rotate(-1deg);
     }
     .project-card h3 {
       color: var(--rose);
       margin-top: 0;
-      font-family: 'Indie Flower', cursive;
+      font-family: 'Pacifico', cursive;
     }
     .project-tags {
-      margin-top: 0.7em;
+      margin-top: 0.8em;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6em;
+      gap: 0.7em;
     }
     .project-tag {
-      background: var(--bleu);
-      color: #6b5d8c;
-      padding: 0.24em 0.9em;
+      background: var(--jaune);
+      color: var(--rose);
+      padding: 0.24em 1em;
       border-radius: 2em;
-      font-size: 0.97em;
-      font-family: 'Quicksand', sans-serif;
-      margin-bottom: 0.3em;
-      box-shadow: 0 1px 8px #b8e0f722;
+      font-size: 0.95em;
+      font-family: 'Fredoka', sans-serif;
+      margin-bottom: 0.2em;
+      box-shadow: 0 1px 8px #fff9ae66;
+      font-weight: bold;
     }
     .project-meta, .entreprise {
       font-size: 0.98em;
-      color: #b875a9;
+      color: var(--violet);
       margin-bottom: 0.5em;
     }
     /* Veille */
     .veille-list {
-      margin-top: 2em;
+      margin-top: 2.2em;
       list-style: none;
       padding: 0;
     }
     .veille-list li {
-      background: #fcf6ff;
-      border-left: 5px solid var(--rose);
+      background: #ffecf9;
+      border-left: 7px solid var(--rose);
       margin-bottom: 1.2em;
-      padding: 1.1em 1.3em;
-      border-radius: var(--radius-card);
-      box-shadow: 0 2px 10px #b8e0f712;
-      color: #895c8a;
+      padding: 1.2em 1.5em;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px #ff6fa422;
+      color: #a1487a;
       font-size: 1.08em;
+      font-family: 'Fredoka', sans-serif;
     }
     .veille-list strong { color: var(--rose);}
     .sources {
       margin-top: 0.6em;
       font-size: 0.97em;
-      color: #7d6fa4;
+      color: var(--violet);
     }
     /* Footer */
     footer {
       text-align: center;
-      color: #b875a9;
+      color: var(--rose);
       margin: 2.7em 0 1.2em 0;
-      font-size: 1.05em;
-      font-family: 'Quicksand', sans-serif;
+      font-size: 1.1em;
+      font-family: 'Pacifico', cursive;
       letter-spacing: 1px;
+      text-shadow: 0 2px 12px #ff6fa422;
     }
     /* Responsive */
-    @media (max-width: 1000px) { .container { padding: 1em; } }
+    @media (max-width: 1100px) { .container { padding: 1em; } }
     @media (max-width: 700px) {
-      .container { padding: 0.5em; }
+      .container { padding: 0.7em; }
       .about-flex { flex-direction: column; align-items: center; }
       nav { gap: 0.7em; font-size: 1em; }
       .projects-grid { grid-template-columns: 1fr; }
@@ -256,11 +234,6 @@
   </script>
 </head>
 <body>
-  <!-- Nuages décoratifs -->
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
-  <div class="cloud cloud3"></div>
-  <div class="cloud cloud4"></div>
   <header>
     <nav>
       <a href="#presentation">Présentation</a>
@@ -275,7 +248,7 @@
       <h1>[Ton Nom] – Portfolio SISR</h1>
       <div class="about-flex">
         <div class="about-photo">
-          <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil">
+          <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil" style="width:140px; height:140px; border-radius:50%; box-shadow:0 0 0 7px #67e8f988; border:5px solid var(--rose); background:#ffecf9">
         </div>
         <div class="about-infos">
           <p>
@@ -411,7 +384,7 @@
     </section>
   </div>
   <footer>
-    &copy; 2025 [Ton Nom] – Portfolio BTS SIO SISR | Réalisé à la main, hébergé sur GitHub Pages
+    &copy; 2025 [Ton Nom] – Portfolio BTS SIO SISR | Version Candy Pop 🍭
   </footer>
 </body>
 </html>
