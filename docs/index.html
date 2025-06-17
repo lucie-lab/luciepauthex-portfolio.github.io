@@ -3,184 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio SISR – [Ton Nom]</title>
-  <meta name="description" content="Portfolio BTS SIO SISR – [Ton Nom]">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <title>Portfolio Pastel Dream – [Ton Nom]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Indie+Flower&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #fdeffb;
-      --main-bg-light: #fbe5f5;
-      --main-accent: #bc4a9b;          /* Rose/violet */
-      --main-accent-light: #fd8ba9;    /* Rose corail */
-      --secondary: #8b6bb5;            /* Violet doux */
-      --neutral: #fff7fc;
-      --white: #fff;
-      --shadow: 0 4px 24px #bc4a9b33;
-      --radius: 14px;
-      --transition: 0.3s cubic-bezier(.4,2,.6,1);
-      --font-main: 'Montserrat', Arial, sans-serif;
-      --font-sec: 'Roboto', Arial, sans-serif;
+      --rose: #f7a1c4;
+      --violet: #c3b1e1;
+      --bleu: #b8e0f7;
+      --jaune: #fff4b1;
+      --blanc: #fff;
+      --gris: #f9f9fb;
+      --shadow: 0 6px 30px #c3b1e144;
+      --radius: 24px;
+      --radius-card: 18px;
     }
     body {
-      margin: 0; padding: 0;
-      background: linear-gradient(120deg, var(--main-bg-light) 60%, var(--main-accent-light) 100%);
-      color: #63305a;
-      font-family: var(--font-main);
+      margin: 0;
+      padding: 0;
       min-height: 100vh;
-      transition: background 1s;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--violet) 50%, var(--bleu) 100%);
+      font-family: 'Quicksand', Arial, sans-serif;
+      color: #83577c;
+      position: relative;
+      overflow-x: hidden;
     }
+    /* Nuages décoratifs */
+    .cloud {
+      position: absolute;
+      background: var(--blanc);
+      opacity: .6;
+      border-radius: 50%;
+      filter: blur(6px);
+      z-index: 0;
+      animation: cloudmove 16s linear infinite alternate;
+    }
+    .cloud1 { width: 170px; height: 80px; top: 30px; left: 7vw; animation-delay: 0s;}
+    .cloud2 { width: 110px; height: 60px; top: 90px; left: 60vw; animation-delay: 2s;}
+    .cloud3 { width: 140px; height: 70px; top: 240px; left: 85vw; animation-delay: 4s;}
+    .cloud4 { width: 100px; height: 50px; top: 620px; left: 2vw; animation-delay: 1s;}
+    @keyframes cloudmove {
+      to { transform: translateY(20px) scale(1.05);}
+    }
+    /* HEADER */
     header {
-      background: linear-gradient(90deg, #f6c1e2 0%, #b98fc8 100%);
+      z-index: 2;
+      position: sticky; top: 0;
+      background: linear-gradient(90deg, var(--rose) 0%, var(--violet) 100%);
       box-shadow: var(--shadow);
-      position: sticky;
-      top: 0; z-index: 10;
+      border-bottom-left-radius: 0.7em;
+      border-bottom-right-radius: 0.7em;
     }
     nav {
       display: flex; justify-content: center; align-items: center; gap: 2.5rem;
-      padding: 1.2rem 3vw;
+      padding: 1.3rem 3vw 1rem 3vw;
     }
     nav a {
-      color: var(--main-accent);
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      padding: 0.6em 1.3em;
-      border-radius: 8px;
-      font-size: 1.15em;
-      letter-spacing: 1px;
-      transition: background var(--transition), color var(--transition);
-      position: relative;
+      font-family: 'Indie Flower', cursive;
+      font-size: 1.3em;
+      letter-spacing: 1.3px;
+      padding: 0.5em 1.2em;
+      border-radius: 1em;
+      background: linear-gradient(90deg, var(--rose) 60%, var(--violet) 100%);
+      box-shadow: 0 2px 8px #f7a1c440;
+      margin: 0 0.2em;
+      transition: filter .2s, transform .2s;
     }
-    nav a.active, nav a:hover {
-      background: var(--main-accent-light);
-      color: var(--white);
-      box-shadow: 0 2px 12px #fd8ba955;
+    nav a:hover, nav a.active {
+      filter: brightness(1.2) drop-shadow(0 0 8px var(--jaune));
+      transform: scale(1.07) rotate(-2deg);
     }
+    /* CONTENU */
     .container {
-      max-width: 1050px;
-      margin: 2.2rem auto 2rem auto;
-      background: rgba(255,255,255,0.75);
-      border-radius: var(--radius);
+      background: var(--blanc);
+      margin: 3rem auto 2rem auto;
+      max-width: 940px;
       box-shadow: var(--shadow);
-      padding: 2.7rem 2rem 2.2rem 2rem;
-      border: 2px solid #fd8ba944;
+      border-radius: var(--radius);
+      padding: 2.2em 2em 1.7em 2em;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(2.5px);
     }
-    section { margin-bottom: 3rem; }
-    h1, h2, h3 {
-      color: var(--main-accent);
-      font-family: var(--font-main);
-      margin-top: 0;
+    h1, h2 {
+      font-family: 'Indie Flower', cursive;
+      color: var(--rose);
+      font-weight: bold;
+      text-shadow: 0 2px 12px #f7a1c455;
+      margin-bottom: .3em;
     }
-    h1 { font-size: 2.5em; }
-    h2 { font-size: 2em; margin-top: 2em; color: var(--secondary);}
-    h3 { color: var(--main-accent-light); font-size: 1.3em; }
-    .about-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.4rem;
-      align-items: flex-start;
-      margin-bottom: 2.2rem;
-    }
-    .about-photo {
-      flex: 0 0 145px;
-      text-align: center;
-    }
-    .about-photo img {
-      width: 145px; height: 145px;
-      border-radius: 50%;
-      border: 6px solid var(--main-accent-light);
-      object-fit: cover;
-      box-shadow: 0 0 0 6px #fd8ba933;
-      background: #fbe5f5;
-      animation: floating 3s infinite ease-in-out alternate;
-    }
-    @keyframes floating {
-      to { transform: translateY(-8px) scale(1.03);}
-    }
-    .about-infos { flex: 1 1 320px; min-width: 240px; }
+    h1 { font-size: 2.7em; }
+    h2 { font-size: 2em; color: var(--violet);}
+    h3 { color: var(--bleu); font-family: 'Quicksand', sans-serif;}
+    /* Parcours */
     .timeline {
-      border-left: 4px solid var(--main-accent-light);
-      margin: 2.7em 0 1em 0;
-      padding-left: 2em;
+      margin: 1.7em 0 1em 0;
+      padding: 0;
       list-style: none;
       position: relative;
     }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 4px; background: var(--main-accent-light);
-      border-radius: 2px;
-    }
     .timeline li {
-      margin-bottom: 1.9em;
+      margin-bottom: 1.4em;
+      padding-left: 1.2em;
       position: relative;
+      font-size: 1.07em;
+      color: #895c8a;
     }
     .timeline li::before {
-      content: "";
+      content: "💎";
       position: absolute;
-      left: -2.1em; top: 0.3em;
-      width: 1em; height: 1em;
-      background: var(--secondary);
-      border: 2px solid var(--main-accent);
-      border-radius: 50%;
-      box-shadow: 0 2px 6px #fd8ba933;
-    }
-    .timeline li strong { color: var(--main-accent); }
-    /* Tableau compétences */
-    .table-competences {
-      width: 100%; border-collapse: collapse; background: #fbe5f5;
-      box-shadow: 0 2px 20px #fd8ba933;
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin: 2em 0;
-      font-family: var(--font-sec);
-      color: #63305a;
-    }
-    .table-competences th, .table-competences td {
-      padding: 1em 1.2em;
-      border-bottom: 1px solid #fd8ba955;
-      text-align: left;
-      font-size: 1.07em;
-    }
-    .table-competences th {
-      background: var(--main-accent);
-      color: var(--white);
-      font-weight: 700;
-      letter-spacing: 1px;
+      left: 0; top: 0;
       font-size: 1.1em;
     }
-    .table-competences tr:last-child td { border-bottom: none; }
-    .table-competences td:first-child { font-weight: bold; color: var(--main-accent);}
-    /* Projets */
+    /* Tableau synthèse */
+    .table-competences {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 2em 0 1.3em 0;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: 0 3px 16px #b8e0f733;
+      background: linear-gradient(90deg, #fff 60%, #ffeaf9 100%);
+    }
+    .table-competences th, .table-competences td {
+      padding: 1em 1.1em;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .table-competences th {
+      background: var(--violet);
+      color: #fff;
+      font-size: 1.13em;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--bleu);
+    }
+    .table-competences td:first-child {
+      color: var(--rose);
+      font-weight: bold;
+    }
+    .table-competences tr:not(:last-child) td {
+      border-bottom: 1px solid #f7a1c422;
+    }
+    /* Projets - cartes */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
-      gap: 2.2rem;
-      margin-top: 2.7rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.1rem;
+      margin-top: 2.3rem;
     }
     .project-card {
-      background: #fff7fc;
-      border-radius: var(--radius);
-      box-shadow: 0 3px 20px #fd8ba933;
-      padding: 1.7rem 1.4rem;
-      border-top: 6px solid var(--main-accent-light);
-      transition: transform .23s, box-shadow .23s;
+      background: linear-gradient(135deg, #fff 80%, #fdeffb 100%);
+      border-radius: var(--radius-card);
+      box-shadow: 0 3px 14px #c3b1e122;
+      padding: 1.3rem 1.1rem;
+      border-top: 6px solid var(--rose);
       display: flex; flex-direction: column;
-      min-height: 220px;
+      min-height: 200px;
       justify-content: space-between;
-      color: #63305a;
+      color: #895c8a;
+      transition: box-shadow .2s, transform .2s;
+      position: relative;
+      overflow: hidden;
     }
     .project-card:hover {
-      transform: translateY(-7px) scale(1.04);
-      box-shadow: 0 8px 40px #fd8ba966;
-      border-top-color: var(--main-accent);
+      box-shadow: 0 8px 40px #f7a1c488;
+      transform: scale(1.03) rotate(-1.5deg);
+      border-top-color: var(--violet);
     }
-    .project-card h3 { color: var(--main-accent); }
-    .project-meta {
-      font-size: 0.95em;
-      color: var(--secondary);
-      margin-bottom: 0.5em;
+    .project-card h3 {
+      color: var(--rose);
+      margin-top: 0;
+      font-family: 'Indie Flower', cursive;
     }
     .project-tags {
       margin-top: 0.7em;
@@ -189,19 +183,19 @@
       gap: 0.6em;
     }
     .project-tag {
-      background: var(--main-accent-light);
-      color: var(--white);
-      padding: 0.2em 0.7em;
-      border-radius: 6px;
-      font-size: 0.93em;
-      font-family: var(--font-sec);
-      letter-spacing: 0.5px;
-    }
-    /* Entreprise */
-    .entreprise {
-      margin: 0.9em 0 0.6em 0;
+      background: var(--bleu);
+      color: #6b5d8c;
+      padding: 0.24em 0.9em;
+      border-radius: 2em;
       font-size: 0.97em;
-      color: var(--secondary);
+      font-family: 'Quicksand', sans-serif;
+      margin-bottom: 0.3em;
+      box-shadow: 0 1px 8px #b8e0f722;
+    }
+    .project-meta, .entreprise {
+      font-size: 0.98em;
+      color: #b875a9;
+      margin-bottom: 0.5em;
     }
     /* Veille */
     .veille-list {
@@ -210,29 +204,29 @@
       padding: 0;
     }
     .veille-list li {
-      background: #fbe5f5;
-      border-left: 6px solid var(--main-accent);
-      margin-bottom: 1.4em;
-      padding: 1.2em 1.5em;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 10px #fd8ba922;
-      color: #63305a;
-      font-family: var(--font-sec);
+      background: #fcf6ff;
+      border-left: 5px solid var(--rose);
+      margin-bottom: 1.2em;
+      padding: 1.1em 1.3em;
+      border-radius: var(--radius-card);
+      box-shadow: 0 2px 10px #b8e0f712;
+      color: #895c8a;
       font-size: 1.08em;
     }
-    .veille-list strong { color: var(--main-accent);}
+    .veille-list strong { color: var(--rose);}
     .sources {
-      margin-top: 0.8em;
-      font-size: 0.98em;
-      color: var(--secondary);
+      margin-top: 0.6em;
+      font-size: 0.97em;
+      color: #7d6fa4;
     }
+    /* Footer */
     footer {
       text-align: center;
-      color: #bc4a9b;
-      margin: 3.2em 0 1.2em 0;
-      font-size: 1em;
+      color: #b875a9;
+      margin: 2.7em 0 1.2em 0;
+      font-size: 1.05em;
+      font-family: 'Quicksand', sans-serif;
       letter-spacing: 1px;
-      font-family: var(--font-sec);
     }
     /* Responsive */
     @media (max-width: 1000px) { .container { padding: 1em; } }
@@ -262,6 +256,11 @@
   </script>
 </head>
 <body>
+  <!-- Nuages décoratifs -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="cloud cloud4"></div>
   <header>
     <nav>
       <a href="#presentation">Présentation</a>
@@ -280,7 +279,7 @@
         </div>
         <div class="about-infos">
           <p>
-            <strong>Étudiante en BTS SIO option SISR</strong>, passionnée par l’administration réseau, la virtualisation et la cybersécurité.<br>
+            <strong>Étudiante en BTS SIO SISR</strong>, passionnée par l’administration réseau, la virtualisation et la cybersécurité.<br>
             Mon parcours scolaire et mes expériences professionnelles m’ont permis de développer des compétences solides dans la gestion de systèmes et réseaux, l’automatisation et la veille technologique.
           </p>
           <ul class="timeline">
