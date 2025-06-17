@@ -3,214 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio - [Ton Nom] - BTS SIO</title>
+  <title>Portfolio SISR – [Ton Nom]</title>
+  <meta name="description" content="Portfolio BTS SIO SISR – [Ton Nom]">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-color: #2a8c9d;
-      --accent: #ffd166;
-      --header-bg: linear-gradient(90deg, #2a8c9d 0%, #1b2b36 100%);
-      --bg-gradient: linear-gradient(120deg, #e0ecff 0%, #fcfffa 100%);
-      --container-bg: rgba(255,255,255,0.97);
-      --text: #1b2b36;
-      --text-light: #666;
+      --main-bg: #181f2b;
+      --main-bg-light: #222b3a;
+      --main-accent: #8c2232; /* Bordeaux */
+      --main-accent-light: #c14459;
+      --secondary: #314c6a; /* Bleu foncé */
+      --neutral: #f4f4f8;
       --white: #fff;
+      --shadow: 0 4px 24px #0003;
+      --radius: 14px;
+      --transition: 0.3s cubic-bezier(.4,2,.6,1);
+      --font-main: 'Montserrat', Arial, sans-serif;
+      --font-sec: 'Roboto', Arial, sans-serif;
     }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg-gradient);
-      color: var(--text);
+      margin: 0; padding: 0;
+      background: linear-gradient(120deg, var(--main-bg) 60%, var(--main-accent) 100%);
+      color: var(--neutral);
+      font-family: var(--font-main);
       min-height: 100vh;
+      transition: background 1s;
     }
     header {
-      width: 100vw;
-      background: var(--header-bg);
-      color: var(--white);
+      background: var(--main-bg-light);
+      box-shadow: var(--shadow);
       position: sticky;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px #0003;
-      padding-bottom: 0.2rem;
+      top: 0; z-index: 10;
     }
     nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2.5rem;
-      padding: 1.2rem 2rem 1rem 2rem;
+      display: flex; justify-content: center; align-items: center; gap: 2.5rem;
+      padding: 1.2rem 3vw;
     }
     nav a {
-      color: var(--white);
+      color: var(--neutral);
       text-decoration: none;
       font-weight: bold;
+      padding: 0.6em 1.3em;
+      border-radius: 8px;
+      font-size: 1.15em;
       letter-spacing: 1px;
-      padding: 0.6em 1.2em;
-      border-radius: 6px;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      font-size: 1.1em;
+      transition: background var(--transition), color var(--transition);
+      position: relative;
     }
-    nav a:hover, nav a.active {
-      background: var(--accent);
-      color: var(--main-color);
-      box-shadow: 0 2px 8px #ffd16666;
+    nav a.active, nav a:hover {
+      background: var(--main-accent-light);
+      color: var(--white);
     }
     .container {
-      max-width: 1100px;
-      margin: 2.7rem auto 2rem auto;
-      background: var(--container-bg);
-      border-radius: 20px;
-      box-shadow: 0 6px 32px #2a8c9d22;
-      padding: 3rem 3rem 2rem 3rem;
-      min-height: 70vh;
+      max-width: 1050px;
+      margin: 2.2rem auto 2rem auto;
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.7rem 2rem 2.2rem 2rem;
     }
-    section {
-      margin-bottom: 3rem;
+    section { margin-bottom: 3rem; }
+    h1, h2, h3 {
+      color: var(--main-accent);
+      font-family: var(--font-main);
+      margin-top: 0;
     }
-    h1 {
-      color: var(--main-color);
-      font-size: 2.6em;
-      margin-bottom: 0.2em;
-      text-shadow: 0 2px 16px #2a8c9d22;
-    }
-    h2 {
-      color: var(--accent);
-      margin-top: 2em;
-      margin-bottom: 0.7em;
-      font-size: 2em;
-      text-shadow: 0 2px 10px #ffd16644;
-    }
-    h3 {
-      color: var(--main-color);
-      margin-top: 1.2em;
-      margin-bottom: 0.2em;
-    }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; margin-top: 2em; }
+    h3 { color: var(--secondary); font-size: 1.3em; }
     .about-flex {
       display: flex;
       flex-wrap: wrap;
-      gap: 2.5rem;
+      gap: 2.4rem;
       align-items: flex-start;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.2rem;
     }
     .about-photo {
-      flex: 0 0 140px;
+      flex: 0 0 145px;
+      text-align: center;
     }
     .about-photo img {
-      width: 140px;
-      height: 140px;
+      width: 145px; height: 145px;
       border-radius: 50%;
+      border: 6px solid var(--main-accent);
       object-fit: cover;
-      border: 5px solid var(--accent);
+      box-shadow: 0 0 0 6px #8c223233;
       background: #ccc;
-      box-shadow: 0 0 0 6px #ffd16644;
-      animation: bounce 2s infinite alternate;
+      animation: floating 3s infinite ease-in-out alternate;
     }
-    @keyframes bounce {
-      to { transform: translateY(-8px) scale(1.04);}
+    @keyframes floating {
+      to { transform: translateY(-8px) scale(1.03);}
     }
-    .about-infos {
-      flex: 1 1 350px;
-      min-width: 250px;
-    }
-    .skills-list, .xp-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
+    .about-infos { flex: 1 1 320px; min-width: 240px; }
+    .timeline {
+      border-left: 4px solid var(--main-accent-light);
+      margin: 2.7em 0 1em 0;
+      padding-left: 2em;
       list-style: none;
-      padding: 0;
-      margin: 1.2em 0 0 0;
+      position: relative;
     }
-    .skills-list li, .xp-list li {
-      background: var(--accent);
-      color: var(--main-color);
-      border-left: 5px solid var(--main-color);
-      padding: 0.7em 1.4em;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #ffd16633;
-      font-size: 1em;
-      min-width: 120px;
-      font-weight: bold;
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--main-accent-light);
+      border-radius: 2px;
     }
-    .xp-list li {
-      border-left: 5px solid var(--main-color);
-      background: #fffbe6;
-      color: #bb7b00;
+    .timeline li {
+      margin-bottom: 1.9em;
+      position: relative;
     }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -2.1em; top: 0.3em;
+      width: 1em; height: 1em;
+      background: var(--secondary);
+      border: 2px solid var(--main-accent);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px #0004;
+    }
+    .timeline li strong { color: var(--main-accent-light); }
+    /* Tableau compétences */
+    .table-competences {
+      width: 100%; border-collapse: collapse; background: #25314a99;
+      box-shadow: 0 2px 20px #0002;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 2em 0;
+      font-family: var(--font-sec);
+      color: var(--neutral);
+    }
+    .table-competences th, .table-competences td {
+      padding: 1em 1.2em;
+      border-bottom: 1px solid #314c6a88;
+      text-align: left;
+      font-size: 1.07em;
+    }
+    .table-competences th {
+      background: var(--main-accent);
+      color: var(--white);
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.1em;
+    }
+    .table-competences tr:last-child td { border-bottom: none; }
+    .table-competences td:first-child { font-weight: bold; color: var(--main-accent-light);}
+    /* Projets */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+      gap: 2.2rem;
+      margin-top: 2.7rem;
     }
     .project-card {
-      background: var(--white);
-      border-radius: 10px;
-      box-shadow: 0 4px 20px #2a8c9d22;
-      padding: 1.3rem 1.2rem;
-      border-left: 6px solid var(--main-color);
-      display: flex;
-      flex-direction: column;
-      min-height: 180px;
+      background: #232e3f;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 20px #8c223255;
+      padding: 1.7rem 1.4rem;
+      border-top: 6px solid var(--main-accent-light);
+      transition: transform .23s, box-shadow .23s;
+      display: flex; flex-direction: column;
+      min-height: 220px;
       justify-content: space-between;
-      transition: transform 0.2s, box-shadow 0.2s;
+      color: var(--white);
     }
     .project-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 40px #2a8c9d44;
-      border-left-color: var(--accent);
+      transform: translateY(-7px) scale(1.04);
+      box-shadow: 0 8px 40px #8c223299;
+      border-top-color: var(--main-accent);
     }
-    .project-card h3 {
-      margin-top: 0;
-      color: var(--main-color);
-      font-size: 1.3em;
+    .project-card h3 { color: var(--accent); }
+    .project-meta {
+      font-size: 0.9em;
+      color: var(--neutral);
+      margin-bottom: 0.5em;
     }
-    .project-links a {
-      color: var(--main-color);
-      text-decoration: none;
-      margin-right: 1.2em;
-      font-weight: bold;
-      font-size: 1em;
-      transition: color 0.2s;
+    .project-tags {
+      margin-top: 0.7em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6em;
     }
-    .project-links a:hover {
-      color: var(--accent);
-      text-decoration: underline;
+    .project-tag {
+      background: var(--secondary);
+      color: var(--neutral);
+      padding: 0.2em 0.7em;
+      border-radius: 6px;
+      font-size: 0.93em;
+      font-family: var(--font-sec);
+      letter-spacing: 0.5px;
     }
+    /* Entreprise */
+    .entreprise {
+      margin: 0.9em 0 0.6em 0;
+      font-size: 0.97em;
+      color: var(--main-accent-light);
+    }
+    /* Veille */
     .veille-list {
       margin-top: 2em;
       list-style: none;
       padding: 0;
     }
     .veille-list li {
-      background: #f6f8fa;
-      border-left: 6px solid var(--main-color);
-      margin-bottom: 1em;
-      padding: 0.9em 1.3em;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #2a8c9d11;
+      background: #2b3b53;
+      border-left: 6px solid var(--main-accent);
+      margin-bottom: 1.4em;
+      padding: 1.2em 1.5em;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 10px #0002;
+      color: var(--neutral);
+      font-family: var(--font-sec);
+      font-size: 1.08em;
     }
-    .veille-list strong {
-      color: var(--main-color);
+    .veille-list strong { color: var(--main-accent-light);}
+    .sources {
+      margin-top: 0.8em;
+      font-size: 0.98em;
+      color: #a9b9ce;
     }
     footer {
       text-align: center;
-      color: #888;
-      margin: 2.5em 0 1em 0;
-      font-size: 1.1em;
+      color: #b6b6c4;
+      margin: 3.2em 0 1.2em 0;
+      font-size: 1em;
       letter-spacing: 1px;
+      font-family: var(--font-sec);
     }
     /* Responsive */
-    @media (max-width: 900px) {
-      .container { padding: 1.5rem; }
+    @media (max-width: 1000px) { .container { padding: 1em; } }
+    @media (max-width: 700px) {
+      .container { padding: 0.5em; }
       .about-flex { flex-direction: column; align-items: center; }
-      nav { gap: 1rem; font-size: 0.98em; }
-    }
-    @media (max-width: 600px) {
-      .container { padding: 0.7rem; }
+      nav { gap: 0.7em; font-size: 1em; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
   <script>
+    // Menu actif selon scroll
     window.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav a');
@@ -231,103 +263,159 @@
 <body>
   <header>
     <nav>
-      <a href="#about">À propos</a>
-      <a href="#projects">Projets</a>
-      <a href="#veille">Veille technologique</a>
+      <a href="#presentation">Présentation</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#veille">Veille</a>
     </nav>
   </header>
   <div class="container">
-    <!-- À PROPOS -->
-    <section id="about">
-      <h1>Bonjour, je suis [Ton Nom]</h1>
+    <!-- Présentation -->
+    <section id="presentation">
+      <h1>[Ton Nom] – Portfolio SISR</h1>
       <div class="about-flex">
         <div class="about-photo">
-          <!-- Mets ta photo ici -->
           <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil">
         </div>
         <div class="about-infos">
           <p>
-            Étudiant en <strong>BTS SIO</strong> (Services Informatiques aux Organisations) spécialité [SLAM/SISR], passionné par le développement et les nouvelles technologies. Je réalise ce portfolio pour présenter mes projets scolaires, professionnels ainsi que ma veille technologique.
+            <strong>Étudiant en BTS SIO option SISR</strong>, passionné par l’administration réseau, la virtualisation et la cybersécurité.  
+            <br>Mon parcours scolaire et mes expériences professionnelles m’ont permis de développer des compétences solides dans la gestion de systèmes et réseaux, l’automatisation et la veille technologique.
           </p>
-          <h3>Compétences principales</h3>
-          <ul class="skills-list">
-            <li>HTML / CSS / JavaScript</li>
-            <li>Python</li>
-            <li>PHP / SQL</li>
-            <li>Git & GitHub</li>
-            <li>Linux / Réseaux</li>
-            <li>Virtualisation</li>
-          </ul>
-          <h3>Expériences</h3>
-          <ul class="xp-list">
-            <li>Stage en entreprise - [Nom de l'entreprise] (2024)</li>
-            <li>Projets scolaires - BTS SIO (2023-2025)</li>
+          <ul class="timeline">
+            <li>
+              <strong>2023 – 2025 :</strong> BTS SIO SISR – Lycée [Nom de l’établissement], [Ville]
+            </li>
+            <li>
+              <strong>2024 :</strong> Stage – Technicien Systèmes & Réseaux, [Entreprise A], [Ville]
+            </li>
+            <li>
+              <strong>2022 :</strong> Bac STI2D – [Lycée], [Ville]
+            </li>
           </ul>
         </div>
       </div>
     </section>
-    <!-- PROJETS -->
-    <section id="projects">
-      <h2>Projets réalisés</h2>
+    <!-- Tableau de synthèse des compétences -->
+    <section id="competences">
+      <h2>Tableau de synthèse – Compétences SISR</h2>
+      <table class="table-competences">
+        <tr>
+          <th>Compétence</th>
+          <th>Description</th>
+          <th>Mise en œuvre</th>
+        </tr>
+        <tr>
+          <td>Gestion d’infrastructure réseau</td>
+          <td>Installer, configurer et maintenir des équipements réseaux (switchs, routeurs), VLAN, VPN, WiFi sécurisé.</td>
+          <td>Déploiement d’un réseau d’entreprise avec segmentation VLAN et accès sécurisé.</td>
+        </tr>
+        <tr>
+          <td>Virtualisation & Cloud</td>
+          <td>Mettre en place des solutions de virtualisation (VMware, Hyper-V, Proxmox) et maîtriser le cloud (Azure, AWS).</td>
+          <td>Création de VM, déploiement de serveurs, migration vers le cloud.</td>
+        </tr>
+        <tr>
+          <td>Automatisation & Scripting</td>
+          <td>Automatiser des tâches d’administration avec PowerShell, Bash, Ansible.</td>
+          <td>Automatisation des sauvegardes, déploiement de scripts de supervision.</td>
+        </tr>
+        <tr>
+          <td>Cybersécurité</td>
+          <td>Mettre en œuvre des politiques de sécurité : firewall, sauvegarde, gestion des droits, supervision.</td>
+          <td>Implémentation de solutions de sauvegarde/restauration et de monitoring.</td>
+        </tr>
+        <tr>
+          <td>Support & Documentation</td>
+          <td>Assister les utilisateurs, rédiger des documentations techniques et procédures IT.</td>
+          <td>Support de niveau 1/2, création de guides utilisateurs.</td>
+        </tr>
+      </table>
+    </section>
+    <!-- Projets -->
+    <section id="projets">
+      <h2>Projets menés en entreprise et formation</h2>
       <div class="projects-grid">
+        <!-- Projet 1 -->
         <div class="project-card">
-          <h3>Application de gestion de tickets</h3>
+          <h3>Déploiement d’une infrastructure réseau sécurisée</h3>
+          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Nom de l’entreprise], PME de 70 salariés, secteur services, portée locale</div>
+          <div class="project-meta"><strong>Objectifs :</strong> Moderniser le réseau, sécuriser les accès, améliorer la performance.</div>
           <p>
-            Application web développée en PHP/MySQL permettant de gérer les tickets d’incidents pour une PME : création, suivi, clôture, affectation à un technicien, etc.
+            Installation et configuration de switchs managés, mise en place de VLAN, configuration d’un firewall, création de VPN pour le télétravail.
           </p>
-          <div class="project-links">
-            <a href="#">Code source</a>
-            <a href="#">Démo</a>
+          <div class="project-tags">
+            <span class="project-tag">Switch Cisco</span>
+            <span class="project-tag">PfSense</span>
+            <span class="project-tag">VLAN</span>
+            <span class="project-tag">VPN</span>
           </div>
-          <small>Projet d’école (2024)</small>
+          <div class="project-meta"><strong>Résultats :</strong> Réseau segmenté, accès sécurisés, télétravail facilité.</div>
         </div>
+        <!-- Projet 2 -->
         <div class="project-card">
-          <h3>Monitoring réseau avec Zabbix</h3>
+          <h3>Virtualisation des serveurs</h3>
+          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise B], ESN, 200 salariés, portée nationale</div>
+          <div class="project-meta"><strong>Objectifs :</strong> Optimiser l’utilisation des ressources et la maintenance.</div>
           <p>
-            Mise en place d'une solution de supervision réseau (Zabbix) pour surveiller l’infrastructure d’une entreprise : dashboards, alertes, rapports automatisés.
+            Déploiement d’une infrastructure Proxmox, migration des serveurs physiques vers des VM, documentation technique.
           </p>
-          <div class="project-links">
-            <a href="#">Documentation</a>
+          <div class="project-tags">
+            <span class="project-tag">Proxmox</span>
+            <span class="project-tag">Linux</span>
+            <span class="project-tag">VM</span>
           </div>
-          <small>Stage entreprise (2024)</small>
+          <div class="project-meta"><strong>Résultats :</strong> Réduction des coûts, simplification de la gestion.</div>
         </div>
+        <!-- Projet 3 -->
         <div class="project-card">
-          <h3>Portfolio en ligne</h3>
+          <h3>Supervision réseau et sauvegarde</h3>
+          <div class="entreprise"><strong>Entreprise rencontrée :</strong> [Entreprise C], TPE, 15 salariés, informatique, portée régionale</div>
+          <div class="project-meta"><strong>Objectifs :</strong> Assurer la disponibilité, détecter les incidents rapidement.</div>
           <p>
-            Ce portfolio responsive, réalisé de A à Z en HTML/CSS/JS et déployé gratuitement sur GitHub Pages.
+            Mise en place de Zabbix pour surveiller les équipements, création de scripts de sauvegarde automatisés.
           </p>
-          <div class="project-links">
-            <a href="#">Voir le site</a>
-            <a href="#">Code source</a>
+          <div class="project-tags">
+            <span class="project-tag">Zabbix</span>
+            <span class="project-tag">Backup</span>
+            <span class="project-tag">PowerShell</span>
           </div>
-          <small>Projet personnel (2025)</small>
+          <div class="project-meta"><strong>Résultats :</strong> Monitoring temps réel, alertes proactives, restauration rapide.</div>
         </div>
       </div>
     </section>
-    <!-- VEILLE TECHNOLOGIQUE -->
+    <!-- Veille technologique -->
     <section id="veille">
-      <h2>Veille technologique</h2>
+      <h2>Veille technologique : innovations & tendances SISR</h2>
       <ul class="veille-list">
         <li>
-          <strong>Docker & Virtualisation</strong>  
+          <strong>SASE (Secure Access Service Edge)</strong>  
           <br>
-          Utilisation de Docker pour le déploiement d’applications en conteneurs, automatisation des environnements de dev/prod.
+          Nouvelle architecture qui combine sécurité réseau et accès cloud, de plus en plus utilisée pour le télétravail.
+          <div class="sources">Sources : <a href="https://www.journaldunet.com/solutions/cloud-computing/1504089-sase-definition-avantages/" target="_blank">JDN</a>, <a href="https://www.cisco.com/c/fr_fr/solutions/sase.html" target="_blank">Cisco</a></div>
         </li>
         <li>
-          <strong>Cybersécurité</strong>  
+          <strong>Automatisation avec Ansible</strong>  
           <br>
-          Suivi des dernières failles (CVE), pratiques de sécurité (OWASP), outils de pentest (Kali Linux, Metasploit).
+          Automatisation du déploiement et de la gestion des infrastructures, gain de temps et réduction des erreurs.
+          <div class="sources">Source : <a href="https://www.ansible.com/resources/get-started" target="_blank">ansible.com</a></div>
         </li>
         <li>
-          <strong>Intelligence Artificielle</strong>  
+          <strong>Cybersécurité & Zero Trust</strong>
           <br>
-          Découverte des modèles LLM (ChatGPT, Copilot), cas d’usages en entreprise et perspectives dans l’IT.
+          Approche "Zero Trust" : ne jamais faire confiance par défaut, tout vérifier. Renforcée par la montée des ransomwares.
+          <div class="sources">Source : <a href="https://www.microsoft.com/fr-fr/security/business/zero-trust" target="_blank">Microsoft Security</a></div>
+        </li>
+        <li>
+          <strong>Participation & veille personnelle</strong>
+          <br>
+          Partage d’articles sur Discord/LinkedIn, alertes Google sur les CVE, lecture de blogs spécialisés (Korben, Undernews).
         </li>
       </ul>
     </section>
   </div>
   <footer>
-    &copy; 2025 [Ton Nom] — Portfolio BTS SIO
+    &copy; 2025 [Ton Nom] – Portfolio BTS SIO SISR | Réalisé à la main, hébergé sur GitHub Pages
   </footer>
 </body>
 </html>
