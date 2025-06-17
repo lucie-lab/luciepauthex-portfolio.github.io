@@ -6,70 +6,79 @@ body {
   color: #32203b;
   min-height: 100vh;
 }
-header {
-  background: #fff0faee;
-  box-shadow: 0 2px 16px #e9b6d366;
-  padding-bottom: 0;
-  border-bottom-left-radius: 26px;
-  border-bottom-right-radius: 26px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.header-content {
-  display: flex;
+
+.header-content.mini-header {
+  padding: 12px 10px 7px 10px;
+  gap: 17px;
+  min-height: unset;
   align-items: center;
-  justify-content: center;
-  padding: 34px 10px 14px 10px;
-  gap: 34px;
+  justify-content: flex-start;
 }
-.avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 8px #ffe3ec, 0 1px 22px #f7c6e0;
-  object-fit: cover;
-  border: 2.5px solid #d72660;
-  background: #fff;
-  margin-right: 8px;
+.avatar.mini-avatar {
+  width: 62px;
+  height: 62px;
+  margin-right: 6px;
+  box-shadow: 0 0 0 3px #ffe3ec, 0 1px 8px #f7c6e0;
 }
-.header-text h1 {
-  font-family: 'Pacifico', cursive;
-  color: #d72660;
-  font-size: 3em;
-  margin: 0 0 8px 0;
+.header-text.mini-header-text h1 {
+  font-size: 1.45em;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.1;
 }
-.subtitle, .option {
-  color: #7c4984;
-  font-size: 1.16em;
+.header-text.mini-header-text .subtitle {
+  font-size: 0.98em;
+  color: #a259cb;
   font-weight: 600;
+  margin-left: 2px;
+  margin-right: 7px;
+  vertical-align: middle;
 }
-.option {
-  background: #f7c6e0;
-  border-radius: 8px;
-  padding: 2px 13px;
-  margin-left: 7px;
-}
-.quote {
-  color: #f06ba4;
-  font-style: italic;
-  margin: 10px 0 0 0;
-  font-size: 1.13em;
+.header-text.mini-header-text .option {
+  font-size: 0.85em;
+  padding: 1px 7px;
+  border-radius: 6px;
+  margin-left: 4px;
 }
 .badges {
-  margin-top: 8px;
+  margin-top: 2px;
+  display: inline-block;
 }
 .badge {
-  display: inline-block;
-  font-size: 0.93em;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 14px;
-  margin-right: 7px;
-  margin-top: 5px;
-  background: #e0c3fc;
-  color: #7c4984;
-  letter-spacing: 1px;
+  font-size: 0.8em;
+  padding: 2px 8px;
+  border-radius: 9px;
+  margin-right: 4px;
+  margin-top: 0;
+}
+nav {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+/* Pour éviter que le header ne prenne trop de place sur mobile */
+@media (max-width: 700px) {
+  .header-content.mini-header {
+    flex-direction: row;
+    gap: 9px;
+    padding: 7px 3vw 4px 3vw;
+  }
+  .avatar.mini-avatar {
+    width: 43px;
+    height: 43px;
+  }
+  .header-text.mini-header-text h1 {
+    font-size: 1.05em;
+  }
+  .header-text.mini-header-text .subtitle {
+    font-size: 0.87em;
+  }
+  .badge {
+    font-size: 0.7em;
+    padding: 1.5px 6px;
+    border-radius: 7px;
+    margin-right: 2px;
+  }
 }
 .badge.pink { background: #ffd6e7; color: #d72660; }
 .badge.violet { background: #e0c3fc; color: #7c4984; }
