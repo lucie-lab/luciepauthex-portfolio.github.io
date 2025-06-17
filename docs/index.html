@@ -1,261 +1,546 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Lucie L. - Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Polices Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Pacifico:400|Poppins:400,600|Fira+Mono:400&display=swap" rel="stylesheet">
-  <!-- Icônes FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- HEADER -->
-<header>
-  <div class="header-content mini-header">
-    <img src="avatar.png" alt="Avatar Lucie" class="avatar mini-avatar">
-    <div class="header-text mini-header-text">
-      <h1>Lucie L.</h1>
-      <span class="subtitle">Portfolio BTS SIO <span class="option">SLAM</span></span>
-      <span class="badges">
-        <span class="badge pink">#FilleEnInformatique</span>
-        <span class="badge violet">#Passionnée</span>
-      </span>
-    </div>
-  </div>
-  <nav class="sticky-nav">
-    <!-- ... Ton menu ici ... -->
-    <ul class="main-nav">
-      <li><a href="#parcours">Parcours</a></li>
-      <li class="dropdown">
-        <a href="#competences">Compétences <i class="fa-solid fa-angle-down"></i></a>
-        <ul class="dropdown-content">
-          <li><a href="#devweb">Développement Web</a></li>
-          <li><a href="#bdd">Base de Données</a></li>
-          <li><a href="#gestion">Gestion de Projet</a></li>
-          <li><a href="#softskills">Soft Skills</a></li>
-        </ul>
-      </li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#veille">Veille Techno</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-  <main>
-    <!-- Parcours -->
-    <section id="parcours" class="glass">
-      <h2><i class="fa-solid fa-graduation-cap"></i> Mon Parcours</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <span class="timeline-date">2023-2025</span>
-          <div>
-            <b>BTS SIO option SLAM</b> – Lycée Arc-en-ciel, Nantes  
-            <p class="timeline-details">Modules : Dev, gestion projet, cybersécurité, etc. <span class="tag tag-pink">En cours</span></p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-date">2022-2023</span>
-          <div>
-            <b>Bac Général</b> – Spé Math/NSI, Lycée Victor Hugo, Nantes
-            <p class="timeline-details">Projet de site de révisions, mention Bien <span class="tag tag-blue">Terminé</span></p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-date">2024 (Stage)</span>
-          <div>
-            <b>Développeuse Web Junior</b> – WebNantes, PME locale  
-            <span class="timeline-details">
-              Création d’un site vitrine, découverte du travail en équipe agile.
-              <span class="tag tag-violet">Stage</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+/* FOND ET TYPO */
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe3ec 0%, #e0c3fc 100%);
+  color: #32203b;
+  min-height: 100vh;
+}
+header {
+  background: #fff0faee;
+  box-shadow: 0 2px 16px #e9b6d366;
+  padding-bottom: 0;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 10px 14px 10px;
+  gap: 34px;
+}
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #ffe3ec, 0 1px 22px #f7c6e0;
+  object-fit: cover;
+  border: 2.5px solid #d72660;
+  background: #fff;
+  margin-right: 8px;
+}
+.header-text h1 {
+  font-family: 'Pacifico', cursive;
+  color: #d72660;
+  font-size: 3em;
+  margin: 0 0 8px 0;
+}
+.subtitle, .option {
+  color: #7c4984;
+  font-size: 1.16em;
+  font-weight: 600;
+}
+.option {
+  background: #f7c6e0;
+  border-radius: 8px;
+  padding: 2px 13px;
+  margin-left: 7px;
+}
+.quote {
+  color: #f06ba4;
+  font-style: italic;
+  margin: 10px 0 0 0;
+  font-size: 1.13em;
+}
+.badges {
+  margin-top: 8px;
+}
+.badge {
+  display: inline-block;
+  font-size: 0.93em;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 14px;
+  margin-right: 7px;
+  margin-top: 5px;
+  background: #e0c3fc;
+  color: #7c4984;
+  letter-spacing: 1px;
+}
+.badge.pink { background: #ffd6e7; color: #d72660; }
+.badge.violet { background: #e0c3fc; color: #7c4984; }
+.badge.blue { background: #d6f0ff; color: #3466af; }
 
-    <!-- COMPÉTENCES -->
-    <section id="competences" class="glass">
-      <h2><i class="fa-solid fa-gem"></i> Compétences majeures</h2>
-      <div class="competences-grid">
-        <div class="skill-card" id="devweb">
-          <h3><i class="fa-solid fa-code"></i> Développement Web</h3>
-          <ul>
-            <li>PHP, JavaScript, HTML5, CSS3</li>
-            <li>Frameworks : Laravel, Vue.js, Bootstrap</li>
-            <li>Responsive design, accessibilité</li>
-            <li>APIs REST, AJAX</li>
-          </ul>
-        </div>
-        <div class="skill-card" id="bdd">
-          <h3><i class="fa-solid fa-database"></i> Bases de données</h3>
-          <ul>
-            <li>MySQL, MariaDB, SQL Server</li>
-            <li>Modélisation, optimisations requêtes</li>
-            <li>Initiation NoSQL (MongoDB)</li>
-          </ul>
-        </div>
-        <div class="skill-card" id="gestion">
-          <h3><i class="fa-solid fa-diagram-project"></i> Gestion de projet</h3>
-          <ul>
-            <li>Méthodes Agiles (Scrum, Kanban)</li>
-            <li>Git & GitHub, Trello</li>
-            <li>Rédaction de documentation technique</li>
-          </ul>
-        </div>
-        <div class="skill-card" id="softskills">
-          <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
-          <ul>
-            <li>Créativité & esprit d’équipe</li>
-            <li>Pédagogie (tutorat, vulgarisation)</li>
-            <li>Réactivité, organisation</li>
-          </ul>
-        </div>
-      </div>
-      <div class="tableau-competences">
-        <h4><i class="fa-solid fa-table"></i> Tableau de synthèse</h4>
-        <!-- Image ou PDF du tableau fourni par l'école -->
-        <img src="tableau_synthese.png" alt="Tableau de synthèse" class="competence-img">
-      </div>
-    </section>
+nav {
+  background: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+nav ul.main-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin: 0;
+  padding: 8px 0 8px 0;
+  position: relative;
+  transition: all 0.3s;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #a259cb;
+  font-weight: 600;
+  font-size: 1.06em;
+  padding: 10px 22px;
+  border-radius: 22px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+nav ul li a:hover, nav ul li a:focus {
+  background: #f06ba4;
+  color: #fff;
+}
+nav ul .dropdown > a i.fa-angle-down {
+  margin-left: 6px;
+  font-size: 0.85em;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 46px;
+  background: #fff0fa;
+  min-width: 180px;
+  border-radius: 13px;
+  box-shadow: 0 2px 14px #f7c6e0bb;
+  z-index: 999;
+  padding: 9px 0 9px 0;
+  animation: fadeIn 0.22s;
+}
+.dropdown.open .dropdown-content {
+  display: block;
+}
+.dropdown-content li {
+  padding: 0;
+}
+.dropdown-content li a {
+  font-size: 0.99em;
+  padding: 9px 16px;
+  color: #7c4984;
+  background: none;
+  border-radius: 0;
+}
+.dropdown-content li a:hover {
+  background: #f7c6e0;
+  color: #d72660;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(7px);}
+  to { opacity: 1; transform: translateY(0);}
+}
 
-    <!-- PROJETS -->
-    <section id="projets" class="glass">
-      <h2><i class="fa-solid fa-rocket"></i> Projets réalisés</h2>
-      <div class="projet-list">
-        <div class="projet-card">
-          <div class="projet-badge tag tag-violet">Entreprise</div>
-          <h3><i class="fa-solid fa-list-check"></i> Gestionnaire de Tâches</h3>
-          <ul>
-            <li><b>Objectif :</b> Simplifier le suivi quotidien des tâches en équipe.</li>
-            <li><b>Technologies :</b> PHP, MySQL, Bootstrap</li>
-            <li><b>Entreprise :</b> WebNantes (PME locale)</li>
-            <li><b>Résultat :</b> +50 utilisateurs, gain de temps pour l’équipe</li>
-          </ul>
-          <div class="projet-liens">
-            <a href="https://github.com/ton-github/projet-taches" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="demo.html" target="_blank"><i class="fa-solid fa-play"></i> Démo</a>
-          </div>
-        </div>
-        <div class="projet-card">
-          <div class="projet-badge tag tag-blue">Formation</div>
-          <h3><i class="fa-solid fa-globe"></i> Site vitrine Association “Arc-en-ciel”</h3>
-          <ul>
-            <li><b>Objectif :</b> Créer un site moderne, accessible et responsive</li>
-            <li><b>Technologies :</b> HTML, CSS, JS</li>
-            <li><b>Résultat :</b> Site en ligne, +30% de visites en 3 mois</li>
-          </ul>
-          <div class="projet-liens">
-            <a href="https://github.com/ton-github/asso-vitrine" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://asso-exemple.fr" target="_blank"><i class="fa-solid fa-globe"></i> Voir le site</a>
-          </div>
-        </div>
-        <div class="projet-card">
-          <div class="projet-badge tag tag-pink">Perso</div>
-          <h3><i class="fa-solid fa-camera-retro"></i> Photothèque Responsive</h3>
-          <ul>
-            <li><b>Objectif :</b> Créer une galerie photo dynamique pour partager mes passions</li>
-            <li><b>Technologies :</b> Vue.js, SASS, Firebase</li>
-          </ul>
-          <div class="projet-liens">
-            <a href="https://github.com/ton-github/phototheque" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
+/* BURGER MENU MOBILE */
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 22px;
+  right: 18px;
+  width: 40px; height: 40px;
+  z-index: 2001;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.burger-menu span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: #d72660;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.burger-menu.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,7px);
+}
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px,-7px);
+}
 
-    <!-- VEILLE TECHNO -->
-    <section id="veille" class="glass">
-      <h2><i class="fa-solid fa-lightbulb"></i> Ma veille technologique</h2>
-      <div class="veille-content">
-        <b>Sujet :</b> L’IA générative dans le développement web<br>
-        <b>Résumé :</b> Découverte des usages de l’IA (Copilot, ChatGPT…) pour accélérer le développement, générer du code, automatiser des tests.<br>
-        <b>Sources principales :</b>
-        <ul>
-          <li><a href="https://blog.openai.com" target="_blank">OpenAI Blog</a></li>
-          <li><a href="https://www.silicon.fr" target="_blank">Silicon.fr</a></li>
-          <li><a href="https://www.journaldugeek.com" target="_blank">Journal du Geek</a></li>
-        </ul>
-        <b>Ma contribution :</b> Présentation à la classe, publication d’un post LinkedIn sur l’IA.
-      </div>
-    </section>
+@media (max-width: 1000px) {
+  nav ul.main-nav {
+    flex-direction: column;
+    background: #fff0faee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 270px;
+    height: 100vh;
+    gap: 9px;
+    padding-top: 95px;
+    box-shadow: -4px 0 20px #e0c3fc77;
+    z-index: 2000;
+    transition: right 0.35s;
+    border-top-left-radius: 36px;
+    border-bottom-left-radius: 36px;
+  }
+  nav ul.main-nav.nav-open {
+    right: 0;
+  }
+  .burger-menu {
+    display: flex;
+  }
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 4vw 8px 4vw;
+  }
+}
 
-    <!-- FUN ZONE (fantaise, passions, playlist, citations, etc.) -->
-    <section id="citations" class="glass fun-section">
-      <h2><i class="fa-solid fa-quote-left"></i> Citations Inspirantes</h2>
-      <blockquote>
-        “Le succès, c’est d’aller d’échec en échec sans perdre son enthousiasme.” <span>— Winston Churchill</span>
-      </blockquote>
-      <blockquote>
-        “Do it with passion or not at all.” <span>— Rosa Nouchette Carey</span>
-      </blockquote>
-    </section>
-    <section id="playlist" class="glass fun-section">
-      <h2><i class="fa-solid fa-music"></i> Ma Playlist Motivation</h2>
-      <ul class="playlist">
-        <li><i class="fa-solid fa-headphones"></i> <b>Dua Lipa</b> – Physical</li>
-        <li><i class="fa-solid fa-headphones"></i> <b>Angèle</b> – Balance ton quoi</li>
-        <li><i class="fa-solid fa-headphones"></i> <b>Imagine Dragons</b> – Thunder</li>
-      </ul>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3oM43CtKnRV?utm_source=generator" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-    </section>
-    <section id="passions" class="glass fun-section">
-      <h2><i class="fa-solid fa-star"></i> Mes Passions</h2>
-      <div class="passions-grid">
-        <div class="passion-card"><i class="fa-solid fa-paintbrush passion-ico"></i> Dessin</div>
-        <div class="passion-card"><i class="fa-solid fa-camera passion-ico"></i> Photographie</div>
-        <div class="passion-card"><i class="fa-solid fa-gamepad passion-ico"></i> Jeux vidéo</div>
-        <div class="passion-card"><i class="fa-solid fa-earth-europe passion-ico"></i> Voyages</div>
-      </div>
-    </section>
+main {
+  max-width: 1150px;
+  margin: 34px auto 40px auto;
+  padding: 34px 20px 46px 20px;
+  background: rgba(255,255,255,0.97);
+  border-radius: 22px;
+  box-shadow: 0 7px 34px #e0c3fc77;
+}
+.glass {
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  box-shadow: 0 2px 14px #e0c3fc55;
+  margin-bottom: 45px;
+  padding: 32px 32px 22px 32px;
+  transition: box-shadow 0.3s;
+}
+section.glass:hover {
+  box-shadow: 0 8px 34px #f06ba4bb;
+}
+h2 {
+  font-family: 'Pacifico', cursive;
+  color: #a259cb;
+  border-left: 7px solid #f06ba4;
+  padding-left: 16px;
+  margin-bottom: 20px;
+  font-size: 2.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h3 {
+  color: #d72660;
+  margin-top: 7px;
+  margin-bottom: 5px;
+  font-size: 1.15em;
+}
+@media (max-width: 700px) {
+  main { padding: 7px 0vw 20px 0vw; }
+  .glass { padding: 13px 4vw 7px 4vw; }
+  h2 { font-size: 1.25em; padding-left: 7px;}
+}
 
-    <!-- CONTACT -->
-    <section id="contact" class="glass">
-      <h2><i class="fa-solid fa-envelope"></i> Me Contacter</h2>
-      <div class="contact-block">
-        <p>Un projet, une question ? Écris-moi !</p>
-        <form action="mailto:lucie@email.fr" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Ton prénom" required>
-          <input type="email" name="email" placeholder="Ton email" required>
-          <textarea name="message" placeholder="Ton message" required></textarea>
-          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Envoyer</button>
-        </form>
-        <div class="contact-links">
-          <a href="mailto:lucie@email.fr"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/lucie-lab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/lucie-lab" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>© Lucie L. 2025 &nbsp; | &nbsp; <a href="mailto:lucie@email.fr">Me contacter</a> | <span style="color:#d72660;">🌸</span></p>
-  </footer>
-  <!-- Menu mobile burger -->
-  <div class="burger-menu" id="burger-menu">
-    <span></span><span></span><span></span>
-  </div>
-  <script>
-    // Menu déroulant mobile
-    const burger = document.getElementById('burger-menu');
-    const nav = document.querySelector('nav ul');
-    burger.onclick = () => {
-      nav.classList.toggle('nav-open');
-      burger.classList.toggle('open');
-    };
-    // Ferme menu au clic sur lien (mobile)
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('nav-open');
-        burger.classList.remove('open');
-      });
-    });
-    // Sous-menus desktop
-    document.querySelectorAll('.dropdown').forEach(item => {
-      item.addEventListener('mouseenter', () => item.classList.add('open'));
-      item.addEventListener('mouseleave', () => item.classList.remove('open'));
-    });
-  </script>
-</body>
-</html>
+/* Timeline */
+.timeline {
+  margin-left: 15px;
+  border-left: 5px solid #f7a5cf;
+  padding-left: 22px;
+}
+.timeline-item {
+  margin-bottom: 19px;
+  position: relative;
+}
+.timeline-date {
+  color: #d72660;
+  font-weight: bold;
+  font-size: 1.03em;
+  position: absolute;
+  left: -93px;
+  top: 0;
+  width: 85px;
+  text-align: right;
+}
+.timeline-details {
+  color: #7c4984;
+  font-size: 0.98em;
+  margin-top: 3px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 11px;
+  border-radius: 11px;
+  font-size: 0.93em;
+  font-weight: 600;
+  margin-left: 6px;
+}
+.tag-pink { background: #ffd6e7; color: #d72660; }
+.tag-violet { background: #e0c3fc; color: #7c4984; }
+.tag-blue { background: #d6f0ff; color: #3466af; }
+
+.competences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.skill-card {
+  background: #ffe3ecbb;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #f7c6e0;
+  padding: 17px 18px;
+  min-width: 190px;
+  transition: transform 0.17s, box-shadow 0.17s;
+}
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 22px #f06ba4bb;
+}
+.skill-card h3 {
+  color: #b580c7;
+}
+.skill-card ul {
+  padding-left: 17px;
+  margin: 7px 0 0 0;
+}
+
+.tableau-competences {
+  text-align: center;
+  margin-top: 18px;
+}
+.competence-img {
+  max-width: 98%;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #e0c3fc;
+  margin-top: 7px;
+}
+.tableau-competences h4 {
+  font-size: 1.07em;
+  color: #7c4984;
+  margin-bottom: 9px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.projet-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.projet-card {
+  flex: 1 1 320px;
+  background: #fff0fa;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #f7c6e0;
+  padding: 20px 25px 18px 25px;
+  min-width: 290px;
+  max-width: 430px;
+  margin-bottom: 18px;
+  position: relative;
+  transition: transform 0.17s, box-shadow 0.17s;
+}
+.projet-card:hover {
+  transform: translateY(-7px) scale(1.04);
+  box-shadow: 0 10px 34px #f06ba4bb;
+}
+.projet-badge {
+  position: absolute;
+  top: 15px;
+  right: 23px;
+  font-size: 0.95em;
+}
+.projet-card h3 {
+  color: #a259cb;
+  margin-top: 0;
+  font-size: 1.17em;
+}
+.projet-liens a {
+  display: inline-block;
+  background: #f06ba4;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 9px;
+  padding: 8px 19px;
+  margin-top: 7px;
+  margin-right: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-size: 0.99em;
+}
+.projet-liens a:hover {
+  background: #a259cb;
+}
+.veille-content {
+  background: #f7e6ff;
+  border-radius: 13px;
+  padding: 17px 22px;
+  margin-top: 8px;
+  box-shadow: 0 2px 10px #e0c3fc22;
+}
+.veille-content ul {
+  margin-top: 7px;
+  margin-bottom: 6px;
+}
+.veille-content a {
+  color: #d72660;
+  text-decoration: underline;
+}
+
+.fun-section {
+  margin-bottom: 24px;
+}
+blockquote {
+  background: #ffe3ec;
+  border-left: 7px solid #f06ba4;
+  margin: 15px auto 18px auto;
+  padding: 13px 23px;
+  font-style: italic;
+  color: #7c4984;
+  border-radius: 12px;
+  box-shadow: 0 1px 7px #f7c6e0;
+  font-size: 1.15em;
+  max-width: 600px;
+  position: relative;
+}
+blockquote span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.92em;
+  color: #d72660;
+  font-style: normal;
+}
+.playlist {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 13px;
+}
+.playlist li {
+  color: #a259cb;
+  margin-bottom: 6px;
+  font-size: 1.06em;
+}
+.passions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 7px;
+}
+.passion-card {
+  background: #ffe3ec;
+  color: #d72660;
+  padding: 17px 22px;
+  border-radius: 13px;
+  font-size: 1.17em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 2px 10px #f7c6e0;
+  transition: background 0.2s, color 0.2s;
+}
+.passion-card:hover {
+  background: #f7c6e0;
+  color: #7c4984;
+}
+.passion-ico {
+  font-size: 1.5em;
+  margin-right: 7px;
+}
+
+.contact-block {
+  text-align: center;
+}
+.contact-block form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  margin: 16px 0 7px 0;
+}
+.contact-block input, .contact-block textarea {
+  width: 90%;
+  max-width: 340px;
+  border-radius: 10px;
+  border: 1.5px solid #e0c3fc;
+  padding: 9px;
+  font-size: 1em;
+  background: #fff0fa;
+  color: #7c4984;
+  margin-bottom: 4px;
+  transition: border 0.2s;
+}
+.contact-block input:focus, .contact-block textarea:focus {
+  border: 1.5px solid #f06ba4;
+  outline: none;
+}
+.contact-block textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+.contact-block button[type="submit"] {
+  background: linear-gradient(90deg, #f06ba4 40%, #a259cb 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 32px;
+  cursor: pointer;
+  box-shadow: 0 1px 7px #f7c6e0;
+  transition: background 0.2s;
+}
+.contact-block button[type="submit"]:hover {
+  background: linear-gradient(90deg, #a259cb 20%, #f06ba4 100%);
+}
+.contact-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.contact-links a {
+  color: #d72660;
+  font-size: 1.7em;
+  background: #ffe3ec;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 7px #f7c6e0;
+}
+.contact-links a:hover {
+  background: #f06ba4;
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  color: #a259cb;
+  font-size: 1.12em;
+  background: none;
+  padding: 12px 0 27px 0;
+  letter-spacing: 0.5px;
+  margin-top: 30px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: #ffe3ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0c3fc;
+  border-radius: 7px;
+}
