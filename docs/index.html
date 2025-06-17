@@ -1,119 +1,303 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio de Lucie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - [Ton Nom] - BTS SIO</title>
   <style>
+    :root {
+      --main-color: #2a8c9d;
+      --bg-dark: #181a1b;
+      --bg-light: #f6f8fa;
+      --accent: #ffd166;
+      --white: #fff;
+      --text: #222;
+      --text-light: #aaa;
+      --font-main: 'Segoe UI', Arial, sans-serif;
+    }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f6f8fa;
-      color: #222;
+      background: var(--bg-light);
+      color: var(--text);
+      font-family: var(--font-main);
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
     header {
-      background: #2a8c9d;
-      color: white;
-      padding: 2rem 0 1rem 0;
-      text-align: center;
+      background: var(--bg-dark);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px #0003;
     }
-    header img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 4px solid #fff;
-      box-shadow: 0 0 0 4px #2a8c9d88;
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem 2rem;
     }
-    main {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px #0001;
-      padding: 2rem;
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--main-color);
+      color: var(--white);
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto 2rem auto;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px #0001;
+      padding: 2.5rem 2rem 2rem 2rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h1, h2, h3 {
+      color: var(--main-color);
+      margin-top: 0;
     }
     h1 {
       margin-bottom: 0.2em;
-      font-size: 2.2em;
     }
-    h2 {
-      color: #2a8c9d;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
+    .about-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
     }
-    ul {
-      padding-left: 1.2em;
+    .about-photo {
+      flex: 0 0 130px;
     }
-    .contact {
-      text-align: center;
-      margin: 2rem 0 0 0;
+    .about-photo img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+      box-shadow: 0 0 0 4px #2a8c9d22;
+      background: #ccc;
     }
-    .contact a {
-      color: #2a8c9d;
+    .about-infos {
+      flex: 1 1 300px;
+    }
+
+    .skills-list, .xp-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 1.5em 0 0 0;
+    }
+    .skills-list li, .xp-list li {
+      background: var(--bg-light);
+      border-left: 4px solid var(--main-color);
+      padding: 0.7em 1.2em;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px #0001;
+      font-size: 1em;
+      min-width: 120px;
+    }
+    .xp-list li {
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Projets */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: var(--bg-light);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px #0001;
+      padding: 1.2rem 1rem;
+      transition: transform 0.2s;
+      border-left: 4px solid var(--main-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
+      justify-content: space-between;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 8px 32px #2a8c9d33;
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .project-links a {
+      color: var(--main-color);
       text-decoration: none;
-      margin: 0 0.5em;
+      margin-right: 1em;
       font-weight: bold;
+      font-size: 1em;
     }
-    footer {
-      text-align: center;
-      color: #888;
-      font-size: 0.95em;
-      margin: 2rem 0 1rem 0;
+
+    /* Veille */
+    .veille-list {
+      margin-top: 2em;
+      list-style: none;
+      padding: 0;
+    }
+    .veille-list li {
+      background: var(--bg-light);
+      border-left: 4px solid var(--main-color);
+      margin-bottom: 1em;
+      padding: 0.8em 1.2em;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px #0001;
+    }
+    .veille-list strong {
+      color: var(--main-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container { padding: 1rem; }
+      .about-flex { flex-direction: column; align-items: center; }
     }
   </style>
+  <script>
+    // Highlight active nav on scroll
+    window.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+      window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(sec => {
+          const secTop = sec.offsetTop - 120;
+          if (pageYOffset >= secTop) current = sec.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) link.classList.add('active');
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
-    <!-- Mets une image de toi ici si tu veux (remplace le lien ci-dessous) -->
-    <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil">
-    <h1>Lucie Dupont</h1>
-    <p>Développeuse web & créatrice passionnée</p>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#veille">Veille technologique</a>
+    </nav>
   </header>
-  <main>
-    <section>
-      <h2>À propos</h2>
-      <p>
-        Bonjour ! Je suis Lucie, développeuse web enthousiaste basée en France. J’aime créer des sites élégants et accessibles, et apprendre de nouvelles technologies.
-      </p>
+  <div class="container">
+    <!-- À PROPOS -->
+    <section id="about">
+      <h1>Bonjour, je suis [Ton Nom]</h1>
+      <div class="about-flex">
+        <div class="about-photo">
+          <!-- Mets ta photo ici (optionnel) -->
+          <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil">
+        </div>
+        <div class="about-infos">
+          <p>
+            Étudiant en <strong>BTS SIO</strong> (Services Informatiques aux Organisations) spécialité [SLAM/SISR], passionné par le développement et les nouvelles technologies. Je réalise ce portfolio pour présenter mes projets scolaires, professionnels ainsi que ma veille technologique.
+          </p>
+          <h3>Compétences principales</h3>
+          <ul class="skills-list">
+            <li>HTML / CSS / JavaScript</li>
+            <li>Python</li>
+            <li>PHP / SQL</li>
+            <li>Git & GitHub</li>
+            <li>Linux / Réseaux</li>
+            <li>Virtualisation</li>
+            <!-- Ajoute/enlève ce qui te correspond -->
+          </ul>
+          <h3>Expériences</h3>
+          <ul class="xp-list">
+            <li>Stage en entreprise - [Nom de l'entreprise] (2024)</li>
+            <li>Projets scolaires - BTS SIO (2023-2025)</li>
+            <!-- Ajoute d'autres expériences -->
+          </ul>
+        </div>
+      </div>
     </section>
-    <section>
-      <h2>Projets</h2>
-      <ul>
+
+    <!-- PROJETS -->
+    <section id="projects">
+      <h2>Projets réalisés</h2>
+      <div class="projects-grid">
+        <!-- Projet 1 -->
+        <div class="project-card">
+          <h3>Application de gestion de tickets</h3>
+          <p>
+            Application web développée en PHP/MySQL permettant de gérer les tickets d’incidents pour une PME : création, suivi, clôture, affectation à un technicien, etc.
+          </p>
+          <div class="project-links">
+            <a href="#">Code source</a>
+            <a href="#">Démo</a>
+          </div>
+          <small>Projet d’école (2024)</small>
+        </div>
+        <!-- Projet 2 -->
+        <div class="project-card">
+          <h3>Monitoring réseau avec Zabbix</h3>
+          <p>
+            Mise en place d'une solution de supervision réseau (Zabbix) pour surveiller l’infrastructure d’une entreprise : dashboards, alertes, rapports automatisés.
+          </p>
+          <div class="project-links">
+            <a href="#">Documentation</a>
+          </div>
+          <small>Stage entreprise (2024)</small>
+        </div>
+        <!-- Projet 3 -->
+        <div class="project-card">
+          <h3>Portfolio en ligne</h3>
+          <p>
+            Ce portfolio responsive, réalisé de A à Z en HTML/CSS/JS et déployé gratuitement sur GitHub Pages.
+          </p>
+          <div class="project-links">
+            <a href="#">Voir le site</a>
+            <a href="#">Code source</a>
+          </div>
+          <small>Projet personnel (2025)</small>
+        </div>
+        <!-- Ajoute d'autres projets -->
+      </div>
+    </section>
+
+    <!-- VEILLE TECHNOLOGIQUE -->
+    <section id="veille">
+      <h2>Veille technologique</h2>
+      <ul class="veille-list">
         <li>
-          <strong>Mon Blog Voyage</strong> — <a href="https://monblogvoyage.example.com" target="_blank">Voir</a><br>
-          Un blog personnel sur mes voyages en Europe, réalisé avec Jekyll.
+          <strong>Docker & Virtualisation</strong>  
+          <br>
+          Utilisation de Docker pour le déploiement d’applications en conteneurs, automatisation des environnements de dev/prod.
         </li>
         <li>
-          <strong>Calculatrice JS</strong> — <a href="https://github.com/lucie-lab/calculatrice-js" target="_blank">Source</a><br>
-          Une petite application de calculatrice en JavaScript pur.
+          <strong>Cybersécurité</strong>  
+          <br>
+          Suivi des dernières failles (CVE), pratiques de sécurité (OWASP), outils de pentest (Kali Linux, Metasploit).
         </li>
         <li>
-          <strong>Page de présentation</strong> — <a href="https://lucie-lab.github.io/portfolio/" target="_blank">Voir</a><br>
-          Ce portfolio en ligne, réalisé 100% gratuitement avec GitHub Pages.
+          <strong>Intelligence Artificielle</strong>  
+          <br>
+          Découverte des modèles LLM (ChatGPT, Copilot), cas d’usages en entreprise et perspectives dans l’IT.
         </li>
+        <!-- Ajoute d'autres sujets de veille, articles, outils, etc. -->
       </ul>
     </section>
-    <section>
-      <h2>Compétences</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Git & GitHub</li>
-        <li>Déploiement avec GitHub Pages</li>
-        <li>Design responsive</li>
-      </ul>
-    </section>
-    <section class="contact">
-      <h2>Contact</h2>
-      <a href="mailto:lucie.dupont@email.com">lucie.dupont@email.com</a>
-      <a href="https://github.com/lucie-lab" target="_blank">GitHub</a>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Lucie Dupont — Portfolio réalisé avec ❤️ et GitHub Pages
+  </div>
+  <footer style="text-align:center; color:#888; margin: 2em 0 1em 0;">
+    &copy; 2025 [Ton Nom] — Portfolio BTS SIO
   </footer>
 </body>
 </html>
