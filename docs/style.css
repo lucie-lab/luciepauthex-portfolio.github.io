@@ -555,15 +555,23 @@ footer {
   border-radius: 7px;
 }
 /* ... toutes tes autres règles CSS ... */
-
+/* MENU FIXE EN HAUT */
 .sticky-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100vw;
   z-index: 1111;
   background: #fff0faee;
-  box-shadow: 0 2px 11px #e9b6d344;
+  box-shadow: 0 2px 14px #e9b6d344;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
+  transition: box-shadow 0.2s;
+}
+
+/* Le reste du body descend pour ne pas passer sous le menu */
+body {
+  padding-top: 62px; /* ajuste selon la hauteur réelle de .sticky-nav */
 }
 
 /* Pour que le menu ne prenne pas trop de place en sticky */
@@ -574,11 +582,12 @@ footer {
   padding-bottom: 0;
 }
 
-/* Menu mobile responsive : tu peux garder le burger déjà fourni ! */
+/* Menu mobile responsive */
 @media (max-width: 1000px) {
   .sticky-nav {
     border-radius: 0;
     box-shadow: 0 2px 14px #e0c3fc77;
+    width: 100vw;
   }
   .sticky-nav ul.main-nav {
     border-radius: 0 0 18px 18px;
