@@ -7,171 +7,210 @@
   <style>
     :root {
       --main-color: #2a8c9d;
-      --bg-dark: #181a1b;
-      --bg-light: #f6f8fa;
       --accent: #ffd166;
+      --header-bg: linear-gradient(90deg, #2a8c9d 0%, #1b2b36 100%);
+      --bg-gradient: linear-gradient(120deg, #e0ecff 0%, #fcfffa 100%);
+      --container-bg: rgba(255,255,255,0.97);
+      --text: #1b2b36;
+      --text-light: #666;
       --white: #fff;
-      --text: #222;
-      --text-light: #aaa;
-      --font-main: 'Segoe UI', Arial, sans-serif;
     }
     body {
-      background: var(--bg-light);
-      color: var(--text);
-      font-family: var(--font-main);
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
+      background: var(--bg-gradient);
+      color: var(--text);
+      min-height: 100vh;
     }
     header {
-      background: var(--bg-dark);
+      width: 100vw;
+      background: var(--header-bg);
       color: var(--white);
       position: sticky;
       top: 0;
+      left: 0;
       z-index: 100;
       box-shadow: 0 2px 10px #0003;
+      padding-bottom: 0.2rem;
     }
     nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
-      padding: 1rem 2rem;
+      gap: 2.5rem;
+      padding: 1.2rem 2rem 1rem 2rem;
     }
     nav a {
       color: var(--white);
       text-decoration: none;
       font-weight: bold;
       letter-spacing: 1px;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-      transition: background 0.2s;
+      padding: 0.6em 1.2em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      font-size: 1.1em;
     }
     nav a:hover, nav a.active {
-      background: var(--main-color);
-      color: var(--white);
+      background: var(--accent);
+      color: var(--main-color);
+      box-shadow: 0 2px 8px #ffd16666;
     }
     .container {
-      max-width: 900px;
-      margin: 2rem auto 2rem auto;
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 4px 24px #0001;
-      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 1100px;
+      margin: 2.7rem auto 2rem auto;
+      background: var(--container-bg);
+      border-radius: 20px;
+      box-shadow: 0 6px 32px #2a8c9d22;
+      padding: 3rem 3rem 2rem 3rem;
+      min-height: 70vh;
     }
     section {
       margin-bottom: 3rem;
     }
-    h1, h2, h3 {
-      color: var(--main-color);
-      margin-top: 0;
-    }
     h1 {
+      color: var(--main-color);
+      font-size: 2.6em;
+      margin-bottom: 0.2em;
+      text-shadow: 0 2px 16px #2a8c9d22;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2em;
+      margin-bottom: 0.7em;
+      font-size: 2em;
+      text-shadow: 0 2px 10px #ffd16644;
+    }
+    h3 {
+      color: var(--main-color);
+      margin-top: 1.2em;
       margin-bottom: 0.2em;
     }
     .about-flex {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: flex-start;
+      margin-bottom: 1.5rem;
     }
     .about-photo {
-      flex: 0 0 130px;
+      flex: 0 0 140px;
     }
     .about-photo img {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--main-color);
-      box-shadow: 0 0 0 4px #2a8c9d22;
+      border: 5px solid var(--accent);
       background: #ccc;
+      box-shadow: 0 0 0 6px #ffd16644;
+      animation: bounce 2s infinite alternate;
+    }
+    @keyframes bounce {
+      to { transform: translateY(-8px) scale(1.04);}
     }
     .about-infos {
-      flex: 1 1 300px;
+      flex: 1 1 350px;
+      min-width: 250px;
     }
-
     .skills-list, .xp-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1.2rem;
       list-style: none;
       padding: 0;
-      margin: 1.5em 0 0 0;
+      margin: 1.2em 0 0 0;
     }
     .skills-list li, .xp-list li {
-      background: var(--bg-light);
-      border-left: 4px solid var(--main-color);
-      padding: 0.7em 1.2em;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px #0001;
+      background: var(--accent);
+      color: var(--main-color);
+      border-left: 5px solid var(--main-color);
+      padding: 0.7em 1.4em;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #ffd16633;
       font-size: 1em;
       min-width: 120px;
+      font-weight: bold;
     }
     .xp-list li {
-      border-left: 4px solid var(--accent);
+      border-left: 5px solid var(--main-color);
+      background: #fffbe6;
+      color: #bb7b00;
     }
-
-    /* Projets */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
     .project-card {
-      background: var(--bg-light);
-      border-radius: 8px;
-      box-shadow: 0 2px 10px #0001;
-      padding: 1.2rem 1rem;
-      transition: transform 0.2s;
-      border-left: 4px solid var(--main-color);
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px #2a8c9d22;
+      padding: 1.3rem 1.2rem;
+      border-left: 6px solid var(--main-color);
       display: flex;
       flex-direction: column;
       min-height: 180px;
       justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .project-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 8px 32px #2a8c9d33;
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 40px #2a8c9d44;
+      border-left-color: var(--accent);
     }
     .project-card h3 {
       margin-top: 0;
+      color: var(--main-color);
+      font-size: 1.3em;
     }
     .project-links a {
       color: var(--main-color);
       text-decoration: none;
-      margin-right: 1em;
+      margin-right: 1.2em;
       font-weight: bold;
       font-size: 1em;
+      transition: color 0.2s;
     }
-
-    /* Veille */
+    .project-links a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
     .veille-list {
       margin-top: 2em;
       list-style: none;
       padding: 0;
     }
     .veille-list li {
-      background: var(--bg-light);
-      border-left: 4px solid var(--main-color);
+      background: #f6f8fa;
+      border-left: 6px solid var(--main-color);
       margin-bottom: 1em;
-      padding: 0.8em 1.2em;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px #0001;
+      padding: 0.9em 1.3em;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #2a8c9d11;
     }
     .veille-list strong {
       color: var(--main-color);
     }
-
+    footer {
+      text-align: center;
+      color: #888;
+      margin: 2.5em 0 1em 0;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+    }
     /* Responsive */
-    @media (max-width: 700px) {
-      .container { padding: 1rem; }
+    @media (max-width: 900px) {
+      .container { padding: 1.5rem; }
       .about-flex { flex-direction: column; align-items: center; }
+      nav { gap: 1rem; font-size: 0.98em; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0.7rem; }
     }
   </style>
   <script>
-    // Highlight active nav on scroll
     window.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav a');
@@ -203,7 +242,7 @@
       <h1>Bonjour, je suis [Ton Nom]</h1>
       <div class="about-flex">
         <div class="about-photo">
-          <!-- Mets ta photo ici (optionnel) -->
+          <!-- Mets ta photo ici -->
           <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Photo de profil">
         </div>
         <div class="about-infos">
@@ -218,23 +257,19 @@
             <li>Git & GitHub</li>
             <li>Linux / Réseaux</li>
             <li>Virtualisation</li>
-            <!-- Ajoute/enlève ce qui te correspond -->
           </ul>
           <h3>Expériences</h3>
           <ul class="xp-list">
             <li>Stage en entreprise - [Nom de l'entreprise] (2024)</li>
             <li>Projets scolaires - BTS SIO (2023-2025)</li>
-            <!-- Ajoute d'autres expériences -->
           </ul>
         </div>
       </div>
     </section>
-
     <!-- PROJETS -->
     <section id="projects">
       <h2>Projets réalisés</h2>
       <div class="projects-grid">
-        <!-- Projet 1 -->
         <div class="project-card">
           <h3>Application de gestion de tickets</h3>
           <p>
@@ -246,7 +281,6 @@
           </div>
           <small>Projet d’école (2024)</small>
         </div>
-        <!-- Projet 2 -->
         <div class="project-card">
           <h3>Monitoring réseau avec Zabbix</h3>
           <p>
@@ -257,7 +291,6 @@
           </div>
           <small>Stage entreprise (2024)</small>
         </div>
-        <!-- Projet 3 -->
         <div class="project-card">
           <h3>Portfolio en ligne</h3>
           <p>
@@ -269,10 +302,8 @@
           </div>
           <small>Projet personnel (2025)</small>
         </div>
-        <!-- Ajoute d'autres projets -->
       </div>
     </section>
-
     <!-- VEILLE TECHNOLOGIQUE -->
     <section id="veille">
       <h2>Veille technologique</h2>
@@ -292,11 +323,10 @@
           <br>
           Découverte des modèles LLM (ChatGPT, Copilot), cas d’usages en entreprise et perspectives dans l’IT.
         </li>
-        <!-- Ajoute d'autres sujets de veille, articles, outils, etc. -->
       </ul>
     </section>
   </div>
-  <footer style="text-align:center; color:#888; margin: 2em 0 1em 0;">
+  <footer>
     &copy; 2025 [Ton Nom] — Portfolio BTS SIO
   </footer>
 </body>
