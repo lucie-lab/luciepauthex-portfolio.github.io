@@ -320,17 +320,19 @@ h3 {
 .timeline-item {
   margin-bottom: 19px;
   position: relative;
+  padding-left: 120px;
 }
 .timeline-date {
   color: #e871a7;
   font-weight: bold;
   font-size: 1.07em;
   position: absolute;
-  left: -93px;
+  left: -120px;
   top: 0;
-  width: 85px;
+  width: 110px;
   text-align: right;
   font-family: 'Inter', Arial, sans-serif;
+  white-space: nowrap;
 }
 .timeline-details {
   color: #f7e6ff;
