@@ -315,19 +315,18 @@ h3 {
 .timeline {
   margin-left: 15px;
   border-left: 5px solid #b980d1;
-  padding-left: 22px;
+  padding-left: 120px;
 }
 .timeline-item {
   margin-bottom: 19px;
   position: relative;
-  padding-left: 120px;
 }
 .timeline-date {
   color: #e871a7;
   font-weight: bold;
   font-size: 1.07em;
   position: absolute;
-  left: -120px;
+  left: 0;
   top: 0;
   width: 110px;
   text-align: right;
