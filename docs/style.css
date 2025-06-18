@@ -313,22 +313,24 @@ h3 {
 
 /* Timeline */
 .timeline {
-  margin-left: 15px;
   border-left: 5px solid #b980d1;
-  padding-left: 120px;
+  padding-left: 120px; /* Laisse de la place à la date */
+  margin-left: 15px;
 }
+
 .timeline-item {
-  margin-bottom: 19px;
   position: relative;
+  margin-bottom: 19px;
 }
+
 .timeline-date {
+  position: absolute;
+  left: -120px;   /* Place la date à gauche de la bordure */
+  top: 0;
+  width: 110px;
   color: #e871a7;
   font-weight: bold;
   font-size: 1.07em;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 110px;
   text-align: right;
   font-family: 'Inter', Arial, sans-serif;
   white-space: nowrap;
