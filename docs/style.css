@@ -380,20 +380,68 @@ h3 {
 .projet-liens a:hover {
   background: #a259cb;
 }
+/* VEILLES TECHNO MULTI-CARDS */
+.veilles-liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.veille-card {
+  background: #fff0faee;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px #e0c3fc55;
+  padding: 21px 23px 19px 23px;
+  min-width: 260px;
+  max-width: 430px;
+  flex: 1 1 340px;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.veille-card:hover {
+  box-shadow: 0 6px 28px #f06ba4bb;
+  transform: translateY(-3px) scale(1.02);
+}
+.veille-titre {
+  font-weight: bold;
+  color: #a259cb;
+  font-size: 1.18em;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Pacifico', cursive;
+}
+.veille-emoji {
+  font-size: 1.3em;
+}
 .veille-content {
-  background: #f7e6ff;
-  border-radius: 13px;
-  padding: 17px 22px;
-  margin-top: 8px;
-  box-shadow: 0 2px 10px #e0c3fc22;
+  color: #7c4984;
+  font-size: 1.01em;
 }
 .veille-content ul {
-  margin-top: 7px;
+  margin-top: 5px;
   margin-bottom: 6px;
+  padding-left: 18px;
 }
 .veille-content a {
   color: #d72660;
   text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .veilles-liste {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .veille-card {
+    max-width: 100%;
+    min-width: 0;
+  }
 }
 
 .fun-section {
