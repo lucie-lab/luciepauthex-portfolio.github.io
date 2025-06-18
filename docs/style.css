@@ -1,4 +1,5 @@
-/* FOND ET TYPO - THEME "VELVET NIGHT" MODERNE & GLASSMORPHISM */
+/* Ton CSS Velvet Night + Glassmorphism, avatar SVG compatible */
+
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
@@ -8,7 +9,6 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-/* Effet de vignette douce en fond */
 body:before {
   content: "";
   position: fixed;
@@ -19,8 +19,6 @@ body:before {
               radial-gradient(ellipse at 10% 90%, #b980d155 0%, transparent 70%);
   opacity: .32;
 }
-
-/* HEADER */
 header {
   background: rgba(44, 25, 62, 0.92);
   box-shadow: 0 8px 40px #a9406480;
@@ -46,14 +44,27 @@ header {
   height: 120px;
   border-radius: 50%;
   box-shadow: 0 0 0 8px #3d2355bb, 0 1px 22px #d7a3e0;
-  object-fit: cover;
   border: 2.5px solid #e871a7;
   background: #271a37;
   margin-right: 8px;
   transition: box-shadow 0.25s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .avatar:hover {
   box-shadow: 0 0 0 12px #e871a7aa, 0 8px 40px #b980d1a0;
+}
+.avatar svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+.compact-avatar {
+  width: 90px;
+  height: 90px;
 }
 .header-text h1 {
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
@@ -81,13 +92,6 @@ header {
   font-weight: 500;
   font-family: 'Montserrat', Arial, sans-serif;
   box-shadow: 0 1px 6px #b980d166;
-}
-.quote {
-  color: #b980d1;
-  font-style: italic;
-  margin: 10px 0 0 0;
-  font-size: 1.08em;
-  font-family: 'Inter', Arial, sans-serif;
 }
 .badges {
   margin-top: 8px;
