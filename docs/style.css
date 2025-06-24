@@ -409,7 +409,9 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 22px;
+  justify-content: center; /* Ajouté pour centrer les cartes même s'il n'y en a qu'une */
 }
+
 .projet-card {
   flex: 1 1 320px;
   background: rgba(63,35,82,0.92);
