@@ -710,3 +710,12 @@ footer {
   padding: 6px 12px;
   border-radius: 6px;
 }
+  animation: fadePopInFormHelp 0.9s cubic-bezier(0.5,1.6,0.4,1) forwards;
+  opacity: 0;
+}
+
+@keyframes fadePopInFormHelp {
+  0%   { opacity: 0; transform: translateY(18px) scale(0.98);}
+  70%  { opacity: 1; transform: translateY(-4px) scale(1.04);}
+  100% { opacity: 1; transform: translateY(0) scale(1);}
+}
