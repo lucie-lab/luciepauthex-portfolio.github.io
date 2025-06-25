@@ -699,3 +699,14 @@ footer {
   background: #8e4585;
   border-radius: 7px;
 }
+.form-help {
+  display: block;
+  font-size: 0.95em;
+  color: #d72660;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  background: rgba(215,38,96,0.08);
+  border-left: 3px solid #d72660;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
