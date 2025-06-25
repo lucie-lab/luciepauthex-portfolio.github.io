@@ -709,7 +709,7 @@ footer {
   border-left: 3px solid #d72660;
   padding: 6px 12px;
   border-radius: 6px;
-}
+  /* Ces deux lignes doivent être ici ! */
   animation: fadePopInFormHelp 0.9s cubic-bezier(0.5,1.6,0.4,1) forwards;
   opacity: 0;
 }
