@@ -31,6 +31,15 @@
     </p>
   </div>
 </div>
+  <script>
+    document.getElementById('btn-ecole').onclick = function() {
+      document.getElementById('modal-ecole').style.display = 'block';
+    };
+// Permettre de fermer en cliquant en dehors du carré
+    document.getElementById('modal-ecole').onclick = function(e) {
+      if(e.target === this) this.style.display = 'none';
+    };
+  </script>
   <body>
   <!-- HEADER -->
   <header>
