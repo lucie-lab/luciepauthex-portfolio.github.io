@@ -12,35 +12,10 @@
   <!-- Ton CSS -->
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Ajout rapide pour faire défiler les ancres en douceur */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<div id="modal-ecole" class="modal" style="display:none;position:fixed;z-index:999;left:0;top:0;width:100vw;height:100vh;background:rgba(30,0,60,0.8);">
-  <div style="background:#23103a;color:#fff;max-width:500px;margin:60px auto;padding:32px 24px;border-radius:18px;box-shadow:0 6px 32px #0005;position:relative;">
-    <button onclick="document.getElementById('modal-ecole').style.display='none'" style="position:absolute;top:18px;right:18px;background:none;border:none;font-size:1.5em;color:#fff;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
-    <h3><i class="fa-solid fa-building-columns"></i> À propos du BTS SIO & IPSSI</h3>
-    <p>
-      <b>IPSSI</b> est une école d’informatique reconnue située à Saint-Quentin en Yvelines.<br><br>
-      <b>BTS SIO (Services Informatiques aux Organisations)</b> : diplôme post-bac en 2 ans, axé sur l’informatique, les réseaux, la cybersécurité et le développement.<br><br>
-      <b>Deux options possibles :</b><br>
-      <span style="color:#b980d1;"><b>SISR</b></span> (Solutions d’Infrastructure, Systèmes et Réseaux) : administration réseaux, systèmes, cybersécurité.<br>
-      <span style="color:#51c9f3;"><b>SLAM</b></span> (Solutions Logicielles et Applications Métiers) : développement d’applications, web, mobile.
-    </p>
-  </div>
-</div>
-  <script>
-    document.getElementById('btn-ecole').onclick = function() {
-      document.getElementById('modal-ecole').style.display = 'block';
-    };
-// Permettre de fermer en cliquant en dehors du carré
-    document.getElementById('modal-ecole').onclick = function(e) {
-      if(e.target === this) this.style.display = 'none';
-    };
-  </script>
-  <body>
+<body>
   <!-- HEADER -->
   <header>
     <div class="header-content">
@@ -57,8 +32,7 @@
         </a>
       </div>
     </div>
-    <div class="header-about-btn" style="margin-top:18px;">
-    </div>
+    <div class="header-about-btn" style="margin-top:18px;"></div>
     <nav>
       <ul class="main-nav">
         <li><a href="#parcours"><i class="fa-solid fa-graduation-cap"></i> Parcours</a></li>
@@ -75,7 +49,6 @@
         <li><a href="#projets"><i class="fa-solid fa-rocket"></i> Projets</a></li>
         <li><a href="#veille"><i class="fa-solid fa-lightbulb"></i> Veille Techno</a></li>
         <li class="dropdown">
-          <!-- ICI : href="#fun" pour aller à la section Fun -->
           <a href="#fun"><i class="fa-solid fa-heart"></i> Fun <i class="fa-solid fa-angle-down"></i></a>
           <ul class="dropdown-content">
             <li><a href="#citations">Citations</a></li>
@@ -90,64 +63,80 @@
 
   <main>
     <!-- Parcours -->
-<section id="parcours" class="glass">
-  <h2><i class="fa-solid fa-graduation-cap"></i> Mon Parcours</h2>
-  <div class="timeline"> 
-    <div class="timeline-item">
-      <span class="timeline-date">2024-2025</span>
-      <div class="timeline-details">
-        <strong>BTS SIO option SISR</strong> - Ecole informatique IPSSI, Saint-Quentin en Yvelines
-        <button id="btn-ecole" class="btn-cv" style="margin-left:10px;">
-          <i class="fa-solid fa-circle-info"></i> À propos du BTS SIO
+    <section id="parcours" class="glass">
+      <h2><i class="fa-solid fa-graduation-cap"></i> Mon Parcours</h2>
+      <div class="timeline"> 
+        <div class="timeline-item">
+          <span class="timeline-date">2024-2025</span>
+          <div class="timeline-details">
+            <strong>BTS SIO option SISR</strong> - Ecole informatique IPSSI, Saint-Quentin en Yvelines
+            <button id="btn-ecole" class="btn-cv" style="margin-left:10px;">
+              <i class="fa-solid fa-circle-info"></i> À propos du BTS SIO
+            </button>
+            <br>
+            Modules : Cybersécurité, Système et Réseau, etc. <span class="tag tag-pink">En cours</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2022-2024</span>
+          <div class="timeline-details">
+            <b>Licence Sciences de la Vie</b> – UVSQ, Versailles<br>
+            Deux années d’études en biologie, qui m’ont permis d’acquérir rigueur scientifique et persévérance.<br>
+            Ce parcours m’a amenée à me réorienter vers l’informatique.
+            <span class="tag tag-grey">Réorientation</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2021-2022</span>
+          <div class="timeline-details">
+            <b>Bac technologique</b> – Spé ST2S, Lycée Les Chataigniers, Versailles<br>
+            Mention assez Bien <span class="tag tag-blue">Terminé</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2025 (Stage)</span>
+          <div class="timeline-details">
+            <b>Administratrice Système et Réseau niv II Junior</b> – Neurones IT, Nanterre<br>
+            Création d’un site vitrine, découverte du travail en équipe agile.
+            <span class="tag tag-violet">Stage</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modale pour BTS SIO -->
+    <div id="modal-ecole" class="modal" style="display:none; position:fixed; z-index:999; left:0; top:0; width:100vw; height:100vh; background:rgba(30,0,60,0.8);">
+      <div style="background:#23103a; color:#fff; max-width:500px; margin:60px auto; padding:32px 24px; border-radius:18px; box-shadow:0 6px 32px #0005; position:relative;">
+        <button id="close-modal-ecole" style="position:absolute;top:18px;right:18px;background:none;border:none;font-size:1.5em;color:#fff;cursor:pointer;">
+          <i class="fa-solid fa-xmark"></i>
         </button>
-        <br>
-        Modules : Cybersécurité, Système et Réseau, etc. <span class="tag tag-pink">En cours</span>
+        <h3><i class="fa-solid fa-building-columns"></i> À propos du BTS SIO & IPSSI</h3>
+        <p>
+          <b>IPSSI</b> est une école d’informatique reconnue située à Saint-Quentin en Yvelines.<br><br>
+          <b>BTS SIO (Services Informatiques aux Organisations)</b> : diplôme post-bac en 2 ans, axé sur l’informatique, les réseaux, la cybersécurité et le développement.<br><br>
+          <b>Deux options possibles :</b><br>
+          <span style="color:#b980d1;"><b>SISR</b></span> (Solutions d’Infrastructure, Systèmes et Réseaux) : administration réseaux, systèmes, cybersécurité.<br>
+          <span style="color:#51c9f3;"><b>SLAM</b></span> (Solutions Logicielles et Applications Métiers) : développement d’applications, web, mobile.
+        </p>
       </div>
     </div>
-    <div class="timeline-item">
-      <span class="timeline-date">2022-2024</span>
-      <div class="timeline-details">
-        <b>Licence Sciences de la Vie</b> – UVSQ, Versailles<br>
-        Deux années d’études en biologie, qui m’ont permis d’acquérir rigueur scientifique et persévérance.<br>
-        Ce parcours m’a amenée à me réorienter vers l’informatique.
-        <span class="tag tag-grey">Réorientation</span>
+
+    <section id="cv" class="glass">
+      <h2><i class="fa-solid fa-file-pdf"></i> Mon CV</h2>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:32px;justify-content:center;">
+        <div>
+          <a href="pauthex-lucie-cv.pdf" target="_blank" class="btn-cv"
+             style="display:inline-block;padding:12px 28px;background:#e871a7;color:#fff;border-radius:8px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px #22173322;">
+            <i class="fa-solid fa-download"></i> Télécharger mon CV
+          </a>
+          <p style="margin-top:14px;color:#b980d1;font-size:0.98em;">
+            Scannez le QR code pour obtenir mon CV PDF directement sur votre mobile !
+          </p>
+        </div>
+        <img src="qr-code.png" alt="QR Code vers mon CV" style="height:130px;width:130px;border-radius:12px;box-shadow:0 3px 12px #22173333;">
       </div>
-    </div>
-    <div class="timeline-item">
-      <span class="timeline-date">2021-2022</span>
-      <div class="timeline-details">
-        <b>Bac technologique</b> – Spé ST2S, Lycée Les Chataigniers, Versailles<br>
-        Mention assez Bien <span class="tag tag-blue">Terminé</span>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <span class="timeline-date">2025 (Stage)</span>
-      <div class="timeline-details">
-        <b>Administratrice Système et Réseau niv II Junior</b> – Neurones IT, Nanterre<br>
-        Création d’un site vitrine, découverte du travail en équipe agile.
-        <span class="tag tag-violet">Stage</span>
-      </div>
-    </div>
-  </div>
-</section>
-    
-<section id="cv" class="glass">
-  <h2><i class="fa-solid fa-file-pdf"></i> Mon CV</h2>
-  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:32px;justify-content:center;">
-    <div>
-      <a href="pauthex-lucie-cv.pdf" target="_blank" class="btn-cv"
-         style="display:inline-block;padding:12px 28px;background:#e871a7;color:#fff;border-radius:8px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px #22173322;">
-        <i class="fa-solid fa-download"></i> Télécharger mon CV
-      </a>
-      <p style="margin-top:14px;color:#b980d1;font-size:0.98em;">
-        Scannez le QR code pour obtenir mon CV PDF directement sur votre mobile !
-      </p>
-    </div>
-    <img src="qr-code.png" alt="QR Code vers mon CV" style="height:130px;width:130px;border-radius:12px;box-shadow:0 3px 12px #22173333;">
-  </div>
-</section>
-    
-   <!-- COMPÉTENCES -->
+    </section>
+        
+    <!-- COMPÉTENCES -->
     <section id="competences" class="glass">
       <h2><i class="fa-solid fa-gem"></i> Compétences majeures</h2>
       <div class="competences-grid">
@@ -243,54 +232,53 @@
         </div>
       </div>
     </section>
-    
-<!-- VEILLE TECHNO (multi-veilles) -->
-<section id="veille" class="glass">
-  <h2><i class="fa-solid fa-lightbulb"></i> Mes veilles technologiques</h2>
-  <div class="veilles-liste">
-    <!-- Veille 1 -->
-<div class="veille-card">
-  <div class="veille-titre">
-    <span class="veille-emoji">🔴</span>Tabnabbing
-  </div>
-  <div class="veille-content">
-    <b>Sujet :</b> Tabnabbing — Comment un simple onglet web peut vous piéger<br>
-    <b>Résumé :</b> Le tabnabbing est une technique de cyberattaque où un onglet inactif peut être détourné pour afficher une fausse page de connexion et voler vos identifiants.<br>
-    <b>Affiche de sensibilisation :</b><br>
-    <a href="https://www.canva.com/design/DAGrRkYw8TY/Jv1TlEOiIdpH-Fv4oDCrZg/edit?utm_content=DAGrRkYw8TY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
-      👉 Voir ou télécharger l'affiche de sensibilisation (PNG)
-    </a>
-    <br>
-    <b>Principales sources :</b>
-    <ul>
-      <li><a href="https://www.cert-ist.com/public/upload/documents/CERT-IST-CT-2020.01-Tabnabbing.pdf" target="_blank">Cert-IST</a></li>
-      <li><a href="https://www.orange.com/fr/newsroom/les-attaques-tabnabbing" target="_blank">Orange</a></li>
-      <li><a href="https://www.xtdesignweb.com/actualites/cybersecurite-tabnabbing-phishing/" target="_blank">xt design web</a></li>
-    </ul>
-  </div>
-</div>
-    <!-- Veille 2 -->
-<div class="veille-card">
-  <div class="veille-titre">
-    <span class="veille-emoji">🤖</span> Intelligence Artificielle & Automobile
-  </div>
-  <div class="veille-content">
-    <b>Sujet :</b> L'IA remplace-t-elle les garagistes ?<br>
-    <b>Résumé :</b> Avec l'arrivée de l'intelligence artificielle et des diagnostics automatisés, de plus en plus de tâches autrefois réservées aux garagistes sont désormais prises en charge par des systèmes intelligents, modifiant en profondeur le métier et les services de réparation automobile.<br>
-    <b>Sources principales :</b>
-    <ul>
-      <li><a href="https://www.franceinfo.fr/replay-radio/bientot-chez-vous/une-start-up-californienne-met-au-point-une-intelligence-artificielle-pour-concurrencer-les-garagistes_7208172.html" target="_blank">France Info</a></li>
-      <li><a href="https://www.auto-moto.com/high-tech/voiture-ia-remplace-votre-garagiste-57321" target="_blank">Auto Moto</a></li>
-      <li><a href="https://apps.apple.com/us/app/sparq-ai/id6469515871" target="_blank">Apple</a></li>
-    </ul>
-  </div>
-</div>
-    <!-- Ajoute d'autres veilles ici si besoin -->
-  </div>
-</section>
+        
+    <!-- VEILLE TECHNO (multi-veilles) -->
+    <section id="veille" class="glass">
+      <h2><i class="fa-solid fa-lightbulb"></i> Mes veilles technologiques</h2>
+      <div class="veilles-liste">
+        <!-- Veille 1 -->
+        <div class="veille-card">
+          <div class="veille-titre">
+            <span class="veille-emoji">🔴</span>Tabnabbing
+          </div>
+          <div class="veille-content">
+            <b>Sujet :</b> Tabnabbing — Comment un simple onglet web peut vous piéger<br>
+            <b>Résumé :</b> Le tabnabbing est une technique de cyberattaque où un onglet inactif peut être détourné pour afficher une fausse page de connexion et voler vos identifiants.<br>
+            <b>Affiche de sensibilisation :</b><br>
+            <a href="https://www.canva.com/design/DAGrRkYw8TY/Jv1TlEOiIdpH-Fv4oDCrZg/edit?utm_content=DAGrRkYw8TY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+              👉 Voir ou télécharger l'affiche de sensibilisation (PNG)
+            </a>
+            <br>
+            <b>Principales sources :</b>
+            <ul>
+              <li><a href="https://www.cert-ist.com/public/upload/documents/CERT-IST-CT-2020.01-Tabnabbing.pdf" target="_blank">Cert-IST</a></li>
+              <li><a href="https://www.orange.com/fr/newsroom/les-attaques-tabnabbing" target="_blank">Orange</a></li>
+              <li><a href="https://www.xtdesignweb.com/actualites/cybersecurite-tabnabbing-phishing/" target="_blank">xt design web</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Veille 2 -->
+        <div class="veille-card">
+          <div class="veille-titre">
+            <span class="veille-emoji">🤖</span> Intelligence Artificielle & Automobile
+          </div>
+          <div class="veille-content">
+            <b>Sujet :</b> L'IA remplace-t-elle les garagistes ?<br>
+            <b>Résumé :</b> Avec l'arrivée de l'intelligence artificielle et des diagnostics automatisés, de plus en plus de tâches autrefois réservées aux garagistes sont désormais prises en charge par des systèmes intelligents, modifiant en profondeur le métier et les services de réparation automobile.<br>
+            <b>Sources principales :</b>
+            <ul>
+              <li><a href="https://www.franceinfo.fr/replay-radio/bientot-chez-vous/une-start-up-californienne-met-au-point-une-intelligence-artificielle-pour-concurrencer-les-garagistes_7208172.html" target="_blank">France Info</a></li>
+              <li><a href="https://www.auto-moto.com/high-tech/voiture-ia-remplace-votre-garagiste-57321" target="_blank">Auto Moto</a></li>
+              <li><a href="https://apps.apple.com/us/app/sparq-ai/id6469515871" target="_blank">Apple</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Ajoute d'autres veilles ici si besoin -->
+      </div>
+    </section>
 
-
-    <!-- FUN ZONE (fantaise, passions, playlist, citations, etc.) -->
+    <!-- FUN ZONE (fantaisie, passions, playlist, citations, etc.) -->
     <section id="citations" class="glass fun-section">
       <h2><i class="fa-solid fa-quote-left"></i> Citations Inspirantes</h2>
       <blockquote>
@@ -335,9 +323,9 @@
           <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>.
         </p>
         <span class="form-help">
-  <i class="fa-solid fa-circle-info"></i>
-  Ce formulaire est sécurisé et vos données sont transmises en toute confidentialité.
-</span>
+          <i class="fa-solid fa-circle-info"></i>
+          Ce formulaire est sécurisé et vos données sont transmises en toute confidentialité.
+        </span>
         <div class="contact-links">
           <a href="mailto:luciepauthex@gmail.com"><i class="fa-solid fa-envelope"></i></a>
           <a href="https://www.linkedin.com/in/lucie-pauthex-078340333/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -346,21 +334,31 @@
       </div>
     </section>
   </main>
- <footer>
-   <p>
-     © Lucie P. 2025 &nbsp; | &nbsp; 
-     <a href="mailto:luciepauthex@gmail.com">Me contacter</a> &nbsp;|&nbsp; 
-     <a href="confidentialite.html" style="color:#a6d9ff;">Politique de confidentialité</a> &nbsp;|&nbsp;
-     <a href="mentions-legales.html" style="color:#a6d9ff;">Mentions légales</a> &nbsp;|&nbsp;
-     <a href="cgu.html" style="color:#a6d9ff;">CGU</a>
-     &nbsp;|&nbsp;<span style="color:#d72660;">🌸</span>
-   </p>
- </footer>
+  <footer>
+    <p>
+      © Lucie P. 2025 &nbsp; | &nbsp; 
+      <a href="mailto:luciepauthex@gmail.com">Me contacter</a> &nbsp;|&nbsp; 
+      <a href="confidentialite.html" style="color:#a6d9ff;">Politique de confidentialité</a> &nbsp;|&nbsp;
+      <a href="mentions-legales.html" style="color:#a6d9ff;">Mentions légales</a> &nbsp;|&nbsp;
+      <a href="cgu.html" style="color:#a6d9ff;">CGU</a>
+      &nbsp;|&nbsp;<span style="color:#d72660;">🌸</span>
+    </p>
+  </footer>
   <!-- Menu mobile burger -->
   <div class="burger-menu" id="burger-menu">
     <span></span><span></span><span></span>
   </div>
   <script>
+    // Modale BTS SIO
+    document.getElementById('btn-ecole').onclick = function() {
+      document.getElementById('modal-ecole').style.display = 'block';
+    };
+    document.getElementById('close-modal-ecole').onclick = function() {
+      document.getElementById('modal-ecole').style.display = 'none';
+    };
+    document.getElementById('modal-ecole').onclick = function(e) {
+      if(e.target === this) this.style.display = 'none';
+    };
     // Menu déroulant mobile
     const burger = document.getElementById('burger-menu');
     const nav = document.querySelector('nav ul');
@@ -368,7 +366,6 @@
       nav.classList.toggle('nav-open');
       burger.classList.toggle('open');
     };
-    // Ferme menu au clic sur lien (mobile)
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('nav-open');
