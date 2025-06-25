@@ -9,16 +9,36 @@
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,900|Montserrat:700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Centrage parfait du bloc .glass */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 80vh;
+      justify-content: flex-start;
+    }
+    .glass {
+      max-width: 700px;
+      margin: 32px auto 32px auto; /* top auto bottom auto */
+    }
+    @media (max-width: 800px) {
+      .glass {
+        max-width: 95vw;
+        padding: 1.5em 0.5em;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <a href="index.html" style="text-decoration:none;color:#25557C;font-weight:bold;">
       <i class="fa-solid fa-arrow-left"></i> Retour au portfolio
     </a>
-    <h1 style="margin-top:18px;">À propos de moi</h1>
+    <h1 style="margin-top:18px;text-align:center;">À propos de moi</h1>
   </header>
   <main>
-    <section class="glass" style="margin-top:32px;max-width:700px;">
+    <section class="glass">
       <h2><i class="fa-solid fa-user"></i> Qui suis-je ?</h2>
       <p>
         Je m’appelle Lucie Pauthex, étudiante en BTS SIO SISR à l’IPSSI (Saint-Quentin-en-Yvelines), passionnée par l’informatique, la cybersécurité et l’apprentissage continu.<br><br>
@@ -52,7 +72,7 @@
       </div>
     </section>
   </main>
-  <footer style="margin-top:40px;">
+  <footer style="margin-top:40px;text-align:center;">
     <p>
       © Lucie P. 2025 &nbsp; | &nbsp; 
       <a href="mailto:luciepauthex@gmail.com">Me contacter</a> &nbsp;|&nbsp; 
