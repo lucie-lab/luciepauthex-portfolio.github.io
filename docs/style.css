@@ -772,87 +772,212 @@ footer {
 .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
   display: block;
 }
+/* ======= Filtrage CSS-only + styles améliorés pour #projets ======= */
+/* (Colle ce bloc à la fin de ton fichier style.css, il remplace le petit bloc précédent) */
 
-/* ---- Styles filtres (radio CSS-only) ---- */
-/* cache les radios mais reste accessibles */
+/* hide radios but keep them accessible */
 #projets input[type="radio"] {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
+  pointer-events: none;
 }
 
-/* style des boutons filtres (labels) */
-#projets .filter-label {
-  display: inline-block;
-  margin-right: 12px;
-  margin-bottom: 16px;
-  padding: 10px 18px;
-  border-radius: 12px;
+/* ----- Dropdown items styled like menu buttons ----- */
+#projets .dropdown-content {
+  display: none; /* laissé géré par ton .dropdown:hover */
+  position: absolute;
+  left: 0;
+  top: 52px;
+  min-width: 220px;
+  border-radius: 14px;
+  padding: 8px;
+  background: linear-gradient(180deg, rgba(49,33,66,0.98), rgba(44,25,62,0.96));
+  box-shadow: 0 12px 30px rgba(20,8,30,0.65), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(185,120,209,0.12);
+  z-index: 1200;
+  transform-origin: top left;
+  transform: translateY(6px);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+/* show on hover / focus-within like before but nicer animation */
+#projets .dropdown:hover .dropdown-content,
+#projets .dropdown:focus-within .dropdown-content {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* remove default bullets and spacing */
+#projets .dropdown-content,
+#projets .dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+}
+
+/* label items look like menu entries */
+#projets .dropdown-content li {
+  margin: 6px 4px;
+}
+#projets .dropdown-content label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  color: #eab0ff;
+  background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
   cursor: pointer;
   font-weight: 700;
-  font-family: 'Montserrat', Arial, sans-serif;
+  transition: background .14s ease, color .12s, transform .12s;
+  font-family: 'Inter', Arial, sans-serif;
+  text-decoration: none;
+}
+#projets .dropdown-content label:hover,
+#projets .dropdown-content label:focus {
+  background: linear-gradient(90deg,#b980d1 10%, rgba(185,120,209,0.07));
   color: #fff;
-  background: linear-gradient(90deg,#e871a7 40%,#b980d1 100%);
-  box-shadow: 0 1px 7px #b980d1;
-  transition: transform .12s, box-shadow .12s, opacity .12s;
-}
-#projets .filter-label:hover, #projets .filter-label:focus {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px #e871a7cc;
+  outline: none;
 }
 
-/* Indiquer visuellement le bouton actif via l'ordre input + label.
-   Pour que ça fonctionne, chaque input doit être immédiatement suivi de son label dans le DOM. */
-#filter-all:checked + label[for="filter-all"],
-#filter-pro:checked + label[for="filter-pro"],
-#filter-formation:checked + label[for="filter-formation"],
-#filter-perso:checked + label[for="filter-perso"] {
-  box-shadow: 0 10px 36px rgba(169,64,100,0.45);
-  transform: translateY(-3px) scale(1.02);
-  outline: 2px solid rgba(232,113,167,0.18);
+/* active menu entry indicator (check icon) using the radio :checked state */
+#filter-pro:checked ~ .dropdown .dropdown-content label[for="filter-pro"]::after,
+#filter-formation:checked ~ .dropdown .dropdown-content label[for="filter-formation"]::after,
+#filter-perso:checked ~ .dropdown .dropdown-content label[for="filter-perso"]::after,
+#filter-all:checked ~ .dropdown .dropdown-content label[for="filter-all"]::after {
+  content: "✓";
+  color: #fff;
+  background: linear-gradient(90deg,#e871a7,#b980d1);
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 0 4px 18px rgba(232,113,167,0.14);
+  margin-left: 8px;
+  font-size: 0.9em;
 }
 
-/* GRILLE : par défaut on cache tout (puis on ré-affiche selon le radio checked) */
+/* highlight active label background slightly for clarity */
+#filter-pro:checked ~ .dropdown .dropdown-content label[for="filter-pro"],
+#filter-formation:checked ~ .dropdown .dropdown-content label[for="filter-formation"],
+#filter-perso:checked ~ .dropdown .dropdown-content label[for="filter-perso"],
+#filter-all:checked ~ .dropdown .dropdown-content label[for="filter-all"] {
+  background: linear-gradient(90deg, rgba(232,113,167,0.14), rgba(185,120,209,0.06));
+  color: #fff;
+}
+
+/* ----- Grid & cards: prettier layout (uses CSS Grid) ----- */
+/* hide cards by default; shown by the :checked rules below */
 #projets .projets-grid .projet-card { display: none; }
 
-/* Quand "Tous" est sélectionné : on affiche toutes les cartes */
-#filter-all:checked ~ .projets-grid .projet-card { display: flex; }
+/* show all */
+#filter-all:checked ~ .projets-grid .projet-card { display: grid; }
 
-/* Quand "Professionnel" est sélectionné : affiche seulement [data-category="pro"] */
-#filter-pro:checked ~ .projets-grid .projet-card[data-category="pro"] { display: flex; }
+/* filtered views */
+#filter-pro:checked ~ .projets-grid .projet-card[data-category="pro"] { display: grid; }
+#filter-formation:checked ~ .projets-grid .projet-card[data-category="formation"] { display: grid; }
+#filter-perso:checked ~ .projets-grid .projet-card[data-category="perso"] { display: grid; }
 
-/* Quand "Formation" est sélectionné */
-#filter-formation:checked ~ .projets-grid .projet-card[data-category="formation"] { display: flex; }
-
-/* Quand "Personnel" est sélectionné */
-#filter-perso:checked ~ .projets-grid .projet-card[data-category="perso"] { display: flex; }
-
-/* Ajuste l'affichage et la grille pour correspondre à ton CSS existant */
+/* grid container */
 #projets .projets-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  justify-content: center;
-  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+  margin-top: 22px;
+  align-items: start;
 }
-#projets .projet-card {
-  flex: 1 1 320px;
-  display: flex;
-  flex-direction: column;
-  background: rgba(63,35,82,0.92);
-  border-radius: 16px;
-  padding: 18px 20px;
-  min-width: 290px;
-  max-width: 430px;
-  box-shadow: 0 2px 10px #8e4585;
-  transition: transform 0.17s, box-shadow 0.17s;
-}
-#projets .projet-card h3 { margin: 6px 0 8px 0; color: #b980d1; }
-#projets .projet-badge { position: absolute; right: 22px; top: 14px; font-size: .95em; }
 
-/* responsive keep behavior from your CSS */
+/* card look */
+#projets .projet-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  background: linear-gradient(180deg, rgba(49,33,66,0.94), rgba(44,25,62,0.95));
+  border-radius: 16px;
+  padding: 22px;
+  min-height: 180px;
+  box-shadow: 0 10px 34px rgba(168,64,100,0.08), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(185,120,209,0.08);
+  position: relative;
+  transition: transform .18s ease, box-shadow .18s ease;
+  overflow: hidden;
+}
+
+/* card hover */
+#projets .projet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(185,120,209,0.14);
+  border: 1px solid rgba(232,113,167,0.12);
+}
+
+/* badge (top-right) */
+#projets .projet-badge {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  padding: 6px 10px;
+  background: linear-gradient(90deg,#e871a7 15%,#b980d1 100%);
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(232,113,167,0.12);
+  font-size: 0.92em;
+}
+
+/* titre & description */
+#projets .projet-card h3 {
+  margin: 0;
+  color: #ffd7ef;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.12em;
+}
+#projets .projet-desc {
+  margin: 6px 0 0 0;
+  color: #f3e6f7;
+  opacity: 0.95;
+  line-height: 1.45;
+  font-size: 0.98em;
+}
+
+/* "Voir" button style */
+#projets .projet-liens a {
+  display: inline-block;
+  margin-top: 12px;
+  background: linear-gradient(90deg,#ff9cc9 10%,#b980d1 100%);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(185,120,209,0.12);
+  transition: transform .12s, box-shadow .12s, filter .12s;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+#projets .projet-liens a:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 44px rgba(232,113,167,0.16);
+}
+
+/* small excerpt footer-style line for meta (optionnel) */
+#projets .projet-meta {
+  color: #d6b7e1;
+  font-size: 0.92em;
+  margin-top: 8px;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  #projets .dropdown-content { left: 10px; top: 48px; min-width: 200px; }
+  #projets .projets-grid { gap: 18px; }
+}
 @media (max-width: 700px) {
-  #projets .filter-label { padding: 8px 12px; margin-right: 8px; font-size: 0.95em; }
-  #projets .projet-card { min-width: 100%; max-width: 100%; }
+  #projets .projets-grid { grid-template-columns: 1fr; }
+  #projets .dropdown-content { position: static; transform: none; opacity: 1; display: block; margin-top: 8px; }
 }
