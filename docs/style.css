@@ -772,3 +772,87 @@ footer {
 .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
   display: block;
 }
+
+/* ---- Styles filtres (radio CSS-only) ---- */
+/* cache les radios mais reste accessibles */
+#projets input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* style des boutons filtres (labels) */
+#projets .filter-label {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 16px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(90deg,#e871a7 40%,#b980d1 100%);
+  box-shadow: 0 1px 7px #b980d1;
+  transition: transform .12s, box-shadow .12s, opacity .12s;
+}
+#projets .filter-label:hover, #projets .filter-label:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px #e871a7cc;
+}
+
+/* Indiquer visuellement le bouton actif via l'ordre input + label.
+   Pour que ça fonctionne, chaque input doit être immédiatement suivi de son label dans le DOM. */
+#filter-all:checked + label[for="filter-all"],
+#filter-pro:checked + label[for="filter-pro"],
+#filter-formation:checked + label[for="filter-formation"],
+#filter-perso:checked + label[for="filter-perso"] {
+  box-shadow: 0 10px 36px rgba(169,64,100,0.45);
+  transform: translateY(-3px) scale(1.02);
+  outline: 2px solid rgba(232,113,167,0.18);
+}
+
+/* GRILLE : par défaut on cache tout (puis on ré-affiche selon le radio checked) */
+#projets .projets-grid .projet-card { display: none; }
+
+/* Quand "Tous" est sélectionné : on affiche toutes les cartes */
+#filter-all:checked ~ .projets-grid .projet-card { display: flex; }
+
+/* Quand "Professionnel" est sélectionné : affiche seulement [data-category="pro"] */
+#filter-pro:checked ~ .projets-grid .projet-card[data-category="pro"] { display: flex; }
+
+/* Quand "Formation" est sélectionné */
+#filter-formation:checked ~ .projets-grid .projet-card[data-category="formation"] { display: flex; }
+
+/* Quand "Personnel" est sélectionné */
+#filter-perso:checked ~ .projets-grid .projet-card[data-category="perso"] { display: flex; }
+
+/* Ajuste l'affichage et la grille pour correspondre à ton CSS existant */
+#projets .projets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  margin-top: 18px;
+}
+#projets .projet-card {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(63,35,82,0.92);
+  border-radius: 16px;
+  padding: 18px 20px;
+  min-width: 290px;
+  max-width: 430px;
+  box-shadow: 0 2px 10px #8e4585;
+  transition: transform 0.17s, box-shadow 0.17s;
+}
+#projets .projet-card h3 { margin: 6px 0 8px 0; color: #b980d1; }
+#projets .projet-badge { position: absolute; right: 22px; top: 14px; font-size: .95em; }
+
+/* responsive keep behavior from your CSS */
+@media (max-width: 700px) {
+  #projets .filter-label { padding: 8px 12px; margin-right: 8px; font-size: 0.95em; }
+  #projets .projet-card { min-width: 100%; max-width: 100%; }
+}
