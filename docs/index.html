@@ -180,16 +180,56 @@
       </div>
     </section>
 
-    <!-- PROJETS -->
- <section id="projets" class="glass">
+<section id="projets" class="glass">
   <h2><i class="fa-solid fa-rocket"></i> Projets réalisés</h2>
+
+  <!-- Radios cachés (doivent être avant la dropdown et la grille) -->
+  <input type="radio" name="projets-filter" id="filter-all" checked>
+  <input type="radio" name="projets-filter" id="filter-pro">
+  <input type="radio" name="projets-filter" id="filter-formation">
+  <input type="radio" name="projets-filter" id="filter-perso">
+
+  <!-- Dropdown inchangé visuellement : on remplace juste les <a> par des <label for="..."> -->
   <div class="dropdown">
     <button class="dropbtn">Catégories <i class="fa fa-caret-down"></i></button>
     <ul class="dropdown-content">
-      <li><a href="projets-pro.html">Professionnel</a></li>
-      <li><a href="projets-formation.html">Formation</a></li>
-      <li><a href="projets-perso.html">Personnel</a></li>
+      <li><label for="filter-pro" role="button" tabindex="0">Professionnel</label></li>
+      <li><label for="filter-formation" role="button" tabindex="0">Formation</label></li>
+      <li><label for="filter-perso" role="button" tabindex="0">Personnel</label></li>
+      <li><label for="filter-all" role="button" tabindex="0">Tous</label></li>
     </ul>
+  </div>
+
+  <!-- Grille de projets : duplique/édite les <article> pour chaque projet -->
+  <div class="projets-grid">
+    <article class="projet-card" data-category="pro">
+      <div class="projet-badge">Professionnel</div>
+      <h3>Nom du projet Pro</h3>
+      <p class="projet-desc">Courte description — entreprise, rôle, technos.</p>
+      <div class="projet-liens">
+        <a href="#" target="_blank" rel="noopener">Voir</a>
+      </div>
+    </article>
+
+    <article class="projet-card" data-category="formation">
+      <div class="projet-badge">Formation</div>
+      <h3>Projet de formation</h3>
+      <p class="projet-desc">Application développée en BTS SIO — stack, responsabilités.</p>
+      <div class="projet-liens">
+        <a href="#" target="_blank" rel="noopener">Voir</a>
+      </div>
+    </article>
+
+    <article class="projet-card" data-category="perso">
+      <div class="projet-badge">Personnel</div>
+      <h3>Projet perso</h3>
+      <p class="projet-desc">Mini appli, design, animation — notes.</p>
+      <div class="projet-liens">
+        <a href="#" target="_blank" rel="noopener">Voir</a>
+      </div>
+    </article>
+
+    <!-- Ajoute d'autres <article class="projet-card" data-category="pro|formation|perso"> ici -->
   </div>
 </section>
     
