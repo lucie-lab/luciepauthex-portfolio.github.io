@@ -179,17 +179,17 @@
         </a>
       </div>
     </section>
-
+    
 <section id="projets" class="glass">
   <h2><i class="fa-solid fa-rocket"></i> Projets réalisés</h2>
 
-  <!-- Radios cachés (doivent être avant la dropdown et la grille) -->
+  <!-- Radios cachés : DOIVENT être AVANT la dropdown et la grille -->
   <input type="radio" name="projets-filter" id="filter-all" checked>
   <input type="radio" name="projets-filter" id="filter-pro">
   <input type="radio" name="projets-filter" id="filter-formation">
   <input type="radio" name="projets-filter" id="filter-perso">
 
-  <!-- Dropdown inchangé visuellement : on remplace juste les <a> par des <label for="..."> -->
+  <!-- Dropdown visuel inchangé (les <a> remplacés par <label> pour activer les radios) -->
   <div class="dropdown">
     <button class="dropbtn">Catégories <i class="fa fa-caret-down"></i></button>
     <ul class="dropdown-content">
@@ -200,36 +200,57 @@
     </ul>
   </div>
 
-  <!-- Grille de projets : duplique/édite les <article> pour chaque projet -->
+  <!-- Grille : colle / duplique ces article pour chaque projet -->
   <div class="projets-grid">
     <article class="projet-card" data-category="pro">
       <div class="projet-badge">Professionnel</div>
-      <h3>Nom du projet Pro</h3>
-      <p class="projet-desc">Courte description — entreprise, rôle, technos.</p>
+      <h3>Apache — Serveur & Commandes</h3>
+      <p class="projet-meta">Administration • Debian/Ubuntu • 2025</p>
+      <p class="projet-desc">Configuration de vhosts, scripts d'administration et déploiement automatisé.</p>
       <div class="projet-liens">
-        <a href="#" target="_blank" rel="noopener">Voir</a>
+        <a href="projet-apache.html" title="Détails Apache">Détails</a>
+      </div>
+    </article>
+
+    <article class="projet-card" data-category="pro">
+      <div class="projet-badge">Professionnel</div>
+      <h3>Scripts Bash — Automatisation</h3>
+      <p class="projet-meta">Outils • Bash • 2025</p>
+      <p class="projet-desc">Collection de scripts pour déploiement, sauvegarde et monitoring simple.</p>
+      <div class="projet-liens">
+        <a href="projet-bash.html" title="Détails Bash">Détails</a>
       </div>
     </article>
 
     <article class="projet-card" data-category="formation">
       <div class="projet-badge">Formation</div>
-      <h3>Projet de formation</h3>
-      <p class="projet-desc">Application développée en BTS SIO — stack, responsabilités.</p>
+      <h3>GLPI — Gestion de parc (demo)</h3>
+      <p class="projet-meta">Service • Docker • 2025</p>
+      <p class="projet-desc">Installation GLPI en local via Docker Compose pour démonstration.</p>
       <div class="projet-liens">
-        <a href="#" target="_blank" rel="noopener">Voir</a>
+        <a href="projet-glpi.html" title="Détails GLPI">Détails</a>
+      </div>
+    </article>
+
+    <article class="projet-card" data-category="pro">
+      <div class="projet-badge">Professionnel</div>
+      <h3>Nginx — Reverse proxy / PHP-FPM</h3>
+      <p class="projet-meta">Serveur • Nginx • 2025</p>
+      <p class="projet-desc">Configuration Nginx pour sites PHP et reverse-proxy vers backends.</p>
+      <div class="projet-liens">
+        <a href="projet-nginx.html" title="Détails Nginx">Détails</a>
       </div>
     </article>
 
     <article class="projet-card" data-category="perso">
       <div class="projet-badge">Personnel</div>
-      <h3>Projet perso</h3>
-      <p class="projet-desc">Mini appli, design, animation — notes.</p>
+      <h3>REVIVE — Projet</h3>
+      <p class="projet-meta">Simulation • Web • 2025</p>
+      <p class="projet-desc">Page projet pour expliquer la création d'une entreprise virtuelle (ou Revive Adserver).</p>
       <div class="projet-liens">
-        <a href="#" target="_blank" rel="noopener">Voir</a>
+        <a href="projet-revive.html" title="Détails REVIVE">Détails</a>
       </div>
     </article>
-
-    <!-- Ajoute d'autres <article class="projet-card" data-category="pro|formation|perso"> ici -->
   </div>
 </section>
     
