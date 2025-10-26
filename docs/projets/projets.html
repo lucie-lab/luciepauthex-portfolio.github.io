@@ -35,47 +35,56 @@
       <!-- Grille de cartes -->
       <div class="projets-grid" id="projetsGrid">
         <!-- Duplique ces blocs pour chaque projet et change data-category -->
-        <article class="projet-card" data-category="pro" tabindex="0">
-          <img src="assets/img/projet-exemple.jpg" alt="Aperçu du projet" class="projet-thumb">
-          <div class="projet-body">
-            <h3 class="projet-title">Nom du projet Pro</h3>
-            <p class="projet-meta">Entreprise XYZ • 2024</p>
-            <p class="projet-desc">Courte description du projet, technologies : PHP, MySQL, Docker.</p>
-            <div class="projet-tags">
-              <span class="tag pro">Professionnel</span>
-              <span class="tag techno">PHP</span>
-            </div>
-            <button class="btn-open" data-detail="projet1">Voir détails</button>
-          </div>
-        </article>
+       <!-- Dupliquer/adapter : coller DANS la <div class="projets-grid"> -->
+<article class="projet-card" data-category="pro">
+  <div class="projet-badge">Professionnel</div>
+  <h3>Apache — Serveur & Commandes</h3>
+  <p class="projet-meta">Administration • Debian/Ubuntu • 2025</p>
+  <p class="projet-desc">Configuration de vhosts, scripts d'administration et déploiement automatisé.</p>
+  <div class="projet-liens">
+    <a href="projet-apache.html" title="Détails Apache">Détails</a>
+  </div>
+</article>
 
-        <article class="projet-card" data-category="formation" tabindex="0">
-          <img src="assets/img/projet-formation.jpg" alt="Projet de formation" class="projet-thumb">
-          <div class="projet-body">
-            <h3 class="projet-title">Projet de formation</h3>
-            <p class="projet-meta">BTS SIO • 2023</p>
-            <p class="projet-desc">Application web développée en équipe pendant la formation.</p>
-            <div class="projet-tags">
-              <span class="tag formation">Formation</span>
-              <span class="tag techno">JavaScript</span>
-            </div>
-            <button class="btn-open" data-detail="projet2">Voir détails</button>
-          </div>
-        </article>
+<article class="projet-card" data-category="pro">
+  <div class="projet-badge">Professionnel</div>
+  <h3>Scripts Bash — Automatisation</h3>
+  <p class="projet-meta">Outils • Bash • 2025</p>
+  <p class="projet-desc">Collection de scripts pour déploiement, sauvegarde et monitoring simple.</p>
+  <div class="projet-liens">
+    <a href="projet-bash.html" title="Détails Bash">Détails</a>
+  </div>
+</article>
 
-        <article class="projet-card" data-category="perso" tabindex="0">
-          <img src="assets/img/projet-perso.jpg" alt="Projet personnel" class="projet-thumb">
-          <div class="projet-body">
-            <h3 class="projet-title">Projet personnel</h3>
-            <p class="projet-meta">2025</p>
-            <p class="projet-desc">Petite appli perso / portfolio, design et animation.</p>
-            <div class="projet-tags">
-              <span class="tag perso">Personnel</span>
-              <span class="tag techno">CSS</span>
-            </div>
-            <button class="btn-open" data-detail="projet3">Voir détails</button>
-          </div>
-        </article>
+<article class="projet-card" data-category="formation">
+  <div class="projet-badge">Formation</div>
+  <h3>GLPI — Gestion de parc (demo)</h3>
+  <p class="projet-meta">Service • Docker • 2025</p>
+  <p class="projet-desc">Installation GLPI en local via Docker Compose pour démonstration.</p>
+  <div class="projet-liens">
+    <a href="projet-glpi.html" title="Détails GLPI">Détails</a>
+  </div>
+</article>
+
+<article class="projet-card" data-category="pro">
+  <div class="projet-badge">Professionnel</div>
+  <h3>Nginx — Reverse proxy / PHP-FPM</h3>
+  <p class="projet-meta">Serveur • Nginx • 2025</p>
+  <p class="projet-desc">Configuration Nginx pour sites PHP et reverse-proxy vers backends.</p>
+  <div class="projet-liens">
+    <a href="projet-nginx.html" title="Détails Nginx">Détails</a>
+  </div>
+</article>
+
+<article class="projet-card" data-category="perso">
+  <div class="projet-badge">Personnel</div>
+  <h3>REVIVE — Projet "REVIVE" (placeholder)</h3>
+  <p class="projet-meta">Simulation • Web • 2025</p>
+  <p class="projet-desc">Page projet pour expliquer la création d'une entreprise virtuelle (REVIVE) ou Revive Adserver selon ce que tu veux montrer.</p>
+  <div class="projet-liens">
+    <a href="projet-revive.html" title="Détails REVIVE">Détails</a>
+  </div>
+</article>
 
       </div>
 
