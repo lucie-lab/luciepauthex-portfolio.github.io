@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apache — Détails</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Si tu as un header commun, tu peux l'inclure ici -->
+  <main>
+    <section class="glass">
+      <h2>Apache — Serveur & Commandes</h2>
+      <p class="projet-meta">Professionnel • 2025</p>
+
+      <h3>Contexte</h3>
+      <p>Installation et configuration de VirtualHosts, commandes d'administration et scripts d'automatisation pour déploiements.</p>
+
+      <h3>Fichiers fournis</h3>
+      <ul>
+        <li>config/apache/mon-site.conf</li>
+        <li>scripts/deploy.sh</li>
+      </ul>
+
+      <h3>Installation rapide (exemple)</h3>
+      <pre>
+sudo cp config/apache/mon-site.conf /etc/apache2/sites-available/monsite.conf
+sudo a2ensite monsite.conf
+sudo systemctl reload apache2
+      </pre>
+
+      <h3>Commandes utiles</h3>
+      <pre>
+sudo a2ensite monsite.conf
+sudo a2dissite monsite.conf
+sudo systemctl restart apache2
+tail -f /var/log/apache2/error.log
+      </pre>
+
+      <h3>Captures / notes</h3>
+      <p>Ajoute ici des screenshots, exports de configuration, etc.</p>
+
+      <p><a href="projets.html">← Retour aux projets</a></p>
+    </section>
+  </main>
+</body>
+</html>
