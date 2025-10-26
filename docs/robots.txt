@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucie-lab.github.io/luciepauthex-portfolio.github.io/sitemap.xml
