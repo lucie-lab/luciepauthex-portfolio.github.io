@@ -289,66 +289,103 @@
   <p class="projet-desc">Présentation du projet REVIVE — objectifs, architecture et démonstration.</p>
 
   <div class="projet-liens">
-    <a class="pdf-link" href="assets/pdf/revive.pdf" target="_blank" rel="noopener">Voir le PDF</a>
-    <a class="pdf-download" href="assets/pdf/revive.pdf" download> Télécharger </a>
+    <a class="pdf-link" href="https://portfolio-fernandes.vercel.app/docs/AP1/Revive/index.html" target="_blank" rel="noopener">Voir le PDF</a>
+    <a class="pdf-download" href="https://portfolio-fernandes.vercel.app/docs/AP1/Revive/index.html" download> Télécharger </a>
   </div>
 
   <!-- NOUVEAU : Liens vers les fichiers du dossier AP1 -->
-  <div class="projet-resources" style="margin-top:14px; padding-top:12px; border-top:1px dashed #ddd;">
-    <h4 style="margin:6px 0;">Ressources AP1</h4>
-    <ul style="list-style:none;padding:0;margin:0;">
-      <!-- Remplace 'AP1/' par le chemin correct si nécessaire (ex: assets/AP1/) -->
-      <li style="margin-bottom:8px;">
-        <span>bon_commande.pdf</span>
-        <a href="AP1/bon_commande.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/bon_commande.pdf" download style="margin-left:6px;">Télécharger</a>
+<!-- Remplace le <div class="projet-resources">... existant par ceci -->
+<div class="projet-resources">
+  <button class="resources-toggle" aria-expanded="false" aria-controls="resources-revive">
+    <span>Ressources AP1</span>
+    <!-- petite chevron (SVG) qui tourne lors du déploiement -->
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+  </button>
+
+  <div id="resources-revive" class="resources-panel" hidden>
+    <ul class="resources-list">
+      <li>
+        <span class="res-name">bon_commande.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/bon_commande.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/bon_commande.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>contrat_travail_hajar.pdf</span>
-        <a href="AP1/contrat_travail_hajar.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/contrat_travail_hajar.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">contrat_travail_hajar.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/contrat_travail_hajar.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/contrat_travail_hajar.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>contrat_travail_tony.pdf</span>
-        <a href="AP1/contrat_travail_tony.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/contrat_travail_tony.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">contrat_travail_tony.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/contrat_travail_tony.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/contrat_travail_tony.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>estimation_prix.pdf</span>
-        <a href="AP1/estimation_prix.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/estimation_prix.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">estimation_prix.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/estimation_prix.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/estimation_prix.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>facture_f33000001.pdf</span>
-        <a href="AP1/facture_f33000001.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/facture_f33000001.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">facture_f33000001.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/facture_f33000001.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/facture_f33000001.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>fiche_de_poste_marketing.pdf</span>
-        <a href="AP1/fiche_de_poste_marketing.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/fiche_de_poste_marketing.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">fiche_de_poste_marketing.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/fiche_de_poste_marketing.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/fiche_de_poste_marketing.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>kbis_revive.pdf</span>
-        <a href="AP1/kbis_revive.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/kbis_revive.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">kbis_revive.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/kbis_revive.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/kbis_revive.pdf" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>logo_revive_blanck.png</span>
-        <a href="AP1/logo_revive_blanck.png" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/logo_revive_blanck.png" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">logo_revive_blanck.png</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/logo_revive_blanck.png" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/logo_revive_blanck.png" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>logo_revive_nobg.png</span>
-        <a href="AP1/logo_revive_nobg.png" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/logo_revive_nobg.png" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">logo_revive_nobg.png</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/logo_revive_nobg.png" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/logo_revive_nobg.png" download>Télécharger</a>
+        </span>
       </li>
-      <li style="margin-bottom:8px;">
-        <span>modèle_devis.pdf</span>
-        <a href="AP1/modèle_devis.pdf" target="_blank" rel="noopener" style="margin-left:8px;">Voir</a>
-        <a href="AP1/modèle_devis.pdf" download style="margin-left:6px;">Télécharger</a>
+
+      <li>
+        <span class="res-name">modèle_devis.pdf</span>
+        <span class="res-actions">
+          <a class="btn btn-view" href="AP1/modèle_devis.pdf" target="_blank" rel="noopener">Voir</a>
+          <a class="btn btn-download" href="AP1/modèle_devis.pdf" download>Télécharger</a>
+        </span>
       </li>
     </ul>
+  </div>
+</div>
   </div>
 </article>
   </div>
