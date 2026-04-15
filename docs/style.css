@@ -25,10 +25,21 @@ header {
   padding-bottom: 0;
   border-bottom-left-radius: 26px;
   border-bottom-right-radius: 26px;
-  position: sticky;
+
+  position: fixed; /* 🔥 important */
   top: 0;
+  left: 0;
+  width: 100%;
+
   z-index: 1000;
   backdrop-filter: blur(12px);
+
+  transition: transform 0.3s ease-in-out; /* animation */
+}
+
+/* état caché */
+header.hide {
+  transform: translateY(-100%);
 }
 .header-content {
   display: flex;
