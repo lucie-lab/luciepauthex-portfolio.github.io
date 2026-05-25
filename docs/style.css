@@ -858,9 +858,9 @@ footer {
 }
 
 /* active menu entry indicator (check icon) using the radio :checked state */
-#filter-pro:checked ~ .dropdown .dropdown-content label[for="filter-pro"]::after,
-#filter-formation:checked ~ .dropdown .dropdown-content label[for="filter-formation"]::after,
-#filter-perso:checked ~ .dropdown .dropdown-content label[for="filter-perso"]::after,
+#filter-pro:checked ~ #projets .projets-grid .projet-card[data-category="professionnel"] { display: grid; }
+#filter-formation:checked ~ #projets .projets-grid .projet-card[data-category="formation"] { display: grid; }
+#filter-perso:checked ~ #projets .projets-grid .projet-card[data-category="personnel"] { display: grid; }
 #filter-all:checked ~ .dropdown .dropdown-content label[for="filter-all"]::after {
   content: "✓";
   color: #fff;
