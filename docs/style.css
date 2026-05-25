@@ -1048,3 +1048,9 @@ footer {
   transition: background 0.2s;
 }
 .ap1-resources li a:hover { background: #e871a7; color: #fff; }
+
+
+#projets .projet-card {
+  overflow: visible;
+  word-break: break-word;
+}
