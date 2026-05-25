@@ -1057,28 +1057,38 @@ footer {
 
 .modal {
   position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(30,0,60,0.85);
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 0, 60, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(4px);
 }
 .modal-box {
-  background: #23103a;
-  color: #fff;
+  background: linear-gradient(160deg, #2c1040, #1a0a2e);
+  color: #f6e8ff;
   max-width: 480px;
   width: 90%;
-  padding: 32px 28px;
-  border-radius: 18px;
-  box-shadow: 0 6px 40px #0008;
+  padding: 36px 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 48px #b980d155, 0 2px 12px #0008;
   position: relative;
   border: 1.5px solid #b980d144;
 }
+.modal-box h3 {
+  color: #e871a7;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
 .modal-close {
   position: absolute;
-  top: 14px; right: 16px;
+  top: 14px;
+  right: 16px;
   background: none;
   border: none;
   font-size: 1.4em;
